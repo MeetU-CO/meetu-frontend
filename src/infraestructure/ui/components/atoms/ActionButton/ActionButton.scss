@@ -1,0 +1,17 @@
+.actionButton {
+  width: 100%;
+  padding: 12px;
+  border: 2.5px solid var(--grey-color);
+  color: var(--orange-color);
+  background-color: var(--white-color);
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  border: 2px solid var(--orange-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  &:hover {
+    background-color: var(--orange-color);
+    color: var(--white-color);
+  }
+}

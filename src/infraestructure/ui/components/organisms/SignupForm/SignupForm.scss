@@ -1,0 +1,43 @@
+.signup-form {
+  width: clamp(350px, 28%, 540px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10% 0;
+  background-color: var(--white-color);
+  padding: 2% 0;
+  z-index: 100;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 16%);
+  svg {
+    width: 230px;
+    margin: 2% 0;
+  }
+  &__buttons {
+    width: 90%;
+    margin-top: 3%;
+  }
+  ul {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    padding: 0;
+    .menuLink {
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .signup-form {
+    margin: 20% 2%;
+    padding: 6% 0;
+    svg {
+      width: 200px;
+    }
+  }
+}

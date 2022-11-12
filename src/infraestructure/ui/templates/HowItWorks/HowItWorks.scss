@@ -1,0 +1,33 @@
+.howItWorks-template {
+  width: 100%;
+  max-width: 1300px;
+  padding: 2% 0;
+  &__explanation {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 6% 0;
+    &__icon {
+      width: 33%;
+      margin-bottom: 6%;
+    }
+    &__steps {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .howItWorks-template {
+    &__explanation {
+      flex-direction: column;
+      &__icon {
+        width: 220px;
+      }
+      &__steps {
+        width: 80%;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.categoryCard {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  text-decoration: none;
+  position: relative;
+}
+
+@media screen and (max-width: 808px) {
+  .categoryCard {
+    width: clamp(250px, 45%, 320px) !important;
+  }
+}

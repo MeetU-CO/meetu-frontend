@@ -1,0 +1,20 @@
+.home-template {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--white-color);
+  &__posts {
+    width: 90%;
+    max-width: 1750px;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-auto-rows: 30rem;
+    // grid-row-gap: 3%;
+    // grid-column-gap: 1%;
+    // justify-items: center;
+    // align-items: flex-start;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    margin: 3% 0;
+  }
+}

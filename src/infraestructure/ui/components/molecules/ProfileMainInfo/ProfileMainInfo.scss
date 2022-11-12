@@ -1,0 +1,56 @@
+.profileMainInfo {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  &__img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+  }
+  &__details {
+    width: 60%;
+    margin-left: 50px;
+    .thirdTitle {
+      h3 {
+        font-family: "Poppins", sans-serif;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .profileMainInfo {
+    &__img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .profileMainInfo {
+    &__img {
+      width: 130px;
+      height: 130px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .profileMainInfo {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    &__img {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+    &__details {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 15px;
+    }
+  }
+}

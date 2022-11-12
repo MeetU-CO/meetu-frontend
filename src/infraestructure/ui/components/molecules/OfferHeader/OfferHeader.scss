@@ -1,0 +1,22 @@
+.offerHeader {
+  width: 95%;
+  height: 70px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  &__leftInfo {
+    width: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__rightInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 4%;
+  }
+}

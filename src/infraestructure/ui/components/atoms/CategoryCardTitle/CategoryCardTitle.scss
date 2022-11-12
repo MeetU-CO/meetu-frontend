@@ -1,0 +1,16 @@
+.categoryCard-title {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media screen and (max-width: 808px) {
+  .categoryCard-title {
+    width: 85%;
+    font-size: 19px;
+  }
+}

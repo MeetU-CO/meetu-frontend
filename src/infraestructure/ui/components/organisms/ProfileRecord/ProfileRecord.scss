@@ -1,0 +1,78 @@
+.profileRecord {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .selectedTab {
+    background-color: #fff;
+    border-radius: 8px 8px 0 0;
+    color: var(--orange-color);
+  }
+  .selectedTabPanel {
+    width: 80%;
+    max-width: 1600px;
+    padding: 50px 0;
+    display: grid;
+    grid-auto-flow: dense;
+    row-gap: 50px;
+    column-gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    align-items: center;
+    justify-items: center;
+  }
+  &__tabList-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--orange-contrast-color);
+    margin: 0;
+    &__tabList {
+      width: 80%;
+      max-width: 1600px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      &__frame {
+        width: clamp(450px, 30%, 1000px);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: var(--orange-color);
+        border-radius: 10px 10px 0 0;
+
+        &__tab {
+          width: 50%;
+          padding: 15px 20px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 500;
+          font-size: 17px;
+          border-radius: 10px 10px 0 0;
+          background-color: var(--orange-color);
+          color: #fff;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .profileRecord {
+    &__tabList-container {
+      &__tabList {
+        width: 100%;
+        &__frame {
+          &__tab {
+            font-size: 13px;
+            padding: 15px 10px;
+          }
+        }
+      }
+    }
+  }
+}

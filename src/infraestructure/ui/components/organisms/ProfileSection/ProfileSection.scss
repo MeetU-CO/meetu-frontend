@@ -1,0 +1,53 @@
+.profileSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--orange-contrast-color);
+  padding: 20px 0;
+  &__header {
+    width: 80%;
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 0;
+    &__mainInfo {
+      width: 45%;
+      height: 300px;
+      background-color: red;
+    }
+    &__divisor-line-vertical {
+      width: 1px;
+      height: 350px;
+      margin: 0 20px;
+      background-color: var(--orange-color);
+    }
+  }
+  &__divisor-line {
+    width: 90%;
+    max-width: 1800px;
+    height: 1px;
+    background-color: var(--orange-color);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .profileSection {
+    &__header {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      &__divisor-line-vertical {
+        display: none;
+      }
+      &__divisor-line-horizontal {
+        width: 110%;
+        max-width: 1800px;
+        height: 1px;
+        background-color: var(--orange-color);
+        margin: 25px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.HIWStep {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 4% 0;
+  &__details {
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 5%;
+    h2 {
+      margin: 0;
+      margin-bottom: 8%;
+    }
+  }
+}

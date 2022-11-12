@@ -1,0 +1,18 @@
+.navbarOption {
+  width: 100%;
+  color: var(--orange-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+  gap: 3px;
+  cursor: pointer;
+  &__icon {
+  }
+  &__title {
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+    margin-left: 2%;
+  }
+}

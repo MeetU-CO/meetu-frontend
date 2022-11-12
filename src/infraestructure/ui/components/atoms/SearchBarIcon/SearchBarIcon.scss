@@ -1,0 +1,33 @@
+.searchBar-icon {
+  width: 13%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey-color);
+  border-radius: 0 8px 8px 0;
+  &__divisor-line {
+    width: 2px;
+    height: 80%;
+    background-color: var(--grey-contrast-color);
+    border-radius: 2px;
+  }
+  &__icon {
+    width: calc(100% - 10px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    span {
+      color: var(--grey-contrast-color);
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .searchBar-icon {
+    width: 25%;
+  }
+}

@@ -1,0 +1,27 @@
+.offerCard {
+  width: clamp(265px, 10%, 350px);
+  height: calc(425px - 2%);
+  min-height: 415px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.15);
+  padding: 2.5em 1.4em 0.5em 1.4em;
+  &__divisor-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--grey-color);
+    margin: 3.5% 0;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .offerCard {
+    width: clamp(190px, 10%, 250px);
+    height: 93%;
+  }
+}

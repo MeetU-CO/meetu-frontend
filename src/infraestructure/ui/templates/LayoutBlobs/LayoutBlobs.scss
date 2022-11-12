@@ -1,0 +1,50 @@
+.layout-blobs {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  background-color: var(--grey-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#blob1,
+#blob2 {
+  position: absolute;
+  z-index: 0;
+}
+#blob1 {
+  top: 0;
+  left: 0;
+  width: 600px;
+  transform: scale(0.85) translate(-12%, -18%);
+
+  @media (max-width: 1035px) {
+    width: 600px;
+  }
+  @media (max-width: 575px) {
+    transform: scale(0.5) translate(-52%, -58%);
+  }
+
+  @media (max-width: 300px) {
+    transform: scale(0.5) translate(-80%, -80%);
+  }
+}
+#blob2 {
+  bottom: 0;
+  right: 0;
+  width: 700px;
+  transform: translateY(50px);
+
+  @media (max-width: 1035px) {
+    width: 600px;
+  }
+
+  @media (max-width: 575px) {
+    width: 500px;
+  }
+
+  @media (max-width: 300px) {
+    width: 200px;
+    transform: translateY(500px);
+  }
+}
