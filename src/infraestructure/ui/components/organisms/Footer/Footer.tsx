@@ -103,7 +103,7 @@ const Footer = () => {
                 color="var(--white-color)"
               />
             </div>
-            <span>© 2022 MeetU Inc. All rights reserved.</span>
+            <span>© 2023 MeetU Inc. All rights reserved.</span>
           </div>
           <div className="footer__footer-container__bottomContent__socialMediaIcons">
             <a href="/">
