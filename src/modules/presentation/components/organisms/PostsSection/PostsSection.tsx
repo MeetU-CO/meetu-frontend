@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Pagination, Navigation } from "swiper";
-import useWindowDimensions from "../../../../hooks/useWindowDimensions";
+import useWindowDimensions from "../../../../application/hooks/useWindowDimensions";
 
 interface IPostSection {
   sectionTitle: (string | JSX.Element)[];

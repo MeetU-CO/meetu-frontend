@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import App from "./infraestructure/ui/container/App";
+import App from "./container/App";
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { store } from "./application/store/store";
+import { store } from "./modules/infraestructure/store/store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

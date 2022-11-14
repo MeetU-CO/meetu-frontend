@@ -7,7 +7,7 @@ import NavbarOptionsContainer from "../../molecules/NavbarOptionsContainer/Navba
 import BurgerMenu from "../../atoms/BurgerMenu/BurgerMenu";
 import ProfileButton from "../../atoms/ProfileButton/ProfileButton";
 import { useSelector } from "react-redux";
-import { selectAuth } from "../../../../../application/slices/AuthSlice";
+import { selectAuth } from "../../../../infraestructure/slices/AuthSlice";
 
 const Navbar = () => {
   const auth = useSelector(selectAuth);

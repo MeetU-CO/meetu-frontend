@@ -2,7 +2,8 @@ import React from "react";
 import NavbarOption from "../../atoms/NavbarOption/NavbarOption";
 import "./NavbarOptionsContainer.scss";
 import { useDispatch } from "react-redux";
-import { logout } from "../../../../../application/slices/AuthSlice";
+import { logout } from "../../../../infraestructure/slices/AuthSlice";
+import { deleteCookie } from "../../../../application/services/Cookie.service";
 
 interface INavbarOptionsContainer {
   auth: boolean;
@@ -12,8 +13,8 @@ const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
   const dispatch = useDispatch();
 
   const handleLogout = (values: any) => {
-    console.log(values);
     dispatch(logout());
+    deleteCookie("auth");
   };
 
   if (!auth) {
