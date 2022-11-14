@@ -12,7 +12,6 @@ const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
   const dispatch = useDispatch();
 
   const handleLogout = (values: any) => {
-    console.log(values);
     dispatch(logout());
   };
 

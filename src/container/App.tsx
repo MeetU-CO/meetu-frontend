@@ -25,7 +25,7 @@ const App = () => {
     if (auth) {
       dispatch(login(auth));
     }
-  }, []);
+  }, [auth, dispatch]);
 
   return (
     <div className="app">
