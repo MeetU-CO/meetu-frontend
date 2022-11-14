@@ -7,10 +7,21 @@ import Input from "../../atoms/Formik/Input";
 import Password from "../../atoms/Formik/Password";
 import ActionButton from "../../atoms/ActionButton/ActionButton";
 import MenuLink from "../../atoms/MenuLink/MenuLink";
+import { signupService } from "../../../../application/services/Signup.service";
+import { signup } from "../../../../domain/entity/Signup.entity";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { login } from "../../../../infraestructure/slices/AuthSlice";
+import { addCookie } from "../../../../application/services/Cookie.service";
+import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
-  const loginInitialValues = {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const signupInitialValues = {
     email: "",
+    name: "",
     password: "",
     passwordConfirm: "",
   };
@@ -19,6 +30,10 @@ const SignupForm = () => {
     email: Yup.string()
       .email("Email no valido")
       .required("Este campo es obligatorio"),
+    name: Yup.string()
+      .required("Este campo es obligatorio")
+      .min(8, "Mínimo 8 caracteres")
+      .max(60, "Máximo 50 caracteres"),
     password: Yup.string()
       .required("Este campo es obligatorio")
       .test(
@@ -53,13 +68,25 @@ const SignupForm = () => {
     ),
   });
 
-  const handleSignup = (values: any) => {
-    console.log(values);
+  const handleSignup = async (values: signup) => {
+    const res = await signupService(values);
+    if (res.token) {
+      dispatch(login(res));
+      addCookie(res.token, "auth");
+      toast.success("Cuenta creada con éxito");
+      toast.onChange((v) => {
+        if (v.status === "removed") {
+          navigate("/");
+        }
+      });
+    } else {
+      toast.error("Ocurrió un error, intenta de nuevo");
+    }
   };
 
   return (
     <Formik
-      initialValues={loginInitialValues}
+      initialValues={signupInitialValues}
       onSubmit={handleSignup}
       validationSchema={validationSchema}
     >
@@ -67,6 +94,7 @@ const SignupForm = () => {
         <Form className="signup-form">
           <MeetUIconOrange />
           <Input type="text" name="email" label="Correo electrónico" />
+          <Input type="text" name="name" label="Nombre completo" />
           <Password
             type="text"
             name="password"

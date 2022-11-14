@@ -9,8 +9,13 @@ import ActionButton from "../../atoms/ActionButton/ActionButton";
 import MenuLink from "../../atoms/MenuLink/MenuLink";
 import { useDispatch } from "react-redux";
 import { login } from "../../../../infraestructure/slices/AuthSlice";
+import { loginService } from "../../../../application/services/Login.service";
+import { addCookie } from "../../../../application/services/Cookie.service";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const loginInitialValues = {
@@ -25,8 +30,20 @@ const LoginForm = () => {
     password: Yup.string().required("Este campo es obligatorio"),
   });
 
-  const handleLogin = (values: any) => {
-    console.log(values);
+  const handleLogin = async (values: any) => {
+    const res = await loginService(values);
+    if (res.token) {
+      dispatch(login(res));
+      addCookie(res.token, "auth");
+      toast.success(`Bienvenido de vuelta ${res.name}`);
+      toast.onChange((v) => {
+        if (v.status === "removed") {
+          navigate("/");
+        }
+      });
+    } else {
+      toast.error("Ocurrió un error, intenta de nuevo");
+    }
     dispatch(login({ name: "Jonathan" }));
   };
 

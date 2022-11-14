@@ -1,6 +1,6 @@
-import { IUser } from "./IUser";
+import { User } from "./User.entity";
 
-export interface IStudent extends IUser {
+export interface Student extends User {
   system_id: string;
   gender: string;
   city: string;
