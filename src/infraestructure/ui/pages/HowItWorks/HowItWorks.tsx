@@ -2,7 +2,6 @@ import React from "react";
 import "./HowItWorks.scss";
 import HowItWorksTemplate from "../../templates/HowItWorks/HowItWorks";
 import { MainTitle } from "../../components/atoms/MainTitle/MainTitle";
-import { spawn } from "child_process";
 import HIWStepsContainer from "../../components/organisms/HIWStepsContainer/HIWStepsContainer";
 
 const HowItWorks = () => {

@@ -2,7 +2,6 @@ import React from "react";
 import "./SignupForm.scss";
 import MeetUIconOrange from "../../atoms/MeetUIcon/MeetUIconOrange";
 import { Formik, Form } from "formik";
-import FormikControl from "../../atoms/Formik/FormikControl";
 import * as Yup from "yup";
 import Input from "../../atoms/Formik/Input";
 import Password from "../../atoms/Formik/Password";

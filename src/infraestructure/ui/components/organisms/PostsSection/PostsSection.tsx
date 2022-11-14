@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./PostsSection.scss";
 import SecondTitle from "../../atoms/SecondTitle/SecondTitle";
 import OfferCard from "../OfferCard/OfferCard";
@@ -19,7 +19,7 @@ interface IPostSection {
 }
 
 const PostsSection = ({ sectionTitle, posts }: IPostSection) => {
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   return (
     <section className="postSection">
