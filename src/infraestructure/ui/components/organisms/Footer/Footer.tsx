@@ -106,16 +106,16 @@ const Footer = () => {
             <span>© 2022 MeetU Inc. All rights reserved.</span>
           </div>
           <div className="footer__footer-container__bottomContent__socialMediaIcons">
-            <a>
+            <a href="/">
               <i className="bi bi-instagram"></i>
             </a>
-            <a>
+            <a href="/">
               <i className="bi bi-facebook"></i>
             </a>
-            <a>
+            <a href="/">
               <i className="bi bi-twitter"></i>
             </a>
-            <a>
+            <a href="/">
               <i className="bi bi-linkedin"></i>
             </a>
           </div>
