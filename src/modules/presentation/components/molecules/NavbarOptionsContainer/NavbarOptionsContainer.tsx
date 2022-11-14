@@ -3,6 +3,7 @@ import NavbarOption from "../../atoms/NavbarOption/NavbarOption";
 import "./NavbarOptionsContainer.scss";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../../infraestructure/slices/AuthSlice";
+import { deleteCookie } from "../../../../application/services/Cookie.service";
 
 interface INavbarOptionsContainer {
   auth: boolean;
@@ -13,6 +14,7 @@ const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
 
   const handleLogout = (values: any) => {
     dispatch(logout());
+    deleteCookie("auth");
   };
 
   if (!auth) {

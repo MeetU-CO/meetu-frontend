@@ -75,7 +75,7 @@ const SignupForm = () => {
       addCookie(res.token, "auth");
       toast.success("Cuenta creada con éxito");
       toast.onChange((v) => {
-        if (v.status === "removed") {
+        if (v.status === "removed" && !res.response) {
           navigate("/");
         }
       });
