@@ -11,15 +11,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
+        with:
+          persist-credentials: false
       - name: Install and Build
         run: |
           npm install
           npm run build
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+      - name: Deploy
+      - uses: actions/checkout@master
+      - uses: jakejarvis/s3-sync-action@master
         with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-1
-      - name: Deploy to S3 bucket
-        run: aws s3 sync ./build/ s3://meetu-frontend --delete
+          SOURCE_DIR: "build"
