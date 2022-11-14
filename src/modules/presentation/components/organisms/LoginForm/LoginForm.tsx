@@ -8,7 +8,7 @@ import Password from "../../atoms/Formik/Password";
 import ActionButton from "../../atoms/ActionButton/ActionButton";
 import MenuLink from "../../atoms/MenuLink/MenuLink";
 import { useDispatch } from "react-redux";
-import { login } from "../../../../../application/slices/AuthSlice";
+import { login } from "../../../../infraestructure/slices/AuthSlice";
 
 const LoginForm = () => {
   const dispatch = useDispatch();

@@ -2,7 +2,7 @@ import React from "react";
 import NavbarOption from "../../atoms/NavbarOption/NavbarOption";
 import "./NavbarOptionsContainer.scss";
 import { useDispatch } from "react-redux";
-import { logout } from "../../../../../application/slices/AuthSlice";
+import { logout } from "../../../../infraestructure/slices/AuthSlice";
 
 interface INavbarOptionsContainer {
   auth: boolean;
