@@ -1,4 +1,3 @@
-import React from "react";
 import SecondTitle from "../../atoms/SecondTitle/SecondTitle";
 import CategoryCard from "../../molecules/CategoryCard/CategoryCard";
 import { ICategory } from "../../molecules/CategoryCard/ICategory";
@@ -9,7 +8,10 @@ interface ICategoriesSection {
   categories: ICategory[];
 }
 
-const CategoriesSection = ({ sectionTitle, categories }: ICategoriesSection) => {
+const CategoriesSection = ({
+  sectionTitle,
+  categories,
+}: ICategoriesSection) => {
   return (
     <div className="categoriesSection">
       <SecondTitle title={sectionTitle} fontSize={"26"} />

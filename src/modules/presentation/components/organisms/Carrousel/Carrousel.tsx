@@ -1,4 +1,3 @@
-import React from "react";
 import "./Carrousel.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";

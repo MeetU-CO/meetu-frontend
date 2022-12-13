@@ -1,4 +1,3 @@
-import React from "react";
 import MenuLink from "../../atoms/MenuLink/MenuLink";
 import FooterColumn from "../../molecules/FooterColumn/FooterColumn";
 import "./Footer.scss";

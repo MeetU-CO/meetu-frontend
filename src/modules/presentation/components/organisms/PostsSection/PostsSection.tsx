@@ -1,4 +1,3 @@
-import React from "react";
 import "./PostsSection.scss";
 import SecondTitle from "../../atoms/SecondTitle/SecondTitle";
 import OfferCard from "../OfferCard/OfferCard";

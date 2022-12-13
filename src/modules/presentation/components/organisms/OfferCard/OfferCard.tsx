@@ -1,4 +1,3 @@
-import React from "react";
 import "./OfferCard.scss";
 import OfferDetails from "../../molecules/OfferDetails/OfferDetails";
 import OfferFooter from "../../molecules/OfferFooter/OfferFooter";

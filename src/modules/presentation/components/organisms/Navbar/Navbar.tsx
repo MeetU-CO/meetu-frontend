@@ -1,4 +1,3 @@
-import React from "react";
 import "./Navbar.scss";
 import MenuLink from "../../atoms/MenuLink/MenuLink";
 import MeetUIconOrange from "../../atoms/MeetUIcon/MeetUIconOrange";

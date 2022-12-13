@@ -1,4 +1,3 @@
-import React from "react";
 import "./SignupForm.scss";
 import MeetUIconOrange from "../../atoms/MeetUIcon/MeetUIconOrange";
 import { Formik, Form } from "formik";

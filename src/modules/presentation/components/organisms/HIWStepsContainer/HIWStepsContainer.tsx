@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import HIWStep from "../../molecules/HIWStep/HIWStep";
 import "./HIWStepsContainer.scss";
 
