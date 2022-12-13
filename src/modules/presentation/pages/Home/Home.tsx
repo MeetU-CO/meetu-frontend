@@ -1,4 +1,3 @@
-import React from "react";
 import HomeTemplate from "../../templates/Home/Home";
 import { ICategory } from "../../components/molecules/CategoryCard/ICategory";
 import { IOffer } from "../../components/organisms/OfferCard/IOffer";

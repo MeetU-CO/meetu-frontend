@@ -1,4 +1,3 @@
-import React from "react";
 import "./Profile.scss";
 import ProfileTemplate from "../../templates/Profile/Profile";
 import { IOffer } from "../../components/organisms/OfferCard/IOffer";

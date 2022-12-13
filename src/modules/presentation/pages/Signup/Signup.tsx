@@ -1,4 +1,3 @@
-import React from "react";
 import "./Signup.scss";
 import SignupTemplate from "../../templates/Signup/Signup";
 

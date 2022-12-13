@@ -1,4 +1,3 @@
-import React from "react";
 import "./HowItWorks.scss";
 import HowItWorksTemplate from "../../templates/HowItWorks/HowItWorks";
 import { MainTitle } from "../../components/atoms/MainTitle/MainTitle";

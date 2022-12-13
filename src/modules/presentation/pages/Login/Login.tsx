@@ -1,4 +1,3 @@
-import React from "react";
 import "./Login.scss";
 import LoginTemplate from "../../templates/Login/Login";
 
