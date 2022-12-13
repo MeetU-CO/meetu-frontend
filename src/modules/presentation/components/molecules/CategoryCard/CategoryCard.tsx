@@ -1,4 +1,3 @@
-import React from "react";
 import CategoryCardImg from "../../atoms/CategoryCardImg/CategoryCardImg";
 import CategoryCardTitle from "../../atoms/CategoryCardTitle/CategoryCardTitle";
 import { ICategory } from "./ICategory";
@@ -19,7 +18,10 @@ const CategoryCard = ({
       style={{ backgroundColor: categoryColor, width: cardWidth }}
     >
       <CategoryCardImg categoryImgUrl={categoryImgUrl} />
-      <CategoryCardTitle categoryTitle={categoryTitle} titleColor={titleColor} />
+      <CategoryCardTitle
+        categoryTitle={categoryTitle}
+        titleColor={titleColor}
+      />
     </Link>
   );
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import NavbarOption from "../../atoms/NavbarOption/NavbarOption";
 import "./NavbarOptionsContainer.scss";
 import { useDispatch } from "react-redux";

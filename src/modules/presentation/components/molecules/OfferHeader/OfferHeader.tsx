@@ -1,4 +1,3 @@
-import React from "react";
 import "./OfferHeader.scss";
 import PostType from "../../atoms/PostType/PostType";
 import PostUserIcon from "../../atoms/PostUserIcon/PostUserIcon";

@@ -1,4 +1,3 @@
-import React from "react";
 import "./OfferInfo.scss";
 import PostDescription from "../../atoms/PostDescription/PostDescription";
 import PostTitle from "../../atoms/PostTitle/PostTitle";

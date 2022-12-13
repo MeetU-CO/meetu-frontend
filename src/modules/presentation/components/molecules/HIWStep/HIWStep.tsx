@@ -1,4 +1,3 @@
-import React from "react";
 import "./HIWStep.scss";
 import SecondTitle from "../../atoms/SecondTitle/SecondTitle";
 import SmallDescriptionText from "../../atoms/SmallDescriptionText/SmallDescriptionText";

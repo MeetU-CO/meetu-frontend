@@ -1,4 +1,3 @@
-import React from "react";
 import "./OfferFooter.scss";
 import PostPayment from "../../atoms/PostPayment/PostPayment";
 import { IOfferFooter } from "./IOfferFooter";
