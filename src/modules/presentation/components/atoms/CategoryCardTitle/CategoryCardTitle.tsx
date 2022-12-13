@@ -1,8 +1,10 @@
-import React from "react";
 import "./CategoryCardTitle.scss";
 import { ICategoryCardTitle } from "./ICategoryCardTitle";
 
-const CategoryCardTitle = ({ categoryTitle, titleColor }: ICategoryCardTitle) => {
+const CategoryCardTitle = ({
+  categoryTitle,
+  titleColor,
+}: ICategoryCardTitle) => {
   return (
     <h3 className="categoryCard-title" style={{ color: titleColor }}>
       {categoryTitle}

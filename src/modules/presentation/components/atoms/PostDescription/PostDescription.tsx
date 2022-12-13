@@ -1,4 +1,3 @@
-import React from "react";
 import "./PostDescription.scss";
 
 interface IPostDescription {

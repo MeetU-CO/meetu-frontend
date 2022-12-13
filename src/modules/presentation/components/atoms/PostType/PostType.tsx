@@ -1,4 +1,3 @@
-import React from "react";
 import "./PostType.scss";
 import { TTypes } from "./TTypes";
 

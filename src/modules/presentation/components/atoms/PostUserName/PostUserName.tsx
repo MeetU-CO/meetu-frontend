@@ -1,4 +1,3 @@
-import React from "react";
 import "./PostUserName.scss";
 
 interface IPostUserName {

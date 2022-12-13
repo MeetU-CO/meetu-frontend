@@ -1,4 +1,3 @@
-import React from "react";
 import "./BurgerMenu.scss";
 
 const BugerMenu = () => {

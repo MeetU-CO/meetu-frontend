@@ -1,4 +1,3 @@
-import React from "react";
 import { IOfferFooter } from "../../molecules/OfferFooter/IOfferFooter";
 import "./PostPayment.scss";
 

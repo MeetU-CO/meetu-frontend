@@ -1,4 +1,3 @@
-import React from "react";
 import "./SearhBarInput.scss";
 
 const SearhBarInput = () => {

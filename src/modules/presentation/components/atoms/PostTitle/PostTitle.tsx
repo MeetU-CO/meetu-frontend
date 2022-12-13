@@ -1,4 +1,3 @@
-import React from "react";
 import "./PostTitle.scss";
 
 interface IPostTitle {

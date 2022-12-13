@@ -1,4 +1,3 @@
-import React from "react";
 import { IProfileField } from "./IProfileField";
 import "./ProfileField.scss";
 

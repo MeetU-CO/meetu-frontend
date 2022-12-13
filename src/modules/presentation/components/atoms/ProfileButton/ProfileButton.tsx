@@ -1,4 +1,3 @@
-import React from "react";
 import "./ProfileButton.scss";
 
 const ProfileButton = () => {

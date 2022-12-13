@@ -1,4 +1,3 @@
-import React from "react";
 import { IOfferDetails } from "../../molecules/OfferDetails/IOfferDetails";
 import "./PostCategory.scss";
 
