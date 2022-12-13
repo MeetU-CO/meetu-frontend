@@ -1,4 +1,3 @@
-import React from "react";
 import { IProfileField } from "../../components/atoms/ProfileField/IProfileField";
 import { IProfileMainInfo } from "../../components/molecules/ProfileMainInfo/IProfileMainInfo";
 import { IOffer } from "../../components/organisms/OfferCard/IOffer";

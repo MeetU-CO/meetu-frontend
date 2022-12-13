@@ -1,4 +1,3 @@
-import React from "react";
 import "./Home.scss";
 import Carrousel from "../../components/organisms/Carrousel/Carrousel";
 import PostsSection from "../../components/organisms/PostsSection/PostsSection";

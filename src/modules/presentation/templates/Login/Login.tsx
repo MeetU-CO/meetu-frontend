@@ -1,4 +1,3 @@
-import React from "react";
 import LoginForm from "../../components/organisms/LoginForm/LoginForm";
 import LayoutBlobs from "../LayoutBlobs/LayoutBlobs";
 import "./Login.scss";

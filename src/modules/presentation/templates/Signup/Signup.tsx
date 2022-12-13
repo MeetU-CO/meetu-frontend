@@ -1,4 +1,3 @@
-import React from "react";
 import SignupForm from "../../components/organisms/SignupForm/SignupForm";
 import LayoutBlobs from "../LayoutBlobs/LayoutBlobs";
 import "./Signup.scss";
