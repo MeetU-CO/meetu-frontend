@@ -1,2 +1,36 @@
 .login-template {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  #blob1 {
+    transform: scale(0.85) translate(-12%, -18%);
+
+    @media (max-width: 1035px) {
+      width: 600px;
+    }
+    @media (max-width: 575px) {
+      transform: scale(0.5) translate(-52%, -58%);
+    }
+
+    @media (max-width: 300px) {
+      transform: scale(0.5) translate(-80%, -80%);
+    }
+  }
+  #blob2 {
+    transform: translateY(50px);
+
+    @media (max-width: 1035px) {
+      width: 600px;
+    }
+
+    @media (max-width: 575px) {
+      width: 500px;
+    }
+
+    @media (max-width: 300px) {
+      width: 200px;
+      transform: translateY(500px);
+    }
+  }
 }

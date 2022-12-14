@@ -1,0 +1,49 @@
+.descriptionAboutUs {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 50px 0;
+  &__definition {
+    width: 50%;
+    margin-bottom: 90px;
+  }
+  &__softText-container {
+    width: 80%;
+  }
+  &__image {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 90px;
+    img {
+      width: 45%;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #blob7,
+  #blob8 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .descriptionAboutUs {
+    height: auto;
+    .layout-blobs {
+      flex-direction: column;
+    }
+    &__definition {
+      width: 85%;
+      margin-bottom: 55px;
+    }
+    &__image {
+      width: 100%;
+    }
+  }
+}

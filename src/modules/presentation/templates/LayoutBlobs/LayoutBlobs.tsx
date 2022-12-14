@@ -1,18 +1,36 @@
+import { IBlob } from "./IBlob";
+
 import "./LayoutBlobs.scss";
 
-import Blob1 from "../../assets/Blobs/Blob1.svg";
-import Blob2 from "../../assets/Blobs/Blob2.svg";
-
 interface ILayoutBlobs {
+  blobs: IBlob[];
+  maxWidth: string;
   children: JSX.Element | JSX.Element[];
 }
 
-const LayoutBlobs = ({ children }: ILayoutBlobs) => {
+const LayoutBlobs = ({ blobs, maxWidth, children }: ILayoutBlobs) => {
   return (
     <>
-      <div className="layout-blobs">
-        <img id="blob1" src={Blob1} alt="" />
-        <img id="blob2" src={Blob2} alt="" />
+      <div className="layout-blobs" style={{ maxWidth: maxWidth }}>
+        {blobs.map((blob, index) => (
+          <img
+            src={blob.src}
+            id={blob.id}
+            alt=""
+            style={{
+              width: blob.width,
+              top: blob.top,
+              right: blob.right,
+              bottom: blob.bottom,
+              left: blob.left,
+              zIndex: blob.zIndex,
+              position: "absolute",
+            }}
+            key={index}
+          />
+        ))}
+        {/* <img id="blob1" src={Blob1} alt="" />
+        <img id="blob2" src={Blob2} alt="" /> */}
         {children}
       </div>
     </>

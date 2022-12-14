@@ -1,4 +1,5 @@
-import AboutUsBanner from "../../components/organisms/BannerAboutUs/BannerAboutUs";
+import BannerAboutUs from "../../components/organisms/BannerAboutUs/BannerAboutUs";
+import DescriptionAboutUs from "../../components/organisms/DescriptionAboutUs/DescriptionAboutUs";
 
 import "./AboutUs.scss";
 
@@ -7,7 +8,8 @@ interface IAboutUs {}
 const AboutUs = ({}: IAboutUs) => {
   return (
     <div className="aboutus-template">
-      <AboutUsBanner />
+      <BannerAboutUs />
+      <DescriptionAboutUs />
     </div>
   );
 };

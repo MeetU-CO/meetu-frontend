@@ -10,8 +10,8 @@
     "application/(.*)$",
     "infraestructure/(.*)$",
     "^./I",
-    ".css",
-    "^[./]"
+    "^[./]",
+    ".scss$"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
