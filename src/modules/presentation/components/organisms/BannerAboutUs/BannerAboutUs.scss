@@ -35,7 +35,6 @@
       bottom: -500px;
     }
   }
-
   &__container {
     width: 100%;
     height: 90%;
@@ -45,6 +44,12 @@
     align-items: center;
     color: #fff;
     margin-bottom: 60px;
+    #blob6 {
+      width: 40%;
+      min-width: 280px;
+      right: 300px;
+      z-index: 2;
+    }
   }
   &__title {
     width: 50%;
@@ -52,6 +57,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    margin-bottom: 200px;
     h1,
     h3 {
       font-family: "Nunito";
@@ -64,41 +70,40 @@
       z-index: 3;
     }
     h3 {
-      width: 70%;
+      width: 80%;
+      font-size: 20px;
       font-style: normal;
       font-weight: 400;
       z-index: 3;
     }
   }
-  #blob6 {
-    width: 44%;
-    right: 300px;
-    z-index: 2;
-  }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 900px) {
   .bannerAboutUs {
-    height: 650px;
+    height: 600px;
     &__container {
       flex-direction: column;
       justify-content: flex-start;
       margin-bottom: 0;
+      #blob6 {
+        width: 50% !important;
+      }
     }
     &__title {
       width: 80%;
+      margin-bottom: 0;
       h1 {
         width: 100%;
-        font-size: 26px;
+        max-width: 300px;
+        font-size: 24px;
       }
       h3 {
         width: 100%;
-        font-size: 16px;
+        max-width: 430px;
+        line-height: 20px;
+        font-size: 14px;
       }
-    }
-    #blob6 {
-      margin-top: 30px;
-      width: 60% !important;
     }
   }
   #blob3 {
