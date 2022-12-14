@@ -1,8 +1,10 @@
 import { IProfileField } from "../../atoms/ProfileField/IProfileField";
+
 import ProfileBottomInfo from "../../molecules/ProfileBottomInfo/ProfileBottomInfo";
 import { IProfileMainInfo } from "../../molecules/ProfileMainInfo/IProfileMainInfo";
 import ProfileMainInfo from "../../molecules/ProfileMainInfo/ProfileMainInfo";
 import ProfileSideInfo from "../../molecules/ProfileSideInfo/ProfileSideInfo";
+
 import "./ProfileSection.scss";
 
 interface IProfileSection {
@@ -11,7 +13,11 @@ interface IProfileSection {
   mainInfo: IProfileMainInfo;
 }
 
-const ProfileSection = ({ mainInfo, sideInfo, bottomInfo }: IProfileSection) => {
+const ProfileSection = ({
+  mainInfo,
+  sideInfo,
+  bottomInfo,
+}: IProfileSection) => {
   return (
     <div className="profileSection">
       <div className="profileSection__header">

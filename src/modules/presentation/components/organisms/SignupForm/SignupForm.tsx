@@ -1,18 +1,23 @@
-import "./SignupForm.scss";
-import MeetUIconOrange from "../../atoms/MeetUIcon/MeetUIconOrange";
-import { Formik, Form } from "formik";
+import { Form, Formik } from "formik";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import * as Yup from "yup";
+
+import ActionButton from "../../atoms/ActionButton/ActionButton";
 import Input from "../../atoms/Formik/Input";
 import Password from "../../atoms/Formik/Password";
-import ActionButton from "../../atoms/ActionButton/ActionButton";
+import MeetUIconOrange from "../../atoms/MeetUIcon/MeetUIconOrange";
 import MenuLink from "../../atoms/MenuLink/MenuLink";
-import { signupService } from "../../../../application/services/Signup.service";
+
 import { signup } from "../../../../domain/entity/Signup.entity";
-import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
-import { login } from "../../../../infraestructure/slices/AuthSlice";
+
 import { addCookie } from "../../../../application/services/Cookie.service";
-import { useNavigate } from "react-router-dom";
+import { signupService } from "../../../../application/services/Signup.service";
+
+import { login } from "../../../../infraestructure/slices/AuthSlice";
+
+import "./SignupForm.scss";
 
 const SignupForm = () => {
   const navigate = useNavigate();

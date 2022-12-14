@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
+
 import CategoryCardImg from "../../atoms/CategoryCardImg/CategoryCardImg";
 import CategoryCardTitle from "../../atoms/CategoryCardTitle/CategoryCardTitle";
-import { ICategory } from "./ICategory";
 import "./CategoryCard.scss";
-import { Link } from "react-router-dom";
+import { ICategory } from "./ICategory";
 
 const CategoryCard = ({
   categoryTitle,

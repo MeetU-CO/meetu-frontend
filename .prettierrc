@@ -1,0 +1,13 @@
+{
+  "importOrder": [
+    "atoms/(.*)$",
+    "molecules/(.*)$",
+    "organisms/(.*)$",
+    "domain/(.*)$",
+    "application/(.*)$",
+    "infraestructure/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
