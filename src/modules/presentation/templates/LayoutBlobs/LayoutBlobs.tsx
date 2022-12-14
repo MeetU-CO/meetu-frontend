@@ -1,6 +1,7 @@
-import Blob1 from "../../assets/LayoutBlobs/Blob1.svg";
-import Blob2 from "../../assets/LayoutBlobs/Blob2.svg";
 import "./LayoutBlobs.scss";
+
+import Blob1 from "../../assets/Blobs/Blob1.svg";
+import Blob2 from "../../assets/Blobs/Blob2.svg";
 
 interface ILayoutBlobs {
   children: JSX.Element | JSX.Element[];

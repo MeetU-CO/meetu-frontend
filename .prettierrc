@@ -1,11 +1,16 @@
 {
   "importOrder": [
+    "assets/(.*)$",
     "atoms/(.*)$",
     "molecules/(.*)$",
     "organisms/(.*)$",
+    "templates/(.*)$",
+    "pages/(.*)$",
     "domain/(.*)$",
     "application/(.*)$",
     "infraestructure/(.*)$",
+    "^./I",
+    ".css",
     "^[./]"
   ],
   "importOrderSeparation": true,

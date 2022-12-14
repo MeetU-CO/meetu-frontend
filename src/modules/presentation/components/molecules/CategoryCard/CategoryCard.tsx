@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 
 import CategoryCardImg from "../../atoms/CategoryCardImg/CategoryCardImg";
 import CategoryCardTitle from "../../atoms/CategoryCardTitle/CategoryCardTitle";
-import "./CategoryCard.scss";
+
 import { ICategory } from "./ICategory";
+
+import "./CategoryCard.scss";
 
 const CategoryCard = ({
   categoryTitle,
