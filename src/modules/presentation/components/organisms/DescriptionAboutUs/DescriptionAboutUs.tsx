@@ -30,7 +30,7 @@ const DescriptionAboutUs = ({}: IDescriptionAboutUs) => {
       src: Blob7,
       top: "",
       bottom: "",
-      right: "-410px",
+      right: "-440px",
       left: "",
       width: "",
       zIndex: "",

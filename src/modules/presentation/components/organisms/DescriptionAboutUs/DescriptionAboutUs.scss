@@ -20,7 +20,8 @@
     align-items: center;
     margin-bottom: 90px;
     img {
-      width: 45%;
+      width: 50%;
+      min-width: 170px;
     }
   }
 }
@@ -44,6 +45,9 @@
     }
     &__image {
       width: 100%;
+      img {
+        min-width: 50px;
+      }
     }
   }
 }
