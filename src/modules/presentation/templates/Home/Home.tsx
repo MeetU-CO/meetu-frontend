@@ -1,9 +1,11 @@
-import "./Home.scss";
-import Carrousel from "../../components/organisms/Carrousel/Carrousel";
-import PostsSection from "../../components/organisms/PostsSection/PostsSection";
-import { IOffer } from "../../components/organisms/OfferCard/IOffer";
-import CategoriesSection from "../../components/organisms/CategoriesSection/CategoriesSection";
 import { ICategory } from "../../components/molecules/CategoryCard/ICategory";
+
+import Carrousel from "../../components/organisms/Carrousel/Carrousel";
+import CategoriesSection from "../../components/organisms/CategoriesSection/CategoriesSection";
+import { IOffer } from "../../components/organisms/OfferCard/IOffer";
+import PostsSection from "../../components/organisms/PostsSection/PostsSection";
+
+import "./Home.scss";
 
 interface IHome {
   carrouselSlides: JSX.Element[];

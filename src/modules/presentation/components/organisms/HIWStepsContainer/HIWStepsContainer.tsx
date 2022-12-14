@@ -1,5 +1,7 @@
 import { Fragment } from "react";
+
 import HIWStep from "../../molecules/HIWStep/HIWStep";
+
 import "./HIWStepsContainer.scss";
 
 const steps = [
@@ -11,14 +13,14 @@ const steps = [
     ],
   },
   {
-    icon: <i className="bi bi-mouse2-fill"></i>,
+    icon: <i className="bi bi-link"></i>,
     title: "2. Vincula tu cuenta",
     description: [
       "Conecta tu cuenta Dugol con tu cuenta universitaria para obtener tu información académica.",
     ],
   },
   {
-    icon: <i className="bi bi-mouse2-fill"></i>,
+    icon: <i className="bi bi-star-fill"></i>,
     title: "3. ¡Listo!",
     description: [
       "Ahora puedes inscribirte en ofertas de tu universidad, rápido y sencillo.",
