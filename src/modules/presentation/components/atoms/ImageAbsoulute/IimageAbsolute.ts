@@ -1,5 +1,5 @@
 export interface IimageAbsolute {
-  imgUrl: string;
+  url: string;
   width: string;
   top?: string;
   right?: string;

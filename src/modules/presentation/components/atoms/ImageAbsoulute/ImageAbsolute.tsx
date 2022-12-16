@@ -2,7 +2,7 @@ import { IimageAbsolute } from "./IimageAbsolute";
 import "./ImageAbsolute.scss";
 
 const ImageAbsolute = ({
-  imgUrl,
+  url,
   width,
   top,
   right,
@@ -11,7 +11,7 @@ const ImageAbsolute = ({
 }: IimageAbsolute) => {
   return (
     <img
-      src={imgUrl}
+      src={url}
       alt=""
       className="imageAbsolute"
       style={{ width, top, right, bottom, left }}

@@ -20,13 +20,9 @@ const CategoriesSection = ({
       <div className="categoriesSection__grid-container">
         {categories.map((i, index) => (
           <CategoryCard
-            categoryTitle={i.categoryTitle}
-            imgUrl={i.imgUrl}
-            width={i.width}
-            top={i.top}
-            left={i.left}
+            img={i.img}
+            title={i.title}
             categoryColor={i.categoryColor}
-            titleColor={i.titleColor}
             cardWidth={i.cardWidth}
             key={index}
           />
