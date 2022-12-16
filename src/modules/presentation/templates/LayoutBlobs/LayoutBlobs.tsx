@@ -5,13 +5,22 @@ import "./LayoutBlobs.scss";
 interface ILayoutBlobs {
   blobs: IBlob[];
   maxWidth: string;
+  direction: "row" | "column";
   children: JSX.Element | JSX.Element[];
 }
 
-const LayoutBlobs = ({ blobs, maxWidth, children }: ILayoutBlobs) => {
+const LayoutBlobs = ({
+  blobs,
+  maxWidth,
+  direction,
+  children,
+}: ILayoutBlobs) => {
   return (
     <>
-      <div className="layout-blobs" style={{ maxWidth: maxWidth }}>
+      <div
+        className="layout-blobs"
+        style={{ maxWidth: maxWidth, flexDirection: direction }}
+      >
         {blobs.map((blob, index) => (
           <img
             src={blob.src}
@@ -29,8 +38,6 @@ const LayoutBlobs = ({ blobs, maxWidth, children }: ILayoutBlobs) => {
             key={index}
           />
         ))}
-        {/* <img id="blob1" src={Blob1} alt="" />
-        <img id="blob2" src={Blob2} alt="" /> */}
         {children}
       </div>
     </>

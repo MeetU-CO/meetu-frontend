@@ -33,7 +33,7 @@ const Signup = () => {
 
   return (
     <div className="signup-template">
-      <LayoutBlobs blobs={layoutBlobs} maxWidth="100%">
+      <LayoutBlobs blobs={layoutBlobs} maxWidth="100%" direction={"row"}>
         <SignupForm />
       </LayoutBlobs>
     </div>

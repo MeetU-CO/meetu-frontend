@@ -1,0 +1,10 @@
+.clickableImage {
+  a {
+    width: fit-content;
+    img {
+      min-width: 200px;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

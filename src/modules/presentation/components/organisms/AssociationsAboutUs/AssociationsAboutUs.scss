@@ -1,0 +1,20 @@
+.associationsAboutUs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__entities {
+    width: 65%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 200px));
+    column-gap: 100px;
+    row-gap: 80px;
+    margin: 4rem 0;
+    margin-bottom: 15rem;
+  }
+}

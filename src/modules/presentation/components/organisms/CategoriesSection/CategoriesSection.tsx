@@ -1,6 +1,8 @@
 import SecondTitle from "../../atoms/SecondTitle/SecondTitle";
+
 import CategoryCard from "../../molecules/CategoryCard/CategoryCard";
 import { ICategory } from "../../molecules/CategoryCard/ICategory";
+
 import "./CategoriesSection.scss";
 
 interface ICategoriesSection {
@@ -19,7 +21,10 @@ const CategoriesSection = ({
         {categories.map((i, index) => (
           <CategoryCard
             categoryTitle={i.categoryTitle}
-            categoryImgUrl={i.categoryImgUrl}
+            imgUrl={i.imgUrl}
+            width={i.width}
+            top={i.top}
+            left={i.left}
             categoryColor={i.categoryColor}
             titleColor={i.titleColor}
             cardWidth={i.cardWidth}

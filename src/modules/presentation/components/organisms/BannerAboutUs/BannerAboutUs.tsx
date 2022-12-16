@@ -46,7 +46,7 @@ const BannerAboutUs = ({}: IBannerAboutUs) => {
 
   return (
     <div className="bannerAboutUs">
-      <LayoutBlobs blobs={layoutBlobs} maxWidth="3000px">
+      <LayoutBlobs blobs={layoutBlobs} maxWidth="3000px" direction={"row"}>
         <div className="bannerAboutUs__container">
           <div className="bannerAboutUs__title">
             <h1>Conecta la oportunidad ideal con la persona ideal</h1>

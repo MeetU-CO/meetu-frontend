@@ -1,3 +1,4 @@
+import AssociationsAboutUs from "../../components/organisms/AssociationsAboutUs/AssociationsAboutUs";
 import BannerAboutUs from "../../components/organisms/BannerAboutUs/BannerAboutUs";
 import DescriptionAboutUs from "../../components/organisms/DescriptionAboutUs/DescriptionAboutUs";
 
@@ -10,6 +11,7 @@ const AboutUs = ({}: IAboutUs) => {
     <div className="aboutus-template">
       <BannerAboutUs />
       <DescriptionAboutUs />
+      <AssociationsAboutUs />
     </div>
   );
 };

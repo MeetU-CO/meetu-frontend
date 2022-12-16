@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import CategoryCardImg from "../../atoms/CategoryCardImg/CategoryCardImg";
 import CategoryCardTitle from "../../atoms/CategoryCardTitle/CategoryCardTitle";
+import CategoryCardImg from "../../atoms/ImageAbsoulute/ImageAbsolute";
 
 import { ICategory } from "./ICategory";
 
@@ -9,7 +9,10 @@ import "./CategoryCard.scss";
 
 const CategoryCard = ({
   categoryTitle,
-  categoryImgUrl,
+  imgUrl,
+  width,
+  top,
+  left,
   categoryColor,
   titleColor,
   cardWidth,
@@ -20,7 +23,7 @@ const CategoryCard = ({
       className="categoryCard"
       style={{ backgroundColor: categoryColor, width: cardWidth }}
     >
-      <CategoryCardImg categoryImgUrl={categoryImgUrl} />
+      <CategoryCardImg imgUrl={imgUrl} width={width} top={top} left={left} />
       <CategoryCardTitle
         categoryTitle={categoryTitle}
         titleColor={titleColor}

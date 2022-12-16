@@ -11,5 +11,10 @@
 @media screen and (max-width: 808px) {
   .categoryCard {
     width: clamp(250px, 45%, 320px) !important;
+    .imageAbsolute {
+      width: 95px !important;
+      top: -30px !important;
+      left: 0px !important;
+    }
   }
 }

@@ -1,6 +1,6 @@
 import Blob7 from "../../../assets/Blobs/Blob7.svg";
 import Blob8 from "../../../assets/Blobs/Blob8.svg";
-import LogoOrange from "../../../assets/LogoOrange.svg";
+import LogoOrange from "../../../assets/Logos/LogoOrange.svg";
 
 import SoftText from "../../atoms/SoftText/SoftText";
 
@@ -39,11 +39,12 @@ const DescriptionAboutUs = ({}: IDescriptionAboutUs) => {
 
   return (
     <div className="descriptionAboutUs">
-      <LayoutBlobs blobs={layoutBlobs} maxWidth="2000px">
+      <LayoutBlobs blobs={layoutBlobs} maxWidth="2000px" direction="row">
         <div className="descriptionAboutUs__definition">
           <TitleWithHead
             head={"Sobre nosotros"}
             title={"MeetU es una StartUp Colombiana"}
+            align={"flex-start"}
           />
           <div className="descriptionAboutUs__softText-Container">
             <SoftText text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum, justo quis faucibus laoreet, nibh nisi congue arcu, ac dictum risus neque in eros. Nam elementum et justo quis ultrices. Duis quam orci, bibendum vitae sapien volutpat, venenatis fermentum lacus. Maecenas hendrerit venenatis massa in sollicitudin." />

@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <div className="login-template">
-      <LayoutBlobs blobs={layoutBlobs} maxWidth="100%">
+      <LayoutBlobs blobs={layoutBlobs} maxWidth="100%" direction={"row"}>
         <LoginForm />
       </LayoutBlobs>
     </div>
