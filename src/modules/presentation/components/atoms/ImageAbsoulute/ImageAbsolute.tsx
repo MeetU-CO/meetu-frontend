@@ -8,13 +8,14 @@ const ImageAbsolute = ({
   right,
   bottom,
   left,
+  ...rest
 }: IimageAbsolute) => {
   return (
     <img
       src={url}
       alt=""
       className="imageAbsolute"
-      style={{ width, top, right, bottom, left }}
+      style={{ width, top, right, bottom, left, ...rest }}
     />
   );
 };

@@ -23,7 +23,12 @@ const CategoryCard = ({ title, img, categoryColor, cardWidth }: ICategory) => {
       <CategoryCardTitle
         title={title.title}
         color={title.color}
-        width={"90%"}
+        width="90%"
+        fontSize="25px"
+        justifyContent="flex-end"
+        fontFamily="'Poppins', sans-serif"
+        fontWeight="500"
+        margin="0"
       />
     </Link>
   );

@@ -5,4 +5,5 @@ export interface IimageAbsolute {
   right?: string;
   bottom?: string;
   left?: string;
+  [rest: string]: any;
 }
