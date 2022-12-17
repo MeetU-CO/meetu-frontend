@@ -1,19 +1,25 @@
-import "./HowItWorks.scss";
-import HowItWorksTemplate from "../../templates/HowItWorks/HowItWorks";
-import { MainTitle } from "../../components/atoms/MainTitle/MainTitle";
+import { TitleH1 } from "../../components/atoms/TitleH1/TitleH1";
+
 import HIWStepsContainer from "../../components/organisms/HIWStepsContainer/HIWStepsContainer";
+
+import HowItWorksTemplate from "../../templates/HowItWorks/HowItWorks";
+
+import "./HowItWorks.scss";
 
 const HowItWorks = () => {
   return (
     <div className="howItWorks">
       <HowItWorksTemplate
         mainTitle={
-          <MainTitle
+          <TitleH1
             title={[
               "Solo 3 pasos para conectarte con ofertas laborales ",
               <br key="1" />,
               "dentro y fuera de tu campus",
             ]}
+            fontFamily="'Nunito', sans-serif"
+            fontSize="34px"
+            margin="1% 0"
           />
         }
         icon={

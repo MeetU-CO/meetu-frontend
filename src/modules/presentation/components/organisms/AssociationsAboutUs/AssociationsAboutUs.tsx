@@ -3,7 +3,7 @@ import LogoJaveriana from "../../../assets/Logos/LogoJaveriana.png";
 import LogoSabana from "../../../assets/Logos/LogoSabana.png";
 import LogoUnal from "../../../assets/Logos/LogoUnal.png";
 
-import ClickableImage from "../../atoms/ClickableImage/ClickableImage";
+import ImageClickable from "../../atoms/ClickableImage/ClickableImage";
 
 import TitleWithHead from "../../molecules/TitleWithHead/TitleWithHead";
 
@@ -26,22 +26,22 @@ const AssociationsAboutUs = ({}: IAssociationsAboutUs) => {
           align={"center"}
         />
         <div className="associationsAboutUs__entities">
-          <ClickableImage
+          <ImageClickable
             link={"https://www.unisabana.edu.co/"}
             imageUrl={LogoSabana}
             width={"200px"}
           />
-          <ClickableImage
+          <ImageClickable
             link={"https://www.javeriana.edu.co/inicio"}
             imageUrl={LogoJaveriana}
             width={"200px"}
           />
-          <ClickableImage
+          <ImageClickable
             link={"https://unal.edu.co/"}
             imageUrl={LogoUnal}
             width={"150px"}
           />
-          <ClickableImage
+          <ImageClickable
             link={"https://www.globant.com"}
             imageUrl={LogoGlobant}
             width={"260px"}
