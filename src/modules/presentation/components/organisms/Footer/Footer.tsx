@@ -1,5 +1,7 @@
-import MenuLink from "../../atoms/MenuLink/MenuLink";
+import LinkList from "../../atoms/LinkList/LinkList";
+
 import FooterColumn from "../../molecules/FooterColumn/FooterColumn";
+
 import "./Footer.scss";
 
 const Footer = () => {
@@ -86,17 +88,17 @@ const Footer = () => {
         <div className="footer__footer-container__bottomContent">
           <div className="footer__footer-container__bottomContent__laws">
             <div className="footer__footer-container__bottomContent__laws__documents">
-              <MenuLink
+              <LinkList
                 title="Términos y Condiciones"
                 link="/"
                 color="var(--white-color)"
               />
-              <MenuLink
+              <LinkList
                 title="Políticas de Privacidad"
                 link="/"
                 color="var(--white-color)"
               />
-              <MenuLink
+              <LinkList
                 title="Tratamiento de Datos"
                 link="/"
                 color="var(--white-color)"

@@ -1,12 +1,16 @@
-import "./Navbar.scss";
-import MenuLink from "../../atoms/MenuLink/MenuLink";
-import MeetUIconOrange from "../../atoms/MeetUIcon/MeetUIconOrange";
-import SearhBar from "../../molecules/SearchBar/SearhBar";
-import NavbarOptionsContainer from "../../molecules/NavbarOptionsContainer/NavbarOptionsContainer";
-import BurgerMenu from "../../atoms/BurgerMenu/BurgerMenu";
-import ProfileButton from "../../atoms/ProfileButton/ProfileButton";
 import { useSelector } from "react-redux";
+
+import BurgerMenu from "../../atoms/BurgerMenu/BurgerMenu";
+import LinkList from "../../atoms/LinkList/LinkList";
+import MeetUIconOrange from "../../atoms/MeetUIcon/MeetUIconOrange";
+import ProfileButton from "../../atoms/ProfileButton/ProfileButton";
+
+import NavbarOptionsContainer from "../../molecules/NavbarOptionsContainer/NavbarOptionsContainer";
+import SearhBar from "../../molecules/SearchBar/SearhBar";
+
 import { selectAuth } from "../../../../infraestructure/slices/AuthSlice";
+
+import "./Navbar.scss";
 
 const Navbar = () => {
   const auth = useSelector(selectAuth);
@@ -24,18 +28,18 @@ const Navbar = () => {
         <div className="navbar__navbar-container__bottomBar">
           <nav className="navbar__navbar-container__bottomBar__nav">
             <ul className="navbar__navbar-container__bottomBar__nav__ul">
-              <MenuLink title="Ofertas" link="/" color="var(--orange-color)" />
-              <MenuLink
+              <LinkList title="Ofertas" link="/" color="var(--orange-color)" />
+              <LinkList
                 title="Sobre nosotros"
                 link="/"
                 color="var(--orange-color)"
               />
-              <MenuLink
+              <LinkList
                 title="Como funciona"
                 link="/"
                 color="var(--orange-color)"
               />
-              <MenuLink
+              <LinkList
                 title="Contactanos"
                 link="/"
                 color="var(--orange-color)"

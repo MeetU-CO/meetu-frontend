@@ -7,8 +7,8 @@ import * as Yup from "yup";
 import ActionButton from "../../atoms/ActionButton/ActionButton";
 import Input from "../../atoms/Formik/Input";
 import Password from "../../atoms/Formik/Password";
+import LinkList from "../../atoms/LinkList/LinkList";
 import MeetUIconOrange from "../../atoms/MeetUIcon/MeetUIconOrange";
-import MenuLink from "../../atoms/MenuLink/MenuLink";
 
 import { addCookie } from "../../../../application/services/Cookie.service";
 import { loginService } from "../../../../application/services/Login.service";
@@ -75,7 +75,7 @@ const LoginForm = () => {
             <ActionButton type="submit" text="Iniciar Sesión" />
           </div>
           <ul>
-            <MenuLink
+            <LinkList
               title="¿No tienes una cuenta? Crea una aquí"
               link="signup"
               color="var(--orange-color)"

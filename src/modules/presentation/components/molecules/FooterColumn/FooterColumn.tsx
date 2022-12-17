@@ -1,4 +1,5 @@
-import MenuLink from "../../atoms/MenuLink/MenuLink";
+import LinkList from "../../atoms/LinkList/LinkList";
+
 import "./FooterColumn.scss";
 
 interface ILinks {
@@ -29,7 +30,7 @@ const FooterColumn = ({
       </h3>
       <ul className="footerColumn__ul">
         {links.map((i, index) => (
-          <MenuLink
+          <LinkList
             key={index}
             title={i.title}
             link={i.link}

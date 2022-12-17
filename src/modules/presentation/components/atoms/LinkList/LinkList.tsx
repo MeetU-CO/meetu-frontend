@@ -1,4 +1,4 @@
-import "./MenuLink.scss";
+import "./LinkList.scss";
 
 interface ILinkList {
   title: string;

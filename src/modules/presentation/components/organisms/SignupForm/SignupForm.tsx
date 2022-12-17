@@ -7,8 +7,8 @@ import * as Yup from "yup";
 import ActionButton from "../../atoms/ActionButton/ActionButton";
 import Input from "../../atoms/Formik/Input";
 import Password from "../../atoms/Formik/Password";
+import LinkList from "../../atoms/LinkList/LinkList";
 import MeetUIconOrange from "../../atoms/MeetUIcon/MeetUIconOrange";
-import MenuLink from "../../atoms/MenuLink/MenuLink";
 
 import { signup } from "../../../../domain/entity/Signup.entity";
 
@@ -115,7 +115,7 @@ const SignupForm = () => {
             <ActionButton type="submit" text="Registrarse" />
           </div>
           <ul>
-            <MenuLink
+            <LinkList
               title="¿Ya tienes una cuenta? Inicia sesión aquí"
               link="signup"
               color="var(--orange-color)"
