@@ -1,9 +1,9 @@
 import { IimageAbsolute } from "../../atoms/ImageAbsoulute/IimageAbsolute";
-import { ITitleH3Color } from "../../atoms/TitleH3Color/ITitleH3Color";
+import { ITitleH3 } from "../../atoms/TitleH3/ITitleH3";
 
 export interface ICategory {
   img: IimageAbsolute;
-  title: ITitleH3Color;
+  title: ITitleH3;
   categoryColor: string;
   cardWidth: string;
 }

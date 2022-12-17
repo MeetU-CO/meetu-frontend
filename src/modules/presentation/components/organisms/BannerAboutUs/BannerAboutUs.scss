@@ -24,24 +24,6 @@
     align-items: flex-start;
     flex-direction: column;
     margin-bottom: 200px;
-    h1,
-    h3 {
-      font-family: "Nunito";
-    }
-    h1 {
-      width: 90%;
-      font-size: 46px;
-      font-style: normal;
-      font-weight: 600;
-      z-index: 3;
-    }
-    h3 {
-      width: 80%;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      z-index: 3;
-    }
   }
   &__image {
     width: 40%;
@@ -60,18 +42,18 @@
       margin-bottom: 0;
     }
     &__title {
-      width: 80%;
+      width: 84%;
       margin-bottom: 0;
-      h1 {
-        width: 100%;
-        max-width: 300px;
-        font-size: 24px;
+      .titleH1 {
+        width: 100% !important;
+        max-width: 350px;
+        font-size: 28px !important;
       }
-      h3 {
-        width: 100%;
+      .titleH3 {
+        width: 100% !important;
         max-width: 430px;
         line-height: 20px;
-        font-size: 14px;
+        font-size: 14px !important;
       }
     }
     &__image {

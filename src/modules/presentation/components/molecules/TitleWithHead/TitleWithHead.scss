@@ -3,13 +3,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  h3 {
-    width: 85%;
-    font-family: "Lato", sans-serif;
-    font-weight: 500;
-    margin: 20px 0;
-    color: var(--orange-color);
-  }
   h2 {
     width: 85%;
     font-family: "Nunito", sans-serif;
@@ -22,6 +15,9 @@
 
 @media screen and (max-width: 670px) {
   .titleWithHead {
-    text-align: left !important;
+    .titleH3,
+    h2 {
+      text-align: left !important;
+    }
   }
 }

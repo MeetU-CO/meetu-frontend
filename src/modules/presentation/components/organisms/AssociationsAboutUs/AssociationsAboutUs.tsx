@@ -24,6 +24,7 @@ const AssociationsAboutUs = ({}: IAssociationsAboutUs) => {
           head={"Ellos confiaron en nosotros"}
           title={"Universidades y empresas en MeetU"}
           align={"center"}
+          textAlign={"center"}
         />
         <div className="associationsAboutUs__entities">
           <ImageClickable

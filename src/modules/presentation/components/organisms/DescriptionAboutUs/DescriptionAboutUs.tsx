@@ -45,6 +45,7 @@ const DescriptionAboutUs = ({}: IDescriptionAboutUs) => {
             head={"Sobre nosotros"}
             title={"MeetU es una StartUp Colombiana"}
             align={"flex-start"}
+            textAlign={"left"}
           />
           <div className="descriptionAboutUs__softText-Container">
             <SoftText text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum, justo quis faucibus laoreet, nibh nisi congue arcu, ac dictum risus neque in eros. Nam elementum et justo quis ultrices. Duis quam orci, bibendum vitae sapien volutpat, venenatis fermentum lacus. Maecenas hendrerit venenatis massa in sollicitudin." />

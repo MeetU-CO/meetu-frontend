@@ -3,6 +3,9 @@ import Blob4 from "../../../assets/Blobs/Blob4.svg";
 import Blob5 from "../../../assets/Blobs/Blob5.svg";
 import Blob6 from "../../../assets/Blobs/Blob6.svg";
 
+import { TitleH1 } from "../../atoms/TitleH1/TitleH1";
+import TitleH3 from "../../atoms/TitleH3/TitleH3";
+
 import { IBlob } from "../../../templates/LayoutBlobs/IBlob";
 import LayoutBlobs from "../../../templates/LayoutBlobs/LayoutBlobs";
 
@@ -49,11 +52,25 @@ const BannerAboutUs = ({}: IBannerAboutUs) => {
       <LayoutBlobs blobs={layoutBlobs} maxWidth="3000px" direction={"row"}>
         <div className="bannerAboutUs__container">
           <div className="bannerAboutUs__title">
-            <h1>Conecta la oportunidad ideal con la persona ideal</h1>
-            <h3>
-              Conectamos estudiantes, empresas y universidades con trabajos
-              fuera y dentro del campus.
-            </h3>
+            <TitleH1
+              title="Conecta la oportunidad ideal con la persona ideal"
+              fontFamily="Nunito"
+              width="90%"
+              fontSize="46px"
+              fontWeight="600"
+              textAlign="left"
+              zIndex="3"
+            />
+            <TitleH3
+              title="Conectamos estudiantes, empresas y universidades con trabajos
+              fuera y dentro del campus."
+              fontFamily="Nunito"
+              width="80%"
+              fontSize="20px"
+              fontWeight="400"
+              textAlign="left"
+              zIndex="3"
+            />
           </div>
           <img className="bannerAboutUs__image" src={Blob6} alt="" />
         </div>
