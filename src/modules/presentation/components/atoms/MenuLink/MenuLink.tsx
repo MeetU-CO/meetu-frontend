@@ -1,19 +1,19 @@
 import "./MenuLink.scss";
 
-interface IMenuLink {
+interface ILinkList {
   title: string;
   link: string;
   color: string;
 }
 
-const MenuLink = ({ title, link, color }: IMenuLink) => {
+const LinkList = ({ title, link, color }: ILinkList) => {
   return (
-    <li className="menuLink">
-      <a className="menuLink__link" href={link} style={{ color: color }}>
+    <li className="linkList">
+      <a className="linkList__link" href={link} style={{ color: color }}>
         {title}
       </a>
     </li>
   );
 };
 
-export default MenuLink;
+export default LinkList;
