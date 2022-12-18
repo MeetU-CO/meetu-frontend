@@ -1,8 +1,12 @@
-import NavbarOption from "../../atoms/NavbarOption/NavbarOption";
-import "./NavbarOptionsContainer.scss";
 import { useDispatch } from "react-redux";
-import { logout } from "../../../../infraestructure/slices/AuthSlice";
+
+import LinkSingle from "../../atoms/LinkSingle/LinkSingle";
+
 import { deleteCookie } from "../../../../application/services/Cookie.service";
+
+import { logout } from "../../../../infraestructure/slices/AuthSlice";
+
+import "./NavbarOptionsContainer.scss";
 
 interface INavbarOptionsContainer {
   auth: boolean;
@@ -19,8 +23,8 @@ const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
   if (!auth) {
     return (
       <div className="navbarOptions-container">
-        <NavbarOption icon="" title="Iniciar sesión" link="/login" />
-        <NavbarOption icon="" title="Registrarse" link="/signup" />
+        <LinkSingle icon="" title="Iniciar sesión" link="/login" />
+        <LinkSingle icon="" title="Registrarse" link="/signup" />
       </div>
     );
   }
@@ -28,9 +32,9 @@ const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
   return (
     <div className="navbarOptions-container">
       <div onClick={handleLogout}>
-        <NavbarOption icon="notifications" link="" />
+        <LinkSingle icon="notifications" link="" />
       </div>
-      <NavbarOption
+      <LinkSingle
         icon="account_circle"
         title="mi perfil"
         link="/perfil/123123"
