@@ -1,3 +1,5 @@
+import ButtonLinkActive from "../../atoms/ButtonLinkActive/ButtonLinkActive";
+
 import QualityCard from "../../molecules/QualityCard/QualityCard";
 import TitleWithHead from "../../molecules/TitleWithHead/TitleWithHead";
 
@@ -42,6 +44,9 @@ const BenefitsStudentsAboutUs = ({}: IBenefitsStudentsAboutUs) => {
           icon="payments"
           color="var(--orange-color)"
         />
+        <div className="benefitsStudentsAboutUs__button">
+          <ButtonLinkActive link="/login" text={"Empieza aquí"} />
+        </div>
       </div>
     </div>
   );

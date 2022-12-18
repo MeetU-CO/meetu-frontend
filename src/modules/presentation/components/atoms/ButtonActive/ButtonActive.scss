@@ -1,4 +1,4 @@
-.buttonPasive {
+.buttonActive {
   width: 100%;
   height: 100%;
   display: flex;
@@ -8,8 +8,8 @@
   padding: 12px;
   text-align: center;
   border: 2.5px solid var(--grey-color);
-  color: var(--orange-color);
-  background-color: var(--white-color);
+  color: var(--white-full-color);
+  background-color: var(--orange-color);
   font-family: "Poppins", sans-serif;
   border-radius: 5px;
   border: 2px solid var(--orange-color);
