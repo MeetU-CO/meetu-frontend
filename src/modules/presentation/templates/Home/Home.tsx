@@ -17,12 +17,9 @@ const Home = ({ carrouselSlides, categories, recentPosts }: IHome) => {
   return (
     <div className="home-template">
       <Carrousel slides={carrouselSlides} />
-      <CategoriesSection
-        sectionTitle={["Categorías"]}
-        categories={categories}
-      />
-      <PostsSection sectionTitle={["Ofertas recientes"]} posts={recentPosts} />
-      <PostsSection sectionTitle={["Ofertas destacadas"]} posts={recentPosts} />
+      <CategoriesSection sectionTitle="Categorías" categories={categories} />
+      <PostsSection sectionTitle="Ofertas recientes" posts={recentPosts} />
+      <PostsSection sectionTitle="Ofertas destacadas" posts={recentPosts} />
     </div>
   );
 };

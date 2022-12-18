@@ -1,19 +1,20 @@
-import "./PostsSection.scss";
-import SecondTitle from "../../atoms/SecondTitle/SecondTitle";
-import OfferCard from "../OfferCard/OfferCard";
-import { IOffer } from "../OfferCard/IOffer";
-import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Navigation, Pagination } from "swiper";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Pagination, Navigation } from "swiper";
+import TitleH2 from "../../atoms/TitleH2/TitleH2";
+
 import useWindowDimensions from "../../../../application/hooks/useWindowDimensions";
 
+import { IOffer } from "../OfferCard/IOffer";
+import OfferCard from "../OfferCard/OfferCard";
+import "./PostsSection.scss";
+
 interface IPostSection {
-  sectionTitle: (string | JSX.Element)[];
+  sectionTitle: string;
   posts: IOffer[];
 }
 
@@ -22,9 +23,11 @@ const PostsSection = ({ sectionTitle, posts }: IPostSection) => {
 
   return (
     <section className="postSection">
-      <div className="postSection__sectionTitle">
-        <SecondTitle title={sectionTitle} fontSize={"26"} />
-      </div>
+      <TitleH2
+        title={sectionTitle}
+        color={"var(--black-full-color)"}
+        textAlign={"center"}
+      />
       <Swiper
         slidesPerView={1}
         slidesPerGroup={1}

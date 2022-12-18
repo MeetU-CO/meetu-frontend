@@ -1,7 +1,8 @@
-import "./HIWStep.scss";
-import SecondTitle from "../../atoms/SecondTitle/SecondTitle";
 import SmallDescriptionText from "../../atoms/SmallDescriptionText/SmallDescriptionText";
 import StepIcon from "../../atoms/StepIcon/StepIcon";
+import TitleH2 from "../../atoms/TitleH2/TitleH2";
+
+import "./HIWStep.scss";
 
 interface IHIWStep {
   icon: JSX.Element;
@@ -14,7 +15,11 @@ const HIWStep = ({ icon, title, description }: IHIWStep) => {
     <div className="HIWStep">
       <StepIcon icon={icon} />
       <div className="HIWStep__details">
-        <SecondTitle title={[title]} fontSize="16px" />
+        <TitleH2
+          title={title}
+          color={"var(--black-full-color)"}
+          textAlign={"left"}
+        />
         <SmallDescriptionText description={description} fontSize="15px" />
       </div>
     </div>

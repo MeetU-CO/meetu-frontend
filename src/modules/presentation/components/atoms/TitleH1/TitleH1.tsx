@@ -1,14 +1,17 @@
 import "./TitleH1.scss";
 
 interface ITitleH1 {
-  title: string | (string | JSX.Element)[];
-  [rest: string]: any;
+  title: string;
+  color: string;
+  textAlign: "center" | "left" | "right";
 }
 
-export const TitleH1 = ({ title, ...rest }: ITitleH1) => {
+const TitleH1 = ({ title, color, textAlign }: ITitleH1) => {
   return (
-    <h1 className="titleH1" style={{ ...rest }}>
+    <h1 className="titleH1" style={{ color, textAlign }}>
       {title}
     </h1>
   );
 };
+
+export default TitleH1;

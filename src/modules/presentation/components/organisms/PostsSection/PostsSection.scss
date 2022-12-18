@@ -3,7 +3,7 @@
   max-width: 1715px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   margin: 50px 0;
   &__sectionTitle {
@@ -35,7 +35,6 @@
 
 @media screen and (max-width: 450px) {
   .postSection {
-    width: 100%;
     &__sectionTitle {
       width: 90%;
     }

@@ -1,0 +1,12 @@
+.titleH1Big {
+  font-size: 50px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+@media screen and (max-width: 850px) {
+  .titleH1Big {
+    font-size: 30px;
+  }
+}

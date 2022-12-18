@@ -1,4 +1,4 @@
-import SecondTitle from "../../atoms/SecondTitle/SecondTitle";
+import TitleH2 from "../../atoms/TitleH2/TitleH2";
 
 import CategoryCard from "../../molecules/CategoryCard/CategoryCard";
 import { ICategory } from "../../molecules/CategoryCard/ICategory";
@@ -6,7 +6,7 @@ import { ICategory } from "../../molecules/CategoryCard/ICategory";
 import "./CategoriesSection.scss";
 
 interface ICategoriesSection {
-  sectionTitle: (string | JSX.Element)[];
+  sectionTitle: string;
   categories: ICategory[];
 }
 
@@ -16,7 +16,11 @@ const CategoriesSection = ({
 }: ICategoriesSection) => {
   return (
     <div className="categoriesSection">
-      <SecondTitle title={sectionTitle} fontSize={"26"} />
+      <TitleH2
+        title={sectionTitle}
+        color={"var(--black-full-color)"}
+        textAlign={"center"}
+      />
       <div className="categoriesSection__grid-container">
         {categories.map((i, index) => (
           <CategoryCard
