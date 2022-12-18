@@ -4,7 +4,7 @@ import Blob5 from "../../../assets/Blobs/Blob5.svg";
 import Blob6 from "../../../assets/Blobs/Blob6.svg";
 
 import TitleH1Big from "../../atoms/TitleH1Big/TitleH1Big";
-import TitleH3 from "../../atoms/TitleH3/TitleH3";
+import TitleH3Light from "../../atoms/TitleH3Light/TitleH3Light";
 
 import { IBlob } from "../../../templates/LayoutBlobs/IBlob";
 import LayoutBlobs from "../../../templates/LayoutBlobs/LayoutBlobs";
@@ -57,15 +57,11 @@ const BannerAboutUs = ({}: IBannerAboutUs) => {
               color="var(--white-full-color)"
               textAlign={"left"}
             />
-            <TitleH3
+            <TitleH3Light
               title="Conectamos estudiantes, empresas y universidades con trabajos
               fuera y dentro del campus."
-              fontFamily="Nunito"
-              width="80%"
-              fontSize="20px"
-              fontWeight="400"
+              color="var(--white-full-color)"
               textAlign="left"
-              zIndex="3"
             />
           </div>
           <img className="bannerAboutUs__image" src={Blob6} alt="" />

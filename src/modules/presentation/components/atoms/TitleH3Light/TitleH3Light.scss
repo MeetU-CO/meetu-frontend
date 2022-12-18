@@ -1,12 +1,12 @@
-.titleH3 {
+.titleH3Light {
   font-size: 23px;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 300;
   margin: 0;
 }
 
 @media screen and (max-width: 850px) {
-  .titleH3 {
-    font-size: 19px;
+  .titleH3Light {
+    font-size: 16px;
   }
 }

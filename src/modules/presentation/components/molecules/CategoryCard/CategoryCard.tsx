@@ -20,16 +20,13 @@ const CategoryCard = ({ title, img, categoryColor, cardWidth }: ICategory) => {
         top={img.top}
         left={img.left}
       />
-      <TitleH3
-        title={title.title}
-        color={title.color}
-        width="90%"
-        fontSize="25px"
-        textAlign="right"
-        fontFamily="'Poppins', sans-serif"
-        fontWeight="500"
-        margin="0"
-      />
+      <div className="categoryCard__titleContainer">
+        <TitleH3
+          title={title.title}
+          color={title.color}
+          textAlign={title.textAlign}
+        />
+      </div>
     </Link>
   );
 };

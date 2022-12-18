@@ -1,4 +1,5 @@
-import TitleH3 from "../../atoms/TitleH3/TitleH3";
+import TitleH2 from "../../atoms/TitleH2/TitleH2";
+import TitleH3Light from "../../atoms/TitleH3Light/TitleH3Light";
 
 import "./TitleWithHead.scss";
 
@@ -18,17 +19,16 @@ const TitleWithHead = ({ head, title, align, textAlign }: ITitleWithHead) => {
         textAlign: textAlign,
       }}
     >
-      <TitleH3
+      <TitleH3Light
         title={head}
-        width="85%"
-        fontSize="19px"
         color="var(--orange-color)"
         textAlign={textAlign}
-        fontFamily="'Lato', sans-serif"
-        fontWeight="500"
-        margin="20px 0"
       />
-      <h2>{title}</h2>
+      <TitleH2
+        title={title}
+        color={"var(--black-full-color)"}
+        textAlign={textAlign}
+      />
     </div>
   );
 };

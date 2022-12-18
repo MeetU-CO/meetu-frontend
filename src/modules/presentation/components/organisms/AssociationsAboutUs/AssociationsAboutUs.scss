@@ -1,8 +1,10 @@
 .associationsAboutUs {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 2% 0;
   &__entities {
     width: 65%;
     display: grid;
@@ -16,5 +18,11 @@
     row-gap: 80px;
     margin: 4rem 0;
     margin-bottom: 15rem;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .associationsAboutUs {
+    width: 85%;
   }
 }

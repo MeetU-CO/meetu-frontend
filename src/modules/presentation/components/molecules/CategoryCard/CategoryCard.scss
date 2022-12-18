@@ -6,6 +6,12 @@
   border-radius: 8px;
   text-decoration: none;
   position: relative;
+  &__titleContainer {
+    width: 85%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 808px) {
@@ -15,10 +21,6 @@
       width: 95px !important;
       top: -30px !important;
       left: 0px !important;
-    }
-    .titleH3 {
-      width: 85% !important;
-      font-size: 19px !important;
     }
   }
 }

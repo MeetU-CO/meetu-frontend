@@ -146,6 +146,7 @@ const Home = () => {
       title: {
         title: "Ingeniería",
         color: "#FF0000",
+        textAlign: "center",
       },
       categoryColor: "#FFD0D0",
       cardWidth: "88%",
@@ -160,6 +161,7 @@ const Home = () => {
       title: {
         title: "Medicina",
         color: "#0094FF",
+        textAlign: "center",
       },
       categoryColor: "#D8EFFF",
       cardWidth: "78%",
@@ -174,6 +176,7 @@ const Home = () => {
       title: {
         title: "Administración",
         color: "#5ACD00",
+        textAlign: "center",
       },
       categoryColor: "#DCFFE0",
       cardWidth: "100%",
@@ -188,6 +191,7 @@ const Home = () => {
       title: {
         title: "Psicología",
         color: "#B400FF",
+        textAlign: "center",
       },
       categoryColor: "#F2E6F7",
       cardWidth: "83%",
@@ -202,6 +206,7 @@ const Home = () => {
       title: {
         title: "Comunicación",
         color: "#FFC700",
+        textAlign: "center",
       },
       categoryColor: "#FFF4BA",
       cardWidth: "100%",
@@ -216,6 +221,7 @@ const Home = () => {
       title: {
         title: "Psicología",
         color: "#B400FF",
+        textAlign: "center",
       },
       categoryColor: "#F2E6F7",
       cardWidth: "83%",
@@ -230,6 +236,7 @@ const Home = () => {
       title: {
         title: "Medicina",
         color: "#0094FF",
+        textAlign: "center",
       },
       categoryColor: "#D8EFFF",
       cardWidth: "78%",
@@ -244,6 +251,7 @@ const Home = () => {
       title: {
         title: "Ingeniería",
         color: "#FF0000",
+        textAlign: "center",
       },
       categoryColor: "#FFD0D0",
       cardWidth: "88%",
