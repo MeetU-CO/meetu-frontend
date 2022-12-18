@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 
-import BurgerMenu from "../../atoms/BurgerMenu/BurgerMenu";
+import ButtonBurger from "../../atoms/ButtonBurger/ButtonBurger";
+import ButtonProfile from "../../atoms/ButtonProfile/ButtonProfile";
 import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
 import LinkList from "../../atoms/LinkList/LinkList";
-import ProfileButton from "../../atoms/ProfileButton/ProfileButton";
 
 import NavbarOptionsContainer from "../../molecules/NavbarOptionsContainer/NavbarOptionsContainer";
 import SearhBar from "../../molecules/SearchBar/SearhBar";
@@ -19,10 +19,10 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbar__navbar-container">
         <div className="navbar__navbar-container__topBar">
-          <BurgerMenu />
+          <ButtonBurger />
           <MeetUIconOrange />
           <SearhBar />
-          <ProfileButton />
+          <ButtonProfile />
           <NavbarOptionsContainer auth={auth.logged} />
         </div>
         <div className="navbar__navbar-container__bottomBar">

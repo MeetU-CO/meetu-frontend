@@ -1,4 +1,4 @@
-import { IProfileField } from "../../atoms/ProfileField/IProfileField";
+import { ITextField } from "../../atoms/TextField/ITextField";
 
 import ProfileBottomInfo from "../../molecules/ProfileBottomInfo/ProfileBottomInfo";
 import { IProfileMainInfo } from "../../molecules/ProfileMainInfo/IProfileMainInfo";
@@ -8,8 +8,8 @@ import ProfileSideInfo from "../../molecules/ProfileSideInfo/ProfileSideInfo";
 import "./ProfileSection.scss";
 
 interface IProfileSection {
-  sideInfo: IProfileField[];
-  bottomInfo: IProfileField[];
+  sideInfo: ITextField[];
+  bottomInfo: ITextField[];
   mainInfo: IProfileMainInfo;
 }
 

@@ -5,9 +5,9 @@ import { toast } from "react-toastify";
 import * as Yup from "yup";
 
 import ActionButton from "../../atoms/ButtonPasive/ButtonPasive";
-import Input from "../../atoms/Formik/Input";
-import Password from "../../atoms/Formik/Password";
 import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
+import Input from "../../atoms/InputFormik/Input";
+import Password from "../../atoms/InputFormik/Password";
 import LinkList from "../../atoms/LinkList/LinkList";
 
 import { signup } from "../../../../domain/entity/Signup.entity";

@@ -1,16 +1,17 @@
-import { IProfileField } from "../../atoms/ProfileField/IProfileField";
-import ProfileField from "../../atoms/ProfileField/ProfileField";
+import { ITextField } from "../../atoms/TextField/ITextField";
+import TextField from "../../atoms/TextField/TextField";
+
 import "./ProfileSideInfo.scss";
 
 interface IProfileSideInfo {
-  data: IProfileField[];
+  data: ITextField[];
 }
 
 const ProfileSideInfo = ({ data }: IProfileSideInfo) => {
   return (
     <div className="profileSideInfo">
       {data.map((i, index) => (
-        <ProfileField field={i.field} value={i.value} link={i.link} key={index} />
+        <TextField field={i.field} value={i.value} link={i.link} key={index} />
       ))}
     </div>
   );

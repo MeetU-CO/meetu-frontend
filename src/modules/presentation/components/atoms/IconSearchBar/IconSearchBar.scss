@@ -1,4 +1,4 @@
-.searchBar-icon {
+.iconSearchBar {
   width: 13%;
   height: 100%;
   display: flex;
@@ -28,7 +28,7 @@
 }
 
 @media screen and (max-width: 850px) {
-  .searchBar-icon {
+  .iconSearchBar {
     width: 25%;
   }
 }

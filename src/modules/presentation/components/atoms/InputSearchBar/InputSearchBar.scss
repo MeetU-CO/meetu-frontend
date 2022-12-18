@@ -1,4 +1,4 @@
-.searchBar-input {
+.inputSearchBar {
   width: 87%;
   height: 100%;
   background-color: var(--grey-color);
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 850px) {
-  .searchBar-input {
+  .inputSearchBar {
     width: 75%;
   }
 }

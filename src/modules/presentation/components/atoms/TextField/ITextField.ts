@@ -1,4 +1,4 @@
-export interface IProfileField {
+export interface ITextField {
   field: string;
   value: string;
   link?: string;

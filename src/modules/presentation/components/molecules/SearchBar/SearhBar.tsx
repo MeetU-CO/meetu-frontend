@@ -1,12 +1,13 @@
+import IconSearchBar from "../../atoms/IconSearchBar/IconSearchBar";
+import InputSearchBar from "../../atoms/InputSearchBar/InputSearchBar";
+
 import "./SearchBar.scss";
-import SearhBarInput from "../../atoms/SearhBarInput/SearhBarInput";
-import SearchBarIcon from "../../atoms/SearchBarIcon/SearchBarIcon";
 
 const SearhBar = () => {
   return (
     <div className="searchBar">
-      <SearhBarInput />
-      <SearchBarIcon />
+      <InputSearchBar />
+      <IconSearchBar />
     </div>
   );
 };

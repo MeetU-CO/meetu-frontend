@@ -1,13 +1,16 @@
-import { IProfileField } from "../../components/atoms/ProfileField/IProfileField";
+import { ITextField } from "../../components/atoms/TextField/ITextField";
+
 import { IProfileMainInfo } from "../../components/molecules/ProfileMainInfo/IProfileMainInfo";
+
 import { IOffer } from "../../components/organisms/OfferCard/IOffer";
 import ProfileRecord from "../../components/organisms/ProfileRecord/ProfileRecord";
 import ProfileSection from "../../components/organisms/ProfileSection/ProfileSection";
+
 import "./Profile.scss";
 
 interface IProfileSection {
-  sideInfo: IProfileField[];
-  bottomInfo: IProfileField[];
+  sideInfo: ITextField[];
+  bottomInfo: ITextField[];
   mainInfo: IProfileMainInfo;
   currentJobs: IOffer[];
   pastJobs: IOffer[];
