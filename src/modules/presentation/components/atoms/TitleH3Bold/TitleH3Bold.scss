@@ -1,0 +1,12 @@
+.titleH3Bold {
+  font-size: 23px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+@media screen and (max-width: 850px) {
+  .titleH3Bold {
+    font-size: 19px;
+  }
+}

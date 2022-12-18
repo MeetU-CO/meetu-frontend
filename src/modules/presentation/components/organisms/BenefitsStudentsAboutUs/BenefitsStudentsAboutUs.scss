@@ -1,3 +1,24 @@
 .benefitsStudentsAboutUs {
-  max-width: 1300px;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__benefits {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.15);
+    padding: 30px 30px;
+    margin: 70px;
+  }
+  &__divisorLine {
+    height: 230px;
+    width: 2px;
+    margin: 20px 0;
+    background-color: var(--grey-color);
+  }
 }

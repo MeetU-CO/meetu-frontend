@@ -2,7 +2,7 @@ import Blob7 from "../../../assets/Blobs/Blob7.svg";
 import Blob8 from "../../../assets/Blobs/Blob8.svg";
 import LogoOrange from "../../../assets/Logos/LogoOrange.svg";
 
-import SoftText from "../../atoms/SoftText/SoftText";
+import TextLight from "../../atoms/TextLight/TextLight";
 
 import TitleWithHead from "../../molecules/TitleWithHead/TitleWithHead";
 
@@ -47,8 +47,11 @@ const DescriptionAboutUs = ({}: IDescriptionAboutUs) => {
             align={"flex-start"}
             textAlign={"left"}
           />
-          <div className="descriptionAboutUs__softText-Container">
-            <SoftText text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum, justo quis faucibus laoreet, nibh nisi congue arcu, ac dictum risus neque in eros. Nam elementum et justo quis ultrices. Duis quam orci, bibendum vitae sapien volutpat, venenatis fermentum lacus. Maecenas hendrerit venenatis massa in sollicitudin." />
+          <div className="descriptionAboutUs__textSoftContainer">
+            <TextLight
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum, justo quis faucibus laoreet, nibh nisi congue arcu, ac dictum risus neque in eros. Nam elementum et justo quis ultrices. Duis quam orci, bibendum vitae sapien volutpat, venenatis fermentum lacus. Maecenas hendrerit venenatis massa in sollicitudin."
+              textAlign={"left"}
+            />
           </div>
         </div>
         <div className="descriptionAboutUs__image">

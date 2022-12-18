@@ -1,14 +1,25 @@
 import SmallComplementaryText from "../../atoms/SmallComplementaryText/SmallComplementaryText";
-import ThirdTitle from "../../atoms/ThirdTitle/ThirdTitle";
+import TitleH3Bold from "../../atoms/TitleH3Bold/TitleH3Bold";
+
 import { IProfileMainInfo } from "./IProfileMainInfo";
+
 import "./ProfileMainInfo.scss";
 
-const ProfileMainInfo = ({ name, carreer, university, profileImg }: IProfileMainInfo) => {
+const ProfileMainInfo = ({
+  name,
+  carreer,
+  university,
+  profileImg,
+}: IProfileMainInfo) => {
   return (
     <div className="profileMainInfo">
       <img src={profileImg} alt="" srcSet="" className="profileMainInfo__img" />
       <div className="profileMainInfo__details">
-        <ThirdTitle title={[name]} fontSize={"20px"} />
+        <TitleH3Bold
+          title={name}
+          color={"var(--black-full-color)"}
+          textAlign={"left"}
+        />
         <SmallComplementaryText
           text={carreer}
           style={{

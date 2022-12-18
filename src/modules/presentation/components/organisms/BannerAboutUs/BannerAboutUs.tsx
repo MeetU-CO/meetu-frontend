@@ -3,7 +3,7 @@ import Blob4 from "../../../assets/Blobs/Blob4.svg";
 import Blob5 from "../../../assets/Blobs/Blob5.svg";
 import Blob6 from "../../../assets/Blobs/Blob6.svg";
 
-import TitleH1Big from "../../atoms/TitleH1Big/TitleH1Big";
+import TitleH1Bold from "../../atoms/TitleH1Bold/TitleH1Bold";
 import TitleH3Light from "../../atoms/TitleH3Light/TitleH3Light";
 
 import { IBlob } from "../../../templates/LayoutBlobs/IBlob";
@@ -52,7 +52,7 @@ const BannerAboutUs = ({}: IBannerAboutUs) => {
       <LayoutBlobs blobs={layoutBlobs} maxWidth="3000px" direction={"row"}>
         <div className="bannerAboutUs__container">
           <div className="bannerAboutUs__title">
-            <TitleH1Big
+            <TitleH1Bold
               title="Conecta la oportunidad ideal con la persona ideal"
               color="var(--white-full-color)"
               textAlign={"left"}

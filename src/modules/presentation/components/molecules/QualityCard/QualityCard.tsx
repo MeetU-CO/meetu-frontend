@@ -1,5 +1,5 @@
 import IconSingle from "../../atoms/IconSingle/IconSingle";
-import TextCardSoft from "../../atoms/TextCardSoft/TextCardSoft";
+import TextLight from "../../atoms/TextLight/TextLight";
 import TitleH3 from "../../atoms/TitleH3/TitleH3";
 
 import "./QualityCard.scss";
@@ -16,7 +16,7 @@ const QualityCard = ({ title, text, icon, color }: IQualityCard) => {
     <div className="qualityCard">
       <IconSingle icon={icon} color={color} />
       <TitleH3 title={title} color="var(--orange-color)" textAlign="center" />
-      <TextCardSoft text={text} />
+      <TextLight text={text} textAlign={"center"} />
     </div>
   );
 };
