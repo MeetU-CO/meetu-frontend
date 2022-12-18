@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 
 import BurgerMenu from "../../atoms/BurgerMenu/BurgerMenu";
+import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
 import LinkList from "../../atoms/LinkList/LinkList";
-import MeetUIconOrange from "../../atoms/MeetUIcon/MeetUIconOrange";
 import ProfileButton from "../../atoms/ProfileButton/ProfileButton";
 
 import NavbarOptionsContainer from "../../molecules/NavbarOptionsContainer/NavbarOptionsContainer";

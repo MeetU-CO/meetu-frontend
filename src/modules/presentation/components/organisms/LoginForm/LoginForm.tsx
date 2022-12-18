@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 
-import ActionButton from "../../atoms/ActionButton/ActionButton";
+import ActionButton from "../../atoms/ButtonPasive/ButtonPasive";
 import Input from "../../atoms/Formik/Input";
 import Password from "../../atoms/Formik/Password";
+import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
 import LinkList from "../../atoms/LinkList/LinkList";
-import MeetUIconOrange from "../../atoms/MeetUIcon/MeetUIconOrange";
 
 import { addCookie } from "../../../../application/services/Cookie.service";
 import { loginService } from "../../../../application/services/Login.service";

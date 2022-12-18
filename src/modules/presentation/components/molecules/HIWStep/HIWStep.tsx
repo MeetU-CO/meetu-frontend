@@ -1,5 +1,5 @@
+import IconStep from "../../atoms/IconStep/IconStep";
 import SmallDescriptionText from "../../atoms/SmallDescriptionText/SmallDescriptionText";
-import StepIcon from "../../atoms/StepIcon/StepIcon";
 import TitleH2 from "../../atoms/TitleH2/TitleH2";
 
 import "./HIWStep.scss";
@@ -13,7 +13,7 @@ interface IHIWStep {
 const HIWStep = ({ icon, title, description }: IHIWStep) => {
   return (
     <div className="HIWStep">
-      <StepIcon icon={icon} />
+      <IconStep icon={icon} />
       <div className="HIWStep__details">
         <TitleH2
           title={title}

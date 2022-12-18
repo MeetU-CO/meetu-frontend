@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import "./MeetUIconOrange.scss";
 
-const MeetUIconOrange = () => {
+import "./IconMeetUOrange.scss";
+
+const IconMeetUOrange = () => {
   return (
-    <Link to="/" className="meetUIconOrange">
+    <Link to="/" className="iconMeetUOrange">
       <svg
         width="100%"
         viewBox="0 0 149 35"
@@ -24,4 +25,4 @@ const MeetUIconOrange = () => {
   );
 };
 
-export default MeetUIconOrange;
+export default IconMeetUOrange;

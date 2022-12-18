@@ -10,9 +10,12 @@
   z-index: 100;
   border-radius: 5px;
   box-shadow: 0 1px 4px rgb(0 0 0 / 16%);
-  svg {
-    width: 230px;
-    margin: 2% 0;
+  .iconMeetUOrange {
+    width: auto;
+    svg {
+      width: 230px;
+      margin: 2% 0;
+    }
   }
   &__buttons {
     width: 90%;
@@ -36,8 +39,11 @@
   .signup-form {
     margin: 20% 2%;
     padding: 6% 0;
-    svg {
-      width: 200px;
+    .iconMeetUOrange {
+      width: auto;
+      svg {
+        width: 200px;
+      }
     }
   }
 }
