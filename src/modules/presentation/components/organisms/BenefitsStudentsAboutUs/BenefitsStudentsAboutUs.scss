@@ -1,13 +1,15 @@
 .benefitsStudentsAboutUs {
-  width: 85%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 200px;
   &__benefits {
-    width: 100%;
     max-width: 1300px;
     display: grid;
+    background-color: var(--white-full-color);
     grid-template-columns: repeat(7, 1fr);
     place-items: center;
     border-radius: 20px;
@@ -36,7 +38,7 @@
 @media screen and (max-width: 1200px) {
   .benefitsStudentsAboutUs {
     &__benefits {
-      width: 90%;
+      width: 80%;
       grid-template-columns: 1fr 50px 1fr;
       grid-template-rows: repeat(2, 1fr);
       :nth-child(4) {
@@ -48,8 +50,12 @@
 
 @media screen and (max-width: 670px) {
   .benefitsStudentsAboutUs {
+    padding-bottom: 0;
+    &__titleContainer {
+      width: 85%;
+    }
     &__benefits {
-      width: 80%;
+      width: 65%;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 20px 1fr 20px 1fr 20px 1fr;
       row-gap: 20px;
@@ -61,6 +67,9 @@
     &__divisorLine {
       width: 80%;
       height: 2px;
+    }
+    #blob9 {
+      display: none;
     }
   }
 }
