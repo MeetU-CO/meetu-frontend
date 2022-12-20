@@ -10,15 +10,15 @@ import TitleWithHead from "../../molecules/TitleWithHead/TitleWithHead";
 import { IBlob } from "../../../templates/LayoutBlobs/IBlob";
 import LayoutBlobs from "../../../templates/LayoutBlobs/LayoutBlobs";
 
-import "./AssociationsAboutUs.scss";
+import "./AboutUsAssociations.scss";
 
-interface IAssociationsAboutUs {}
+interface IAboutUsAssociations {}
 
-const AssociationsAboutUs = ({}: IAssociationsAboutUs) => {
+const AboutUsAssociations = ({}: IAboutUsAssociations) => {
   const layoutBlobs: IBlob[] = [];
 
   return (
-    <div className="associationsAboutUs">
+    <div className="aboutUsAssociations">
       <LayoutBlobs blobs={layoutBlobs} maxWidth="2000px" direction="column">
         <TitleWithHead
           head={"Ellos confiaron en nosotros"}
@@ -26,7 +26,7 @@ const AssociationsAboutUs = ({}: IAssociationsAboutUs) => {
           align={"center"}
           textAlign={"center"}
         />
-        <div className="associationsAboutUs__entities">
+        <div className="aboutUsAssociations__entities">
           <ImageClickable
             link={"https://www.unisabana.edu.co/"}
             url={LogoSabana}
@@ -53,4 +53,4 @@ const AssociationsAboutUs = ({}: IAssociationsAboutUs) => {
   );
 };
 
-export default AssociationsAboutUs;
+export default AboutUsAssociations;

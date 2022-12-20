@@ -8,11 +8,11 @@ import TitleWithHead from "../../molecules/TitleWithHead/TitleWithHead";
 import { IBlob } from "../../../templates/LayoutBlobs/IBlob";
 import LayoutBlobs from "../../../templates/LayoutBlobs/LayoutBlobs";
 
-import "./BenefitsStudentsAboutUs.scss";
+import "./AboutUsBenefitsStudents.scss";
 
-interface IBenefitsStudentsAboutUs {}
+interface IAboutUsBenefitsStudents {}
 
-const BenefitsStudentsAboutUs = ({}: IBenefitsStudentsAboutUs) => {
+const AboutUsBenefitsStudents = ({}: IAboutUsBenefitsStudents) => {
   const layoutBlobs: IBlob[] = [
     {
       id: "blob9",
@@ -27,9 +27,9 @@ const BenefitsStudentsAboutUs = ({}: IBenefitsStudentsAboutUs) => {
   ];
 
   return (
-    <div className="benefitsStudentsAboutUs">
+    <div className="aboutUsBenefitsStudents">
       <LayoutBlobs blobs={layoutBlobs} maxWidth="2000px" direction="column">
-        <div className="benefitsStudentsAboutUs__titleContainer">
+        <div className="aboutUsBenefitsStudents__titleContainer">
           <TitleWithHead
             head={"Beneficios"}
             title={"MeetU para estudiantes"}
@@ -38,35 +38,35 @@ const BenefitsStudentsAboutUs = ({}: IBenefitsStudentsAboutUs) => {
           />
         </div>
 
-        <div className="benefitsStudentsAboutUs__benefits">
+        <div className="aboutUsBenefitsStudents__benefits">
           <QualityCard
             title="Comodidad"
             text="Encuentra de forma sencilla todos los eventos, actividades y oportunidades laborales dentro y fuera de tu U en un solo lugar."
             icon="chair"
             color="var(--orange-color)"
           />
-          <div className="benefitsStudentsAboutUs__divisorLine"></div>
+          <div className="aboutUsBenefitsStudents__divisorLine"></div>
           <QualityCard
             title="Rapidez"
             text="Encuentra de forma sencilla todos los eventos, actividades y oportunidades laborales dentro y fuera de tu U en un solo lugar."
             icon="bolt"
             color="var(--orange-color)"
           />
-          <div className="benefitsStudentsAboutUs__divisorLine"></div>
+          <div className="aboutUsBenefitsStudents__divisorLine"></div>
           <QualityCard
             title="Notificaciones"
             text="Encuentra de forma sencilla todos los eventos, actividades y oportunidades laborales dentro y fuera de tu U en un solo lugar."
             icon="notifications"
             color="var(--orange-color)"
           />
-          <div className="benefitsStudentsAboutUs__divisorLine"></div>
+          <div className="aboutUsBenefitsStudents__divisorLine"></div>
           <QualityCard
             title="Gratis"
             text="Encuentra de forma sencilla todos los eventos, actividades y oportunidades laborales dentro y fuera de tu U en un solo lugar."
             icon="payments"
             color="var(--orange-color)"
           />
-          <div className="benefitsStudentsAboutUs__button">
+          <div className="aboutUsBenefitsStudents__button">
             <ButtonLinkActive link="/login" text={"Empieza aquí"} />
           </div>
         </div>
@@ -75,4 +75,4 @@ const BenefitsStudentsAboutUs = ({}: IBenefitsStudentsAboutUs) => {
   );
 };
 
-export default BenefitsStudentsAboutUs;
+export default AboutUsBenefitsStudents;

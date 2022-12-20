@@ -9,11 +9,11 @@ import TitleWithHead from "../../molecules/TitleWithHead/TitleWithHead";
 import { IBlob } from "../../../templates/LayoutBlobs/IBlob";
 import LayoutBlobs from "../../../templates/LayoutBlobs/LayoutBlobs";
 
-import "./DescriptionAboutUs.scss";
+import "./AboutUsDescription.scss";
 
-interface IDescriptionAboutUs {}
+interface IAboutUsDescription {}
 
-const DescriptionAboutUs = ({}: IDescriptionAboutUs) => {
+const AboutUsDescription = ({}: IAboutUsDescription) => {
   const layoutBlobs: IBlob[] = [
     {
       id: "blob8",
@@ -38,23 +38,23 @@ const DescriptionAboutUs = ({}: IDescriptionAboutUs) => {
   ];
 
   return (
-    <div className="descriptionAboutUs">
+    <div className="aboutUsDescription">
       <LayoutBlobs blobs={layoutBlobs} maxWidth="2000px" direction="row">
-        <div className="descriptionAboutUs__definition">
+        <div className="aboutUsDescription__definition">
           <TitleWithHead
             head={"Sobre nosotros"}
             title={"MeetU es una StartUp Colombiana"}
             align={"flex-start"}
             textAlign={"left"}
           />
-          <div className="descriptionAboutUs__textSoftContainer">
+          <div className="AboutUsDescription__textSoftContainer">
             <TextLight
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum, justo quis faucibus laoreet, nibh nisi congue arcu, ac dictum risus neque in eros. Nam elementum et justo quis ultrices. Duis quam orci, bibendum vitae sapien volutpat, venenatis fermentum lacus. Maecenas hendrerit venenatis massa in sollicitudin."
               textAlign={"left"}
             />
           </div>
         </div>
-        <div className="descriptionAboutUs__image">
+        <div className="aboutUsDescription__image">
           <img src={LogoOrange} alt="" />
         </div>
       </LayoutBlobs>
@@ -62,4 +62,4 @@ const DescriptionAboutUs = ({}: IDescriptionAboutUs) => {
   );
 };
 
-export default DescriptionAboutUs;
+export default AboutUsDescription;

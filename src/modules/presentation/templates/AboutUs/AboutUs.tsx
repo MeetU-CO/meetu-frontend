@@ -1,7 +1,8 @@
-import AssociationsAboutUs from "../../components/organisms/AssociationsAboutUs/AssociationsAboutUs";
-import BannerAboutUs from "../../components/organisms/BannerAboutUs/BannerAboutUs";
-import BenefitsStudentsAboutUs from "../../components/organisms/BenefitsStudentsAboutUs/BenefitsStudentsAboutUs";
-import DescriptionAboutUs from "../../components/organisms/DescriptionAboutUs/DescriptionAboutUs";
+import AboutUsAssociations from "../../components/organisms/AboutUsAssociations/AboutUsAssociations";
+import AboutUsBanner from "../../components/organisms/AboutUsBanner/AboutUsBanner";
+import AboutUsBenefitsStudents from "../../components/organisms/AboutUsBenefitsStudents/AboutUsBenefitsStudents";
+import AboutUsDescription from "../../components/organisms/AboutUsDescription/AboutUsDescription";
+import AboutUsbenefitsEntities from "../../components/organisms/AboutUsbenefitsEntities/AboutUsbenefitsEntities";
 
 import "./AboutUs.scss";
 
@@ -10,10 +11,11 @@ interface IAboutUs {}
 const AboutUs = ({}: IAboutUs) => {
   return (
     <div className="aboutus-template">
-      <BannerAboutUs />
-      <DescriptionAboutUs />
-      <BenefitsStudentsAboutUs />
-      <AssociationsAboutUs />
+      <AboutUsBanner />
+      <AboutUsDescription />
+      <AboutUsBenefitsStudents />
+      <AboutUsbenefitsEntities />
+      <AboutUsAssociations />
     </div>
   );
 };

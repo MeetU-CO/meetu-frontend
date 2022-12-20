@@ -9,11 +9,11 @@ import TitleH3Light from "../../atoms/TitleH3Light/TitleH3Light";
 import { IBlob } from "../../../templates/LayoutBlobs/IBlob";
 import LayoutBlobs from "../../../templates/LayoutBlobs/LayoutBlobs";
 
-import "./BannerAboutUs.scss";
+import "./AboutUsBanner.scss";
 
-interface IBannerAboutUs {}
+interface IAboutUsBanner {}
 
-const BannerAboutUs = ({}: IBannerAboutUs) => {
+const AboutUsBanner = ({}: IAboutUsBanner) => {
   const layoutBlobs: IBlob[] = [
     {
       id: "blob3",
@@ -48,10 +48,10 @@ const BannerAboutUs = ({}: IBannerAboutUs) => {
   ];
 
   return (
-    <div className="bannerAboutUs">
+    <div className="aboutUsBanner">
       <LayoutBlobs blobs={layoutBlobs} maxWidth="3000px" direction={"row"}>
-        <div className="bannerAboutUs__container">
-          <div className="bannerAboutUs__title">
+        <div className="aboutUsBanner__container">
+          <div className="aboutUsBanner__title">
             <TitleH1Bold
               title="Conecta la oportunidad ideal con la persona ideal"
               color="var(--white-full-color)"
@@ -64,11 +64,11 @@ const BannerAboutUs = ({}: IBannerAboutUs) => {
               textAlign="left"
             />
           </div>
-          <img className="bannerAboutUs__image" src={Blob6} alt="" />
+          <img className="aboutUsBanner__image" src={Blob6} alt="" />
         </div>
       </LayoutBlobs>
     </div>
   );
 };
 
-export default BannerAboutUs;
+export default AboutUsBanner;
