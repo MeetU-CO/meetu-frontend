@@ -1,5 +1,6 @@
 .iconSearchBar {
   width: 13%;
+  min-width: 79px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -30,5 +31,6 @@
 @media screen and (max-width: 850px) {
   .iconSearchBar {
     width: 25%;
+    min-width: 52px;
   }
 }

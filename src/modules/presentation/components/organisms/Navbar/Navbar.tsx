@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import ButtonBurger from "../../atoms/ButtonBurger/ButtonBurger";
@@ -6,7 +7,7 @@ import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
 import LinkList from "../../atoms/LinkList/LinkList";
 
 import NavbarOptionsContainer from "../../molecules/NavbarOptionsContainer/NavbarOptionsContainer";
-import SearhBar from "../../molecules/SearchBar/SearhBar";
+import SearchBar from "../../molecules/SearchBar/SearchBar";
 
 import { selectAuth } from "../../../../infraestructure/slices/AuthSlice";
 
@@ -15,13 +16,23 @@ import "./Navbar.scss";
 const Navbar = () => {
   const auth = useSelector(selectAuth);
 
+  const [focus, setFocus] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log(focus);
+  }, [focus]);
+
   return (
     <div className="navbar">
       <div className="navbar__navbar-container">
-        <div className="navbar__navbar-container__topBar">
+        <div
+          className={`navbar__navbar-container__topBar ${
+            focus ? "navbar__navbar-container__topBar--hide" : ""
+          }`}
+        >
           <ButtonBurger />
           <MeetUIconOrange />
-          <SearhBar />
+          <SearchBar focus={focus} setFocus={setFocus} />
           <ButtonProfile />
           <NavbarOptionsContainer auth={auth.logged} />
         </div>
