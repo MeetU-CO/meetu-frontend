@@ -18,10 +18,6 @@ const Navbar = () => {
 
   const [focus, setFocus] = useState<boolean>(false);
 
-  useEffect(() => {
-    console.log(focus);
-  }, [focus]);
-
   return (
     <div className="navbar">
       <div className="navbar__navbar-container">
