@@ -4,7 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 
+import LogoGoogle from "../../../assets/Logos/LogoGoogle.svg";
+import LogoMicrosoft from "../../../assets/Logos/LogoMicrosoft.svg";
+
 import ActionButton from "../../atoms/ButtonPasive/ButtonPasive";
+import ButtonSocial from "../../atoms/ButtonSocial/ButtonSocial";
 import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
 import Input from "../../atoms/InputFormik/Input";
 import Password from "../../atoms/InputFormik/Password";
@@ -88,6 +92,23 @@ const SignupForm = () => {
     }
   };
 
+  const handleLoginGooogle = async () => {
+    const windowFeatures = "left=0px,top=0px,width=420,height=620";
+    const googlePopup: any = window.open(
+      `${process.env.REACT_APP_AUTHENTICATION_SERVICE_URI}/google`,
+      // "_self"
+      "mozillaWindow",
+      windowFeatures
+    );
+
+    googlePopup.opener.postMessage("hey ho", "*");
+
+    window.addEventListener("message", (event: any) => {
+      console.log(event);
+      console.log(event.data);
+    });
+  };
+
   return (
     <Formik
       initialValues={signupInitialValues}
@@ -112,6 +133,24 @@ const SignupForm = () => {
             autoComplete="username"
           />
           <div className="signup-form__buttons">
+            <ButtonSocial
+              imgUrl={LogoGoogle}
+              text={"Acceder con Google"}
+              color={"#EEEEEE"}
+              textColor={"rgba(0, 0, 0, 0.54)"}
+              fill={true}
+              border={false}
+              onClick={handleLoginGooogle}
+            />
+            <ButtonSocial
+              imgUrl={LogoMicrosoft}
+              text={"Acceder con Microsoft"}
+              color={"#8E8E8E"}
+              textColor={"#7B7B7B"}
+              fill={false}
+              border={true}
+              onClick={handleLoginGooogle}
+            />
             <ActionButton type="submit" text="Registrarse" />
           </div>
           <ul>

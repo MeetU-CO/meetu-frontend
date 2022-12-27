@@ -37,6 +37,7 @@ const SearchBar = ({ focus, setFocus }: ISearchBar) => {
   return (
     <div
       className="searchBar"
+      data-testid="searchBar"
       onFocus={() => onFocus()}
       onBlur={() => onBlur()}
       ref={containerRef}
