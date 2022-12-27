@@ -6,22 +6,22 @@
   align-items: center;
   cursor: pointer;
   box-sizing: border-box;
-  padding: 12px;
   border-radius: 5px;
   &__img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 30px;
+    margin: 0 20px;
     img {
       width: 28px;
     }
   }
   &__text {
     font-family: "Roboto", sans-serif;
+    font-style: normal;
     font-weight: 500;
     font-size: 20px;
-    margin: 0 10px;
+    margin: 0 20px;
   }
 }
 

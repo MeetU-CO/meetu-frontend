@@ -136,10 +136,11 @@ const SignupForm = () => {
             <ButtonSocial
               imgUrl={LogoGoogle}
               text={"Acceder con Google"}
-              color={"#EEEEEE"}
+              color={"#FFF"}
               textColor={"rgba(0, 0, 0, 0.54)"}
               fill={true}
               border={false}
+              shadow={"rgba(0, 0, 0, 0.084)"}
               onClick={handleLoginGooogle}
             />
             <ButtonSocial
@@ -149,6 +150,7 @@ const SignupForm = () => {
               textColor={"#7B7B7B"}
               fill={false}
               border={true}
+              shadow={""}
               onClick={handleLoginGooogle}
             />
             <ActionButton type="submit" text="Registrarse" />

@@ -7,6 +7,7 @@ interface IButtonSocial {
   textColor: string;
   fill: boolean;
   border: boolean;
+  shadow: string;
   onClick(): void;
 }
 
@@ -17,6 +18,7 @@ const ButtonSocial = ({
   textColor,
   fill,
   border,
+  shadow,
   onClick,
 }: IButtonSocial) => {
   return (
@@ -25,7 +27,10 @@ const ButtonSocial = ({
       onClick={() => onClick()}
       style={{
         border: border ? `2px solid ${color}` : "0px solid",
-        backgroundColor: fill ? color : "var(--white-full-color)",
+        backgroundColor: fill ? color : "#FFF",
+        boxShadow: shadow
+          ? `0px 0px 2.41919px ${shadow}, 0px 2.41919px 2.41919px ${shadow}`
+          : "",
       }}
     >
       <div className="buttonSocial__img">
