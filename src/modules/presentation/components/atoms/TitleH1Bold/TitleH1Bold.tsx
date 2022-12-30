@@ -1,12 +1,12 @@
-import "./TitleH1_Bold.scss";
+import "./TitleH1Bold.scss";
 
-interface ITitleH1_Bold {
+interface ITitleH1Bold {
   title: string;
   color: string;
   textAlign: "center" | "left" | "right";
 }
 
-const TitleH1_Bold = ({ title, color, textAlign }: ITitleH1_Bold) => {
+const TitleH1Bold = ({ title, color, textAlign }: ITitleH1Bold) => {
   return (
     <h1 className="titleH1Bold" style={{ color, textAlign }}>
       {title}
@@ -14,4 +14,4 @@ const TitleH1_Bold = ({ title, color, textAlign }: ITitleH1_Bold) => {
   );
 };
 
-export default TitleH1_Bold;
+export default TitleH1Bold;
