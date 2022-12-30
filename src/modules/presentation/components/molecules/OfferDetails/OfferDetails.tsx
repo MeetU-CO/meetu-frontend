@@ -1,11 +1,13 @@
-import "./OfferDetails.scss";
-import PostCategory from "../../atoms/PostCategory/PostCategory";
+import Span from "../../atoms/Span/Span";
+
 import { IOfferDetails } from "./IOfferDetails";
+
+import "./OfferDetails.scss";
 
 const OfferDetails = ({ categoryName }: IOfferDetails) => {
   return (
     <div className="offerDetails">
-      <PostCategory categoryName={categoryName} />
+      <Span text={categoryName} />
     </div>
   );
 };

@@ -1,11 +1,13 @@
-import "./OfferFooter.scss";
-import PostPayment from "../../atoms/PostPayment/PostPayment";
+import Span from "../../atoms/Span/Span";
+
 import { IOfferFooter } from "./IOfferFooter";
+
+import "./OfferFooter.scss";
 
 const OfferFooter = ({ payment }: IOfferFooter) => {
   return (
     <div className="offerFooter">
-      <PostPayment payment={payment} />
+      <Span text={payment} />
     </div>
   );
 };

@@ -47,7 +47,7 @@ const AboutUsDescription = ({}: IAboutUsDescription) => {
             align={"flex-start"}
             textAlign={"left"}
           />
-          <div className="AboutUsDescription__textSoftContainer">
+          <div className="aboutUsDescription__textSoftContainer">
             <TextLight
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum, justo quis faucibus laoreet, nibh nisi congue arcu, ac dictum risus neque in eros. Nam elementum et justo quis ultrices. Duis quam orci, bibendum vitae sapien volutpat, venenatis fermentum lacus. Maecenas hendrerit venenatis massa in sollicitudin."
               textAlign={"left"}

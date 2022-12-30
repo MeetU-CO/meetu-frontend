@@ -8,25 +8,19 @@ const steps = [
   {
     icon: <i className="bi bi-mouse2-fill"></i>,
     title: "1. Únete a MeetU",
-    description: [
+    description:
       "Inicia sesión en tu cuenta Dugol o crea una nueva usando tu correo electrónico de preferencia.",
-    ],
   },
   {
     icon: <i className="bi bi-link"></i>,
     title: "2. Vincula tu cuenta",
-    description: [
+    description:
       "Conecta tu cuenta Dugol con tu cuenta universitaria para obtener tu información académica.",
-    ],
   },
   {
     icon: <i className="bi bi-star-fill"></i>,
     title: "3. ¡Listo!",
-    description: [
-      "Ahora puedes inscribirte en ofertas de tu universidad, rápido y sencillo.",
-      <br key="1" />,
-      "(Cuando seas seleccionado para una oferta te enviaremos una notificacón)",
-    ],
+    description: `Ahora puedes inscribirte en ofertas de tu universidad, rápido y sencillo. (Cuando seas seleccionado para una oferta te enviaremos una notificacón)`,
   },
 ];
 

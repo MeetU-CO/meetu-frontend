@@ -1,4 +1,4 @@
-import SmallComplementaryText from "../../atoms/SmallComplementaryText/SmallComplementaryText";
+import SpanCustom from "../../atoms/SpanCustom/SpanCustom";
 import TitleH3Bold from "../../atoms/TitleH3Bold/TitleH3Bold";
 
 import { IProfileMainInfo } from "./IProfileMainInfo";
@@ -20,7 +20,7 @@ const ProfileMainInfo = ({
           color={"var(--black-full-color)"}
           textAlign={"left"}
         />
-        <SmallComplementaryText
+        <SpanCustom
           text={carreer}
           style={{
             fontSize: "18px",
@@ -28,7 +28,7 @@ const ProfileMainInfo = ({
             fontWeight: "400",
           }}
         />
-        <SmallComplementaryText
+        <SpanCustom
           text={university}
           style={{
             fontSize: "16px",

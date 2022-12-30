@@ -57,17 +57,14 @@ const LoginForm = () => {
     const windowFeatures = "left=0px,top=0px,width=420,height=620";
     const googlePopup: any = window.open(
       `${process.env.REACT_APP_AUTHENTICATION_SERVICE_URI}/google`,
-      // "_self"
-      "mozillaWindow",
-      windowFeatures
+      "_self"
+      // "mozillaWindow",
+      // windowFeatures
     );
 
-    googlePopup.opener.postMessage("hey ho", "*");
-
-    window.addEventListener("message", (event: any) => {
-      console.log(event);
-      console.log(event.data);
-    });
+    // console.log(googlePopup);
+    // console.log(googlePopup.document);
+    debugger;
   };
 
   return (

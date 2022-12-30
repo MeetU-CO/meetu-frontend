@@ -1,7 +1,7 @@
-import { TTypes } from "../../atoms/PostType/TTypes";
+import { IOfferTypes } from "./IOfferTypes";
 
 export interface IOfferHeader {
   imgSrc: string;
   userName: string;
-  type: TTypes;
+  type: IOfferTypes;
 }

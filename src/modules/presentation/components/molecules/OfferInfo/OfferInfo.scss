@@ -6,4 +6,7 @@
   align-items: flex-start;
   flex-direction: column;
   text-align: left;
+  &__description {
+    margin: 10px 0;
+  }
 }
