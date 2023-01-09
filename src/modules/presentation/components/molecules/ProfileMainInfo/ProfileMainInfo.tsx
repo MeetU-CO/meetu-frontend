@@ -1,4 +1,5 @@
-import SmallComplementaryText from "../../atoms/SmallComplementaryText/SmallComplementaryText";
+import SpanPoppins from "../../atoms/SpanPoppins/SpanPoppins";
+import SpanPoppinsLight from "../../atoms/SpanPoppinsLight/SpanPoppinsLight";
 import TitleH3Bold from "../../atoms/TitleH3Bold/TitleH3Bold";
 
 import { IProfileMainInfo } from "./IProfileMainInfo";
@@ -20,22 +21,8 @@ const ProfileMainInfo = ({
           color={"var(--black-full-color)"}
           textAlign={"left"}
         />
-        <SmallComplementaryText
-          text={carreer}
-          style={{
-            fontSize: "18px",
-            fontFamily: "'Poppins', sans-serif",
-            fontWeight: "400",
-          }}
-        />
-        <SmallComplementaryText
-          text={university}
-          style={{
-            fontSize: "16px",
-            fontFamily: "'Poppins', sans-serif",
-            fontWeight: "300",
-          }}
-        />
+        <SpanPoppins text={carreer} />
+        <SpanPoppinsLight text={university} />
       </div>
     </div>
   );

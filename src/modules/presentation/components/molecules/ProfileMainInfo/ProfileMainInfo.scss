@@ -11,11 +11,11 @@
   &__details {
     width: 60%;
     margin-left: 50px;
-    .thirdTitle {
-      h3 {
-        font-family: "Poppins", sans-serif;
-      }
-    }
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
   }
 }
 

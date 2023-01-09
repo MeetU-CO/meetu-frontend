@@ -1,5 +1,5 @@
 import IconStep from "../../atoms/IconStep/IconStep";
-import SmallDescriptionText from "../../atoms/SmallDescriptionText/SmallDescriptionText";
+import TextNormal from "../../atoms/TextNormal/TextNormal";
 import TitleH2 from "../../atoms/TitleH2/TitleH2";
 
 import "./HIWStep.scss";
@@ -7,7 +7,7 @@ import "./HIWStep.scss";
 interface IHIWStep {
   icon: JSX.Element;
   title: string;
-  description: (string | JSX.Element)[];
+  description: string;
 }
 
 const HIWStep = ({ icon, title, description }: IHIWStep) => {
@@ -20,7 +20,7 @@ const HIWStep = ({ icon, title, description }: IHIWStep) => {
           color={"var(--black-full-color)"}
           textAlign={"left"}
         />
-        <SmallDescriptionText description={description} fontSize="15px" />
+        <TextNormal text={description} textAlign={"left"} />
       </div>
     </div>
   );
