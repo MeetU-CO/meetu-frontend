@@ -15,7 +15,6 @@ test("Should show login/signup buttons", () => {
   );
   const login = screen.getByText(/^Iniciar sesión$/i);
   const signup = screen.getByText(/^Registrarse$/i);
-
   expect(login).toBeInTheDocument;
   expect(signup).toBeInTheDocument;
 });
@@ -28,6 +27,5 @@ test("Should show account buttons", () => {
     { wrapper: BrowserRouter }
   );
   const profile = screen.getByText(/^mi perfil$/i);
-
   expect(profile).toBeInTheDocument;
 });
