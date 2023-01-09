@@ -1,9 +1,7 @@
-import { Dispatch, SetStateAction, useRef } from "react";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
 
 import IconSearchBar from "../../atoms/IconSearchBar/IconSearchBar";
 import InputSearchBar from "../../atoms/InputSearchBar/InputSearchBar";
-
-import useWindowDimensions from "../../../../application/hooks/useWindowDimensions";
 
 import "./SearchBar.scss";
 
@@ -13,36 +11,32 @@ interface ISearchBar {
 }
 
 const SearchBar = ({ focus, setFocus }: ISearchBar) => {
-  const { width } = useWindowDimensions();
+  const [searchParameter, setSearchParameter] = useState<string>("");
   const containerRef = useRef<any>();
 
   const onFocus = () => {
     setFocus(true);
-    if (width <= 850) {
-      containerRef.current.style.width = "100%";
-      containerRef.current.style.height = "73px";
-      containerRef.current.style.maxWidth = "100%";
-    }
   };
 
   const onBlur = () => {
     setFocus(false);
-    if (width <= 850) {
-      containerRef.current.style.width = "55%";
-      containerRef.current.style.height = "35px";
-      containerRef.current.style.maxWidth = "634px";
-    }
   };
 
   return (
     <div
-      className="searchBar"
-      onFocus={() => onFocus()}
-      onBlur={() => onBlur()}
+      className={`searchBar ${focus ? "searchBar--focus" : "searchBar--blur"}`}
       ref={containerRef}
     >
-      <InputSearchBar />
-      <IconSearchBar />
+      <InputSearchBar
+        onFocus={onFocus}
+        onBlur={onBlur}
+        searchParameter={searchParameter}
+        setSearchParameter={setSearchParameter}
+      />
+      <IconSearchBar
+        searchParameter={searchParameter}
+        setSearchParameter={setSearchParameter}
+      />
     </div>
   );
 };
