@@ -1,4 +1,5 @@
 import { Form, Formik } from "formik";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -13,6 +14,7 @@ import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
 import Input from "../../atoms/InputFormik/Input";
 import Password from "../../atoms/InputFormik/Password";
 import LinkList from "../../atoms/LinkList/LinkList";
+import Loader from "../../atoms/Loader/Loader";
 
 import { addCookie } from "../../../../application/services/Cookie.service";
 import { loginService } from "../../../../application/services/Login.service";
@@ -24,6 +26,7 @@ import "./LoginForm.scss";
 const LoginForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const loginInitialValues = {
     email: "",
@@ -38,6 +41,7 @@ const LoginForm = () => {
   });
 
   const handleLogin = async (values: any) => {
+    setLoading(true);
     const res = await loginService(values);
     if (res.token) {
       dispatch(login(res));
@@ -51,21 +55,21 @@ const LoginForm = () => {
     } else {
       toast.error("Ocurrió un error, intenta de nuevo");
     }
+    setLoading(false);
   };
 
   const handleLoginGooogle = async () => {
-    const windowFeatures = "left=0px,top=0px,width=420,height=620";
-    const googlePopup: any = window.open(
+    window.open(
       `${process.env.REACT_APP_AUTHENTICATION_SERVICE_URI}/google`,
       "_self"
-      // "mozillaWindow",
-      // windowFeatures
     );
 
-    // console.log(googlePopup);
-    // console.log(googlePopup.document);
     debugger;
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <Formik

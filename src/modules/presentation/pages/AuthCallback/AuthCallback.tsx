@@ -18,21 +18,22 @@ const AuthCallback = ({}: IAuthCallback) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    let data: any = {};
-    data.email = params.get("email");
-    data.name = params.get("name");
-    data.roles = params.get("roles");
-    data.notifications = params.get("notifications");
-    data.token = params.get("token");
-    dispatch(login(data));
-    addCookie(data.token, "auth");
-    toast.success(`Bienvenido de vuelta ${data.name}`);
+  const handleUrlToken = () => {
+    // TODO replace token type
+    const token: any = params.get("token");
+    dispatch(login(token));
+    addCookie(token, "auth");
+    // TODO create service to read JWT
+    toast.success(`Bienvenido de vuelta usuario`);
     toast.onChange((v) => {
-      if (v.status === "removed" && !data.response) {
+      if (v.status === "removed" && true) {
         navigate("/");
       }
     });
+  };
+
+  useEffect(() => {
+    handleUrlToken();
   }, []);
 
   return (
