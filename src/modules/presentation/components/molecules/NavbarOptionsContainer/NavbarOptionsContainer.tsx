@@ -18,6 +18,7 @@ const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
   const handleLogout = (values: any) => {
     dispatch(logout());
     deleteCookie("auth");
+    window.location.reload();
   };
 
   if (!auth) {

@@ -6,6 +6,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css/bundle";
 
+import ProtectedRoute from "../modules/presentation/components/molecules/ProtectedRoute/ProtectedRoute";
+
 import Layout from "../modules/presentation/templates/Layout/Layout";
 
 import AboutUs from "../modules/presentation/pages/AboutUs/AboutUs";
@@ -50,12 +52,20 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/perfil/:id" element={<Profile />} />
           <Route path="como-funciona" element={<HowItWorks />} />
           <Route path="sobre-nosotros" element={<AboutUs />} />
-          <Route path="login" element={<Login />} />
-          <Route path="Signup" element={<Signup />} />
-          <Route path="auth-callback" element={<AuthCallback />} />
+          <Route
+            element={<ProtectedRoute isAllowed={auth} redirectPath="/login" />}
+          >
+            <Route path="/perfil/:id" element={<Profile />} />
+          </Route>
+          <Route
+            element={<ProtectedRoute isAllowed={!auth} redirectPath="/" />}
+          >
+            <Route path="login" element={<Login />} />
+            <Route path="Signup" element={<Signup />} />
+            <Route path="auth-callback" element={<AuthCallback />} />
+          </Route>
         </Routes>
       </Layout>
     </div>

@@ -40,6 +40,8 @@ const AuthCallback = ({}: IAuthCallback) => {
     handleUrlToken();
   }, []);
 
+  // TODO check for cookie generated coming from other routes
+
   return (
     <div className="authCallback">
       <AuthCallbackTemplate />
