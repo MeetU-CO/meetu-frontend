@@ -47,11 +47,8 @@ const LoginForm = () => {
     if (res.token) {
       dispatch(login(res));
       addCookie(res.token, "auth");
-      toast.success(`Bienvenido de vuelta ${res.name}`);
-      toast.onChange((v) => {
-        if (v.status === "removed" && !res.response) {
-          navigate("/");
-        }
+      toast.success(`Bienvenido de vuelta ${res.name}`, {
+        onClose: () => navigate("/"),
       });
     } else {
       toast.error("Ocurrió un error, intenta de nuevo");

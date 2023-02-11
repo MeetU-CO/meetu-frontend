@@ -23,11 +23,8 @@ const AuthCallback = ({}: IAuthCallback) => {
 
   const handleToast = (decodedToken: Token) => {
     console.log("a");
-    toast.success(`Bienvenido de vuelta ${decodedToken.name}`);
-    toast.onChange((v) => {
-      if (v.status === "removed" && true) {
-        navigate("/");
-      }
+    toast.success(`Bienvenido de vuelta ${decodedToken.name}`, {
+      onClose: () => navigate("/"),
     });
   };
 
