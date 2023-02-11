@@ -81,11 +81,8 @@ const SignupForm = () => {
     if (res.token) {
       dispatch(login(res));
       addCookie(res.token, "auth");
-      toast.success("Cuenta creada con éxito");
-      toast.onChange((v) => {
-        if (v.status === "removed" && !res.response) {
-          navigate("/");
-        }
+      toast.success("Cuenta creada con éxito", {
+        onClose: () => navigate("/"),
       });
     } else {
       toast.error("Ocurrió un error, intenta de nuevo");
@@ -93,20 +90,17 @@ const SignupForm = () => {
   };
 
   const handleLoginGooogle = async () => {
-    const windowFeatures = "left=0px,top=0px,width=420,height=620";
-    const googlePopup: any = window.open(
+    window.open(
       `${process.env.REACT_APP_AUTHENTICATION_SERVICE_URI}/google`,
       "_self"
-      // "mozillaWindow",
-      // windowFeatures
     );
+  };
 
-    googlePopup.opener.postMessage("hey ho", "*");
-
-    window.addEventListener("message", (event: any) => {
-      console.log(event);
-      console.log(event.data);
-    });
+  const handleLoginMicrosoft = async () => {
+    window.open(
+      `${process.env.REACT_APP_AUTHENTICATION_SERVICE_URI}/microsoft`,
+      "_self"
+    );
   };
 
   return (
@@ -151,7 +145,7 @@ const SignupForm = () => {
               fill={false}
               border={true}
               shadow={""}
-              onClick={handleLoginGooogle}
+              onClick={handleLoginMicrosoft}
             />
             <ActionButton type="submit" text="Registrarse" />
           </div>

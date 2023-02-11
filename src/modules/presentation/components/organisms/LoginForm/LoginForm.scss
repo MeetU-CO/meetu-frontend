@@ -10,6 +10,12 @@
   z-index: 100;
   border-radius: 5px;
   box-shadow: 0 1px 4px rgb(0 0 0 / 16%);
+  &--loading {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .iconMeetUOrange {
     width: auto;
     svg {

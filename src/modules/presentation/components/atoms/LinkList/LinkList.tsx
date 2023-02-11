@@ -8,7 +8,7 @@ interface ILinkList {
 
 const LinkList = ({ title, link, color }: ILinkList) => {
   return (
-    <li className="linkList">
+    <li className="linkList" style={{ color: color }}>
       <a className="linkList__link" href={link} style={{ color: color }}>
         {title}
       </a>
