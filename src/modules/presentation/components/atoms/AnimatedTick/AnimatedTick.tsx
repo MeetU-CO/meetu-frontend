@@ -1,8 +1,8 @@
-import "./GreenCheck.scss";
+import "./AnimatedTick.scss";
 
-interface IGreenCheck {}
+interface IAnimatedTick {}
 
-const GreenCheck = ({}: IGreenCheck) => {
+const AnimatedTick = ({}: IAnimatedTick) => {
   return (
     <div className="wrapper">
       <svg
@@ -16,7 +16,7 @@ const GreenCheck = ({}: IGreenCheck) => {
           cy="26"
           r="25"
           fill="none"
-        />
+        />{" "}
         <path
           className="checkmark__check"
           fill="none"
@@ -27,4 +27,4 @@ const GreenCheck = ({}: IGreenCheck) => {
   );
 };
 
-export default GreenCheck;
+export default AnimatedTick;

@@ -1,4 +1,5 @@
-import GreenCheck from "../../components/atoms/GreenCheck/GreenCheck";
+import AnimatedTick from "../../components/atoms/AnimatedTick/AnimatedTick";
+import TitleH1 from "../../components/atoms/TitleH1/TitleH1";
 
 import "./AuthCallback.scss";
 
@@ -7,7 +8,12 @@ interface IAuthCallback {}
 const AuthCallback = ({}: IAuthCallback) => {
   return (
     <div className="authCallback">
-      <GreenCheck />
+      <TitleH1
+        title={"Inicio de sesión exitoso"}
+        color={"var(--black-full-color)"}
+        textAlign={"center"}
+      />
+      <AnimatedTick />
     </div>
   );
 };

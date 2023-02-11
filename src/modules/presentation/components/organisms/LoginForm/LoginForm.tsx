@@ -8,6 +8,7 @@ import * as Yup from "yup";
 import LogoGoogle from "../../../assets/Logos/LogoGoogle.svg";
 import LogoMicrosoft from "../../../assets/Logos/LogoMicrosoft.svg";
 
+import AnimatedLoader from "../../atoms/AnimatedLoader/AnimatedLoader";
 import ButtonPasive from "../../atoms/ButtonPasive/ButtonPasive";
 import ButtonSocial from "../../atoms/ButtonSocial/ButtonSocial";
 import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
@@ -40,7 +41,7 @@ const LoginForm = () => {
     password: Yup.string().required("Este campo es obligatorio"),
   });
 
-  const handleLogin = async (values: any) => {
+  const handleEmailLogin = async (values: any) => {
     setLoading(true);
     const res = await loginService(values);
     if (res.token) {
@@ -63,18 +64,27 @@ const LoginForm = () => {
       `${process.env.REACT_APP_AUTHENTICATION_SERVICE_URI}/google`,
       "_self"
     );
+  };
 
-    debugger;
+  const handleLoginMicrosoft = async () => {
+    window.open(
+      `${process.env.REACT_APP_AUTHENTICATION_SERVICE_URI}/microsoft`,
+      "_self"
+    );
   };
 
   if (loading) {
-    return <Loader />;
+    return (
+      <div className="login-form--loading">
+        <AnimatedLoader />
+      </div>
+    );
   }
 
   return (
     <Formik
       initialValues={loginInitialValues}
-      onSubmit={handleLogin}
+      onSubmit={handleEmailLogin}
       validationSchema={validationSchema}
     >
       {() => (
@@ -112,7 +122,7 @@ const LoginForm = () => {
               fill={false}
               border={true}
               shadow={""}
-              onClick={handleLoginGooogle}
+              onClick={handleLoginMicrosoft}
             />
             <ButtonPasive type="submit" text="Iniciar Sesión" />
           </div>
