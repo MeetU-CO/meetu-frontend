@@ -7,7 +7,7 @@ import * as Yup from "yup";
 import LogoGoogle from "../../../assets/Logos/LogoGoogle.svg";
 import LogoMicrosoft from "../../../assets/Logos/LogoMicrosoft.svg";
 
-import ActionButton from "../../atoms/ButtonPasive/ButtonPasive";
+import ActionButton from "../../atoms/ButtonPassive/ButtonPassive";
 import ButtonSocial from "../../atoms/ButtonSocial/ButtonSocial";
 import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
 import Input from "../../atoms/InputFormik/Input";

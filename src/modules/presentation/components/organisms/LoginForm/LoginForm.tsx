@@ -9,7 +9,7 @@ import LogoGoogle from "../../../assets/Logos/LogoGoogle.svg";
 import LogoMicrosoft from "../../../assets/Logos/LogoMicrosoft.svg";
 
 import AnimatedLoader from "../../atoms/AnimatedLoader/AnimatedLoader";
-import ButtonPasive from "../../atoms/ButtonPasive/ButtonPasive";
+import ButtonPassive from "../../atoms/ButtonPassive/ButtonPassive";
 import ButtonSocial from "../../atoms/ButtonSocial/ButtonSocial";
 import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
 import Input from "../../atoms/InputFormik/Input";
@@ -121,7 +121,7 @@ const LoginForm = () => {
               shadow={""}
               onClick={handleLoginMicrosoft}
             />
-            <ButtonPasive type="submit" text="Iniciar Sesión" />
+            <ButtonPassive type="submit" text="Iniciar Sesión" />
           </div>
           <ul>
             <LinkList

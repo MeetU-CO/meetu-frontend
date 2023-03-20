@@ -51,9 +51,15 @@
     "cypress:open": "cypress open"
   },
   "eslintConfig": {
+    "env": {
+      "cypress/globals": true
+    },
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "plugins": [
+      "cypress"
     ]
   },
   "browserslist": {
@@ -74,6 +80,7 @@
     "@testing-library/react": "^13.4.0",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "cypress": "^12.5.1",
+    "eslint-plugin-cypress": "^2.12.1",
     "prettier": "^2.8.1"
   }
 }
