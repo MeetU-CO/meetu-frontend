@@ -110,7 +110,7 @@ const SignupForm = () => {
       validationSchema={validationSchema}
     >
       {() => (
-        <Form className="signup-form">
+        <Form className="signup-form" data-test-id="signup-form">
           <MeetUIconOrange />
           <Input type="text" name="email" label="Correo electrónico" />
           <Input type="text" name="name" label="Nombre completo" />

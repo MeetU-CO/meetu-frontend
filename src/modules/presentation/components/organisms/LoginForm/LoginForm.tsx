@@ -85,7 +85,7 @@ const LoginForm = () => {
       validationSchema={validationSchema}
     >
       {() => (
-        <Form className="login-form">
+        <Form className="login-form" data-test-id="login-form">
           <MeetUIconOrange />
           <Input
             type="text"
