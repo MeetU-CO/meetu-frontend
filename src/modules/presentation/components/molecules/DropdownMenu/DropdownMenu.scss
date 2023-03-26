@@ -1,0 +1,46 @@
+.dropdownMenu {
+  position: relative;
+  &__toggleButton {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--orange-color);
+    cursor: pointer;
+  }
+  &__options {
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: -90px;
+    background-color: var(--white-color);
+    gap: 20px;
+    padding: 10px;
+    margin-top: 13px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    overflow: visible;
+    &--disabled {
+      width: 170px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      position: absolute;
+      gap: 20px;
+      padding: 10px;
+      margin-top: 13px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+      overflow: visible;
+      opacity: 0;
+    }
+  }
+}

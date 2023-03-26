@@ -1,15 +1,27 @@
 .navbarOptions-container {
-  width: 15%;
-  min-width: 270px;
-  max-width: 288px;
+  width: clamp(250px, 10%, 288px);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  &__notifications {
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &--logged {
+    width: clamp(210px, 10%, 288px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 850px) {
   .navbarOptions-container {
     display: none;
+    &--logged {
+      display: none;
+    }
   }
 }

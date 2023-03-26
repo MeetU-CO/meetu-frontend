@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./LinkSingle.scss";
 
 interface ILinkSingle {
-  icon: string;
+  icon?: string;
   title?: string;
   link: string;
 }

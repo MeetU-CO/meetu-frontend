@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 import ButtonBurger from "../../atoms/ButtonBurger/ButtonBurger";
@@ -30,7 +30,7 @@ const Navbar = () => {
           <MeetUIconOrange />
           <SearchBar focus={focus} setFocus={setFocus} />
           <ButtonProfile />
-          <NavbarOptionsContainer auth={auth.logged} />
+          <NavbarOptionsContainer auth={auth} />
         </div>
         <div className="navbar__navbar-container__bottomBar">
           <nav className="navbar__navbar-container__bottomBar__nav">

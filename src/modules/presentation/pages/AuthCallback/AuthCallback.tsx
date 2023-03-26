@@ -22,7 +22,6 @@ const AuthCallback = ({}: IAuthCallback) => {
   const navigate = useNavigate();
 
   const handleToast = (decodedToken: Token) => {
-    console.log("a");
     toast.success(`Bienvenido de vuelta ${decodedToken.name}`, {
       onClose: () => navigate("/"),
     });
@@ -31,7 +30,6 @@ const AuthCallback = ({}: IAuthCallback) => {
   const handleUrlToken = () => {
     const token: string = params.get("token")!;
     const decodedToken: Token = tokenHandler(token);
-    dispatch(login(token));
     addCookie(token, "auth");
     handleToast(decodedToken);
   };

@@ -1,27 +1,22 @@
-import { useDispatch } from "react-redux";
-
 import LinkSingle from "../../atoms/LinkSingle/LinkSingle";
+import LinkStatic from "../../atoms/LinkStatic/LinkStatic";
 
-import { deleteCookie } from "../../../../application/services/Cookie.service";
+import { Token } from "../../../../domain/entity/Token.entity";
 
-import { logout } from "../../../../infraestructure/slices/AuthSlice";
+import { tokenHandler } from "../../../../application/services/TokenHandler.service";
 
+import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import "./NavbarOptionsContainer.scss";
 
 interface INavbarOptionsContainer {
-  auth: boolean;
+  // TODO create DTO
+  auth: any;
 }
 
 const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
-  const dispatch = useDispatch();
+  const authData: Token = tokenHandler(auth.data);
 
-  const handleLogout = (values: any) => {
-    dispatch(logout());
-    deleteCookie("auth");
-    window.location.reload();
-  };
-
-  if (!auth) {
+  if (!auth.logged) {
     return (
       <div className="navbarOptions-container">
         <LinkSingle icon="" title="Iniciar sesión" link="/login" />
@@ -31,15 +26,15 @@ const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
   }
 
   return (
-    <div className="navbarOptions-container">
-      <div onClick={handleLogout}>
-        <LinkSingle icon="notifications" link="" />
-      </div>
-      <LinkSingle
-        icon="account_circle"
-        title="mi perfil"
-        link="/perfil/123123"
-      />
+    <div className="navbarOptions-container--logged">
+      <LinkStatic icon="notifications" color={"var(--orange-color)"} />
+      <DropdownMenu profileID={auth.data}>
+        <LinkStatic
+          icon="account_circle"
+          title={authData ? authData.name : ""}
+          color={"var(--orange-color)"}
+        />
+      </DropdownMenu>
     </div>
   );
 };

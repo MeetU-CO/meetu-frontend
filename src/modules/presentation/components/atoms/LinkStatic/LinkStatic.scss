@@ -1,0 +1,20 @@
+.linkStatic {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+  cursor: pointer;
+  gap: 3px;
+  &__icon {
+  }
+  &__title {
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    margin-left: 2%;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

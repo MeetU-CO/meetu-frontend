@@ -1,7 +1,5 @@
 .searchBar {
-  width: 33%;
-  min-width: 285px;
-  max-width: 634px;
+  width: clamp(285px, 35%, 634px);
   height: 35px;
   margin: 19px 0;
   display: flex;

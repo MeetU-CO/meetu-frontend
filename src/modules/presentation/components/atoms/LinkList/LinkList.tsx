@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./LinkList.scss";
 
 interface ILinkList {
@@ -9,9 +11,9 @@ interface ILinkList {
 const LinkList = ({ title, link, color }: ILinkList) => {
   return (
     <li className="linkList" style={{ color: color }}>
-      <a className="linkList__link" href={link} style={{ color: color }}>
+      <Link className="linkList__link" to={link} style={{ color: color }}>
         {title}
-      </a>
+      </Link>
     </li>
   );
 };
