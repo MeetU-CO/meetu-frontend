@@ -18,7 +18,7 @@ describe("Auth_login", () => {
     cy.contains("button", "Iniciar Sesión").click();
     cy.url().should("eq", `${Cypress.config().baseUrl}/`);
     cy.getCookie("auth").should("exist");
-    cy.get("h2").first().should("contain", "Categorías");
+    cy.contains("Bienvenido de vuelta");
   });
 
   it("Login using wrong credentials", () => {
@@ -30,7 +30,7 @@ describe("Auth_login", () => {
       "jonathan118761A"
     );
     cy.contains("button", "Iniciar Sesión").click();
+    cy.contains("Ocurrió un error, intenta de nuevo");
     cy.getCookie("auth").should("not.exist");
-    cy.contains("button", "Iniciar Sesión").should("exist");
   });
 });

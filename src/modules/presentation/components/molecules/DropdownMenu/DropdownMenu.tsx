@@ -25,18 +25,18 @@ const DropdownMenu = ({ children, profileID }: IDropdownMenu) => {
     window.location.reload();
   };
 
-  document.addEventListener("mousedown", (e) => {
-    console.log(e);
-    e.stopPropagation();
-    e.preventDefault();
-  });
+  // document.addEventListener("mousedown", (e) => {
+  //   console.log(e);
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  // });
 
   return (
     <div className="dropdownMenu">
       <button
         className="dropdownMenu__toggleButton"
         onClick={() => setIsActive(!isActive)}
-        onBlur={() => setIsActive(false)}
+        // onBlur={() => setIsActive(false)}
       >
         {children}
       </button>
@@ -44,7 +44,7 @@ const DropdownMenu = ({ children, profileID }: IDropdownMenu) => {
         className={
           isActive ? "dropdownMenu__options" : "dropdownMenu__options--disabled"
         }
-        onBlur={() => setIsActive(false)}
+        // onBlur={() => setIsActive(false)}
       >
         <LinkList
           link={`/perfil/${profileID}`}

@@ -27,7 +27,7 @@ describe("Auth_signup", () => {
     cy.contains("button", "Registrarse").click();
     cy.url().should("eq", `${Cypress.config().baseUrl}/`);
     cy.getCookie("auth").should("exist");
-    cy.get("h2").first().should("contain", "Categorías");
+    cy.contains("Cuenta creada con éxito");
   });
 
   it("Signup in existing account", () => {
@@ -43,7 +43,7 @@ describe("Auth_signup", () => {
       `Testing_${id}`
     );
     cy.contains("button", "Registrarse").click();
+    cy.contains("Ocurrió un error, intenta de nuevo");
     cy.getCookie("auth").should("not.exist");
-    cy.contains("button", "Registrarse").should("exist");
   });
 });

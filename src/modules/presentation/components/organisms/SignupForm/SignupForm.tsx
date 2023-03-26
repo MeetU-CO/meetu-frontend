@@ -152,7 +152,7 @@ const SignupForm = () => {
           <ul>
             <LinkList
               title="¿Ya tienes una cuenta? Inicia sesión aquí"
-              link="signup"
+              link="/login"
               color="var(--orange-color)"
             />
           </ul>

@@ -126,7 +126,7 @@ const LoginForm = () => {
           <ul>
             <LinkList
               title="¿No tienes una cuenta? Crea una aquí"
-              link="signup"
+              link="/signup"
               color="var(--orange-color)"
             />
           </ul>
