@@ -6,17 +6,17 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css/bundle";
 
-import ProtectedRoute from "../modules/presentation/components/molecules/ProtectedRoute/ProtectedRoute";
+import ProtectedRoute from "../presentation/components/molecules/ProtectedRoute/ProtectedRoute";
 
-import Layout from "../modules/presentation/templates/Layout/Layout";
+import Layout from "../presentation/templates/Layout/Layout";
 
-import AboutUs from "../modules/presentation/pages/AboutUs/AboutUs";
-import AuthCallback from "../modules/presentation/pages/AuthCallback/AuthCallback";
-import Home from "../modules/presentation/pages/Home/Home";
-import HowItWorks from "../modules/presentation/pages/HowItWorks/HowItWorks";
-import Login from "../modules/presentation/pages/Login/Login";
-import Profile from "../modules/presentation/pages/Profile/Profile";
-import Signup from "../modules/presentation/pages/Signup/Signup";
+import AboutUs from "../presentation/pages/AboutUs/AboutUs";
+import AuthCallback from "../presentation/pages/AuthCallback/AuthCallback";
+import Home from "../presentation/pages/Home/Home";
+import HowItWorks from "../presentation/pages/HowItWorks/HowItWorks";
+import Login from "../presentation/pages/Login/Login";
+import Profile from "../presentation/pages/Profile/Profile";
+import Signup from "../presentation/pages/Signup/Signup";
 
 import { getCookie } from "../modules/application/services/Cookie.service";
 

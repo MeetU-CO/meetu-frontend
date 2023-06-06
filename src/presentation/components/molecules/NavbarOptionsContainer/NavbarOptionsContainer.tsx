@@ -1,9 +1,9 @@
 import LinkSingle from "../../atoms/LinkSingle/LinkSingle";
 import LinkStatic from "../../atoms/LinkStatic/LinkStatic";
 
-import { Token } from "../../../../domain/entity/Token.entity";
+import { Token } from "../../../../modules/domain/entity/Token.entity";
 
-import { tokenHandler } from "../../../../application/services/TokenHandler.service";
+import { tokenHandler } from "../../../../modules/application/services/TokenHandler.service";
 
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import "./NavbarOptionsContainer.scss";

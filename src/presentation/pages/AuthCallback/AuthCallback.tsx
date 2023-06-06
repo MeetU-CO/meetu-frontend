@@ -5,12 +5,12 @@ import { toast } from "react-toastify";
 
 import AuthCallbackTemplate from "../../templates/AuthCallback/AuthCallback";
 
-import { Token } from "../../../domain/entity/Token.entity";
+import { Token } from "../../../modules/domain/entity/Token.entity";
 
-import { addCookie } from "../../../application/services/Cookie.service";
-import { tokenHandler } from "../../../application/services/TokenHandler.service";
+import { addCookie } from "../../../modules/application/services/Cookie.service";
+import { tokenHandler } from "../../../modules/application/services/TokenHandler.service";
 
-import { login } from "../../../infraestructure/slices/AuthSlice";
+import { login } from "../../../modules/infraestructure/slices/AuthSlice";
 
 import "./AuthCallback.scss";
 

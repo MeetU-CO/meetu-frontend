@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import LinkList from "../../atoms/LinkList/LinkList";
 import LinkStatic from "../../atoms/LinkStatic/LinkStatic";
 
-import { deleteCookie } from "../../../../application/services/Cookie.service";
+import { deleteCookie } from "../../../../modules/application/services/Cookie.service";
 
-import { logout } from "../../../../infraestructure/slices/AuthSlice";
+import { logout } from "../../../../modules/infraestructure/slices/AuthSlice";
 
 import "./DropdownMenu.scss";
 

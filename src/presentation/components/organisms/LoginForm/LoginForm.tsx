@@ -1,4 +1,5 @@
 import { Form, Formik } from "formik";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -7,86 +8,52 @@ import * as Yup from "yup";
 import LogoGoogle from "../../../assets/Logos/LogoGoogle.svg";
 import LogoMicrosoft from "../../../assets/Logos/LogoMicrosoft.svg";
 
-import ActionButton from "../../atoms/ButtonPassive/ButtonPassive";
+import AnimatedLoader from "../../atoms/AnimatedLoader/AnimatedLoader";
+import ButtonPassive from "../../atoms/ButtonPassive/ButtonPassive";
 import ButtonSocial from "../../atoms/ButtonSocial/ButtonSocial";
 import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
 import Input from "../../atoms/InputFormik/Input";
 import Password from "../../atoms/InputFormik/Password";
 import LinkList from "../../atoms/LinkList/LinkList";
+import Loader from "../../atoms/Loader/Loader";
 
-import { signup } from "../../../../domain/entity/Signup.entity";
+import { addCookie } from "../../../../modules/application/services/Cookie.service";
+import { loginService } from "../../../../modules/application/services/Login.service";
 
-import { addCookie } from "../../../../application/services/Cookie.service";
-import { signupService } from "../../../../application/services/Signup.service";
+import { login } from "../../../../modules/infraestructure/slices/AuthSlice";
 
-import { login } from "../../../../infraestructure/slices/AuthSlice";
+import "./LoginForm.scss";
 
-import "./SignupForm.scss";
-
-const SignupForm = () => {
+const LoginForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const signupInitialValues = {
+  const loginInitialValues = {
     email: "",
-    name: "",
     password: "",
-    passwordConfirm: "",
   };
 
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Email no valido")
       .required("Este campo es obligatorio"),
-    name: Yup.string()
-      .required("Este campo es obligatorio")
-      .min(8, "Mínimo 8 caracteres")
-      .max(60, "Máximo 50 caracteres"),
-    password: Yup.string()
-      .required("Este campo es obligatorio")
-      .test(
-        "a",
-        "Incluye al menos una minuscula",
-        (value: string | undefined): boolean => {
-          return value ? /[a-z]/.test(value) : false;
-        }
-      )
-      .test(
-        "a",
-        "Incluye valores alfanuméricos",
-        (value: string | undefined): boolean => {
-          return value ? /[0-9]/.test(value) : false;
-        }
-      )
-      .test(
-        "a",
-        "Incluye al menos una mayuscula",
-        (value: string | undefined): boolean => {
-          return value ? /[A-Z]/.test(value) : false;
-        }
-      )
-      .min(8, "Mínimo 8 caracteres")
-      .max(60, "Máximo 50 caracteres"),
-    passwordConfirm: Yup.string().test(
-      "",
-      "Las contraseñas no coinciden",
-      function (value) {
-        return this.parent.password === value;
-      }
-    ),
+    password: Yup.string().required("Este campo es obligatorio"),
   });
 
-  const handleSignup = async (values: signup) => {
-    const res = await signupService(values);
+  const handleEmailLogin = async (values: any) => {
+    setLoading(true);
+    const res = await loginService(values);
     if (res.token) {
       dispatch(login(res));
       addCookie(res.token, "auth");
-      toast.success("Cuenta creada con éxito", {
+      toast.success(`Bienvenido de vuelta ${res.name}`, {
         onClose: () => navigate("/"),
       });
     } else {
       toast.error("Ocurrió un error, intenta de nuevo");
     }
+    setLoading(false);
   };
 
   const handleLoginGooogle = async () => {
@@ -103,30 +70,37 @@ const SignupForm = () => {
     );
   };
 
+  if (loading) {
+    return (
+      <div className="login-form--loading">
+        <AnimatedLoader />
+      </div>
+    );
+  }
+
   return (
     <Formik
-      initialValues={signupInitialValues}
-      onSubmit={handleSignup}
+      initialValues={loginInitialValues}
+      onSubmit={handleEmailLogin}
       validationSchema={validationSchema}
     >
       {() => (
-        <Form className="signup-form" data-test-id="signup-form">
+        <Form className="login-form" data-test-id="login-form">
           <MeetUIconOrange />
-          <Input type="text" name="email" label="Correo electrónico" />
-          <Input type="text" name="name" label="Nombre completo" />
+          <Input
+            type="text"
+            name="email"
+            label="Correo electrónico"
+            guideLink="name"
+          />
           <Password
             type="text"
             name="password"
             label="Contraseña"
+            guideLink="name"
             autoComplete="username"
           />
-          <Password
-            type="text"
-            name="passwordConfirm"
-            label="Confirmar contraseña"
-            autoComplete="username"
-          />
-          <div className="signup-form__buttons">
+          <div className="login-form__buttons">
             <ButtonSocial
               imgUrl={LogoGoogle}
               text={"Acceder con Google"}
@@ -147,12 +121,12 @@ const SignupForm = () => {
               shadow={""}
               onClick={handleLoginMicrosoft}
             />
-            <ActionButton type="submit" text="Registrarse" />
+            <ButtonPassive type="submit" text="Iniciar Sesión" />
           </div>
           <ul>
             <LinkList
-              title="¿Ya tienes una cuenta? Inicia sesión aquí"
-              link="/login"
+              title="¿No tienes una cuenta? Crea una aquí"
+              link="/signup"
               color="var(--orange-color)"
             />
           </ul>
@@ -162,4 +136,4 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm;
+export default LoginForm;

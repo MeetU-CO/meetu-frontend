@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
-import { store } from "../../../../infraestructure/store/store";
+import { store } from "../../../../modules/infraestructure/store/store";
 
 import NavbarOptionsContainer from "./NavbarOptionsContainer";
 

@@ -9,7 +9,7 @@ import LinkList from "../../atoms/LinkList/LinkList";
 import NavbarOptionsContainer from "../../molecules/NavbarOptionsContainer/NavbarOptionsContainer";
 import SearchBar from "../../molecules/SearchBar/SearchBar";
 
-import { selectAuth } from "../../../../infraestructure/slices/AuthSlice";
+import { selectAuth } from "../../../../modules/infraestructure/slices/AuthSlice";
 
 import "./Navbar.scss";
 
