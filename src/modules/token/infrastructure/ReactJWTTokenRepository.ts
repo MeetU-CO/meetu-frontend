@@ -3,7 +3,7 @@ import { decodeToken, isExpired } from "react-jwt";
 import { Token } from "../domain/Token";
 import { TokenRepository } from "../domain/TokenRepository";
 
-export const ReactJWTToken = (): TokenRepository => {
+export const ReactJWTTokenRepository = (): TokenRepository => {
   return {
     decode,
     isExpiredToken,

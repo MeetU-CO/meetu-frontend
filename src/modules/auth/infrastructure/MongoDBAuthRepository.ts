@@ -3,9 +3,9 @@ import { AuthRepository } from "../domain/AuthRepository";
 
 import { postHttp } from "../../http/application/postHttp";
 
-import { HttpAxios } from "../../http/infrastructure/HttpAxios";
+import { HttpAxiosRepository } from "../../http/infrastructure/HttpAxiosRepository";
 
-const httpRepository = HttpAxios();
+const httpRepository = HttpAxiosRepository();
 
 export const createMongoDBAuthRepository = (): AuthRepository => {
   return {

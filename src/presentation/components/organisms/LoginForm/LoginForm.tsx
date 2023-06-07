@@ -23,7 +23,7 @@ import { addCookie } from "../../../../modules/cookie/application/addCookie";
 
 import { createMongoDBAuthRepository } from "../../../../modules/auth/infrastructure/MongoDBAuthRepository";
 import { login as loginSlice } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
-import { createUniversalCookieRepository } from "../../../../modules/cookie/infrastructure/UniversalCookie";
+import { createUniversalCookieRepository } from "../../../../modules/cookie/infrastructure/UniversalCookieRepository";
 import "./LoginForm.scss";
 
 const LoginForm = () => {

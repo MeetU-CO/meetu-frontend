@@ -5,7 +5,7 @@ import { Token } from "../../../../modules/token/domain/Token";
 
 import { decodeToken } from "../../../../modules/token/application/decodeToken";
 
-import { ReactJWTToken } from "../../../../modules/token/infrastructure/ReactJWTToken";
+import { ReactJWTTokenRepository } from "../../../../modules/token/infrastructure/ReactJWTTokenRepository";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import "./NavbarOptionsContainer.scss";
 
@@ -15,7 +15,7 @@ interface INavbarOptionsContainer {
 }
 
 const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
-  const tokenRepository = ReactJWTToken();
+  const tokenRepository = ReactJWTTokenRepository();
 
   const authData: Token = decodeToken(tokenRepository, auth.data);
 

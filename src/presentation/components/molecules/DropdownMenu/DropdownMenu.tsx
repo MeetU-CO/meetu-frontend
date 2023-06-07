@@ -7,7 +7,7 @@ import LinkStatic from "../../atoms/LinkStatic/LinkStatic";
 import { removeCookie } from "../../../../modules/cookie/application/removeCookie";
 
 import { logout } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
-import { createUniversalCookieRepository } from "../../../../modules/cookie/infrastructure/UniversalCookie";
+import { createUniversalCookieRepository } from "../../../../modules/cookie/infrastructure/UniversalCookieRepository";
 import "./DropdownMenu.scss";
 
 interface IDropdownMenu {

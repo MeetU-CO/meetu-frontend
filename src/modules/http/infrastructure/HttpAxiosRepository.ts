@@ -7,7 +7,7 @@ const headers = {
   "Content-type": "application/json",
 };
 
-export const HttpAxios = (): HttpRepository => {
+export const HttpAxiosRepository = (): HttpRepository => {
   return {
     get,
     post,

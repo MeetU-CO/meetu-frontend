@@ -21,7 +21,7 @@ import Signup from "../presentation/pages/Signup/Signup";
 import { getCookie } from "../modules/cookie/application/getCookie";
 
 import { login } from "../modules/auth/infrastructure/slices/AuthSlice";
-import { createUniversalCookieRepository } from "../modules/cookie/infrastructure/UniversalCookie";
+import { createUniversalCookieRepository } from "../modules/cookie/infrastructure/UniversalCookieRepository";
 import "./App.scss";
 import "./colors.variables.css";
 import "./normalize.css";

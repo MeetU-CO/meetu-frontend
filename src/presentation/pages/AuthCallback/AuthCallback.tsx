@@ -10,14 +10,14 @@ import { Token } from "../../../modules/token/domain/Token";
 import { addCookie } from "../../../modules/cookie/application/addCookie";
 import { decodeToken } from "../../../modules/token/application/decodeToken";
 
-import { createUniversalCookieRepository } from "../../../modules/cookie/infrastructure/UniversalCookie";
-import { ReactJWTToken } from "../../../modules/token/infrastructure/ReactJWTToken";
+import { createUniversalCookieRepository } from "../../../modules/cookie/infrastructure/UniversalCookieRepository";
+import { ReactJWTTokenRepository } from "../../../modules/token/infrastructure/ReactJWTTokenRepository";
 import "./AuthCallback.scss";
 
 interface IAuthCallback {}
 
 const AuthCallback = ({}: IAuthCallback) => {
-  const tokenRepository = ReactJWTToken();
+  const tokenRepository = ReactJWTTokenRepository();
 
   const cookieRepository = createUniversalCookieRepository();
   const [params] = useSearchParams();
