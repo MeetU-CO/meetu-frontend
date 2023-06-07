@@ -2,8 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
-import { store } from "../../../../modules/infraestructure/store/store";
-
+import { store } from "../../../../modules/auth/infrastructure/store/store";
 import NavbarOptionsContainer from "./NavbarOptionsContainer";
 
 test("Should show login/signup buttons", () => {

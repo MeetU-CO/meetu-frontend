@@ -14,17 +14,19 @@ import Input from "../../atoms/InputFormik/Input";
 import Password from "../../atoms/InputFormik/Password";
 import LinkList from "../../atoms/LinkList/LinkList";
 
-import { signup } from "../../../../modules/auth/domain/dto/Signup.entity";
+import { Auth } from "../../../../modules/auth/domain/Auth";
 
-import { signupService } from "../../../../modules/auth/application/Signup.service";
+import { signup } from "../../../../modules/auth/application/Signup";
 import { addCookie } from "../../../../modules/cookie/application/addCookie";
 
-import { login } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
+import { createMongoDBAuthRepository } from "../../../../modules/auth/infrastructure/MongoDBAuthRepository";
+import { login as loginSlice } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
 import { createUniversalCookieRepository } from "../../../../modules/cookie/infrastructure/UniversalCookie";
 import "./SignupForm.scss";
 
 const SignupForm = () => {
   const cookieRepository = createUniversalCookieRepository();
+  const authRepository = createMongoDBAuthRepository();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -77,10 +79,10 @@ const SignupForm = () => {
     ),
   });
 
-  const handleSignup = async (values: signup) => {
-    const res = await signupService(values);
+  const handleSignup = async (values: Auth) => {
+    const res = await signup(authRepository, values);
     if (res.token) {
-      dispatch(login(res));
+      dispatch(loginSlice(res));
       addCookie(cookieRepository, { name: "auth", data: res.token });
       toast.success("Cuenta creada con éxito", {
         onClose: () => navigate("/"),

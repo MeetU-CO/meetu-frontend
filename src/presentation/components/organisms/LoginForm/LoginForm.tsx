@@ -16,15 +16,19 @@ import Input from "../../atoms/InputFormik/Input";
 import Password from "../../atoms/InputFormik/Password";
 import LinkList from "../../atoms/LinkList/LinkList";
 
-import { loginService } from "../../../../modules/auth/application/Login.service";
+import { Auth } from "../../../../modules/auth/domain/Auth";
+
+import { login } from "../../../../modules/auth/application/Login";
 import { addCookie } from "../../../../modules/cookie/application/addCookie";
 
-import { login } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
+import { createMongoDBAuthRepository } from "../../../../modules/auth/infrastructure/MongoDBAuthRepository";
+import { login as loginSlice } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
 import { createUniversalCookieRepository } from "../../../../modules/cookie/infrastructure/UniversalCookie";
 import "./LoginForm.scss";
 
 const LoginForm = () => {
   const cookieRepository = createUniversalCookieRepository();
+  const authRepository = createMongoDBAuthRepository();
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -42,11 +46,12 @@ const LoginForm = () => {
     password: Yup.string().required("Este campo es obligatorio"),
   });
 
-  const handleEmailLogin = async (values: any) => {
+  const handleEmailLogin = async (values: Auth) => {
     setLoading(true);
-    const res = await loginService(values);
+    // const res = await loginService(values);
+    const res = await login(authRepository, values);
     if (res.token) {
-      dispatch(login(res));
+      dispatch(loginSlice(res));
       addCookie(cookieRepository, { name: "auth", data: res.token });
       toast.success(`Bienvenido de vuelta ${res.name}`, {
         onClose: () => navigate("/"),
