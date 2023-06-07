@@ -5,18 +5,20 @@ import { toast } from "react-toastify";
 
 import AuthCallbackTemplate from "../../templates/AuthCallback/AuthCallback";
 
-import { Token } from "../../../modules/token/domain/Token.entity";
+import { Token } from "../../../modules/token/domain/Token";
 
 import { addCookie } from "../../../modules/cookie/application/addCookie";
-import { tokenHandler } from "../../../modules/token/application/TokenHandler.service";
+import { decodeToken } from "../../../modules/token/application/decodeToken";
 
-import { login } from "../../../modules/auth/infrastructure/slices/AuthSlice";
 import { createUniversalCookieRepository } from "../../../modules/cookie/infrastructure/UniversalCookie";
+import { ReactJWTToken } from "../../../modules/token/infrastructure/ReactJWTToken";
 import "./AuthCallback.scss";
 
 interface IAuthCallback {}
 
 const AuthCallback = ({}: IAuthCallback) => {
+  const tokenRepository = ReactJWTToken();
+
   const cookieRepository = createUniversalCookieRepository();
   const [params] = useSearchParams();
   const dispatch = useDispatch();
@@ -30,7 +32,7 @@ const AuthCallback = ({}: IAuthCallback) => {
 
   const handleUrlToken = () => {
     const token: string = params.get("token")!;
-    const decodedToken: Token = tokenHandler(token);
+    const decodedToken: Token = decodeToken(tokenRepository, token);
     addCookie(cookieRepository, { name: "auth", data: token });
     handleToast(decodedToken);
   };

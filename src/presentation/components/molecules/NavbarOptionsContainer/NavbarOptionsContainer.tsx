@@ -1,10 +1,11 @@
 import LinkSingle from "../../atoms/LinkSingle/LinkSingle";
 import LinkStatic from "../../atoms/LinkStatic/LinkStatic";
 
-import { Token } from "../../../../modules/token/domain/Token.entity";
+import { Token } from "../../../../modules/token/domain/Token";
 
-import { tokenHandler } from "../../../../modules/token/application/TokenHandler.service";
+import { decodeToken } from "../../../../modules/token/application/decodeToken";
 
+import { ReactJWTToken } from "../../../../modules/token/infrastructure/ReactJWTToken";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import "./NavbarOptionsContainer.scss";
 
@@ -14,7 +15,9 @@ interface INavbarOptionsContainer {
 }
 
 const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
-  const authData: Token = tokenHandler(auth.data);
+  const tokenRepository = ReactJWTToken();
+
+  const authData: Token = decodeToken(tokenRepository, auth.data);
 
   if (!auth.logged) {
     return (
