@@ -14,16 +14,17 @@ import Input from "../../atoms/InputFormik/Input";
 import Password from "../../atoms/InputFormik/Password";
 import LinkList from "../../atoms/LinkList/LinkList";
 
-import { signup } from "../../../../modules/domain/entity/Signup.entity";
+import { signup } from "../../../../modules/auth/domain/dto/Signup.entity";
 
-import { addCookie } from "../../../../modules/application/services/Cookie.service";
-import { signupService } from "../../../../modules/application/services/Signup.service";
+import { signupService } from "../../../../modules/auth/application/Signup.service";
+import { addCookie } from "../../../../modules/cookie/application/addCookie";
 
-import { login } from "../../../../modules/infraestructure/slices/AuthSlice";
-
+import { login } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
+import { createUniversalCookieRepository } from "../../../../modules/cookie/infrastructure/UniversalCookie";
 import "./SignupForm.scss";
 
 const SignupForm = () => {
+  const cookieRepository = createUniversalCookieRepository();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -80,7 +81,7 @@ const SignupForm = () => {
     const res = await signupService(values);
     if (res.token) {
       dispatch(login(res));
-      addCookie(res.token, "auth");
+      addCookie(cookieRepository, { name: "auth", data: res.token });
       toast.success("Cuenta creada con éxito", {
         onClose: () => navigate("/"),
       });

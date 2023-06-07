@@ -7,8 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import TitleH2 from "../../atoms/TitleH2/TitleH2";
 
-import useWindowDimensions from "../../../../modules/application/hooks/useWindowDimensions";
-
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import { IOffer } from "../OfferCard/IOffer";
 import OfferCard from "../OfferCard/OfferCard";
 import "./PostsSection.scss";

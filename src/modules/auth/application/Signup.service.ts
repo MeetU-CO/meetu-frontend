@@ -1,6 +1,7 @@
-import { signup } from "../../domain/entity/Signup.entity";
-import { signupAdapter } from "../../infraestructure/adapters/Signup.adapter";
-import { httpAxios } from "../../infraestructure/repository/httpAxios";
+import { signup } from "../../auth/domain/dto/Signup.entity";
+
+import { httpAxios } from "../../http/infrastructure/httpAxios";
+import { signupAdapter } from "../infrastructure/adapters/Signup.adapter";
 
 export const signupService = async (values: signup) => {
   try {

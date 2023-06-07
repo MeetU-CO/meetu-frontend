@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import App from "./container/App";
-import { BrowserRouter } from "react-router-dom";
-import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { store } from "./modules/infraestructure/store/store";
+import { BrowserRouter } from "react-router-dom";
+
+import App from "./container/App";
+import "./index.css";
+import { store } from "./modules/auth/infrastructure/store/store";
+import reportWebVitals from "./reportWebVitals";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

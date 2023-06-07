@@ -1,6 +1,7 @@
-import { login } from "../../domain/entity/Login.entity";
-import { loginAdapter } from "../../infraestructure/adapters/Login.adapater";
-import { httpAxios } from "../../infraestructure/repository/httpAxios";
+import { login } from "../domain/dto/Login.entity";
+
+import { httpAxios } from "../../http/infrastructure/httpAxios";
+import { loginAdapter } from "../infrastructure/adapters/Login.adapater";
 
 export const loginService = async (values: login) => {
   try {

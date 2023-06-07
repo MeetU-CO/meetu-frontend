@@ -4,10 +4,10 @@ import { useDispatch } from "react-redux";
 import LinkList from "../../atoms/LinkList/LinkList";
 import LinkStatic from "../../atoms/LinkStatic/LinkStatic";
 
-import { deleteCookie } from "../../../../modules/application/services/Cookie.service";
+import { removeCookie } from "../../../../modules/cookie/application/removeCookie";
 
-import { logout } from "../../../../modules/infraestructure/slices/AuthSlice";
-
+import { logout } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
+import { createUniversalCookieRepository } from "../../../../modules/cookie/infrastructure/UniversalCookie";
 import "./DropdownMenu.scss";
 
 interface IDropdownMenu {
@@ -16,12 +16,14 @@ interface IDropdownMenu {
 }
 
 const DropdownMenu = ({ children, profileID }: IDropdownMenu) => {
+  const cookieRepository = createUniversalCookieRepository();
+
   const [isActive, setIsActive] = useState<boolean>(false);
   const dispatch = useDispatch();
 
   const handleLogout = () => {
     dispatch(logout());
-    deleteCookie("auth");
+    removeCookie(cookieRepository, "auth");
     window.location.reload();
   };
 

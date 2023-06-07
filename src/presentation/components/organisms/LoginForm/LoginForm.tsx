@@ -15,16 +15,17 @@ import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
 import Input from "../../atoms/InputFormik/Input";
 import Password from "../../atoms/InputFormik/Password";
 import LinkList from "../../atoms/LinkList/LinkList";
-import Loader from "../../atoms/Loader/Loader";
 
-import { addCookie } from "../../../../modules/application/services/Cookie.service";
-import { loginService } from "../../../../modules/application/services/Login.service";
+import { loginService } from "../../../../modules/auth/application/Login.service";
+import { addCookie } from "../../../../modules/cookie/application/addCookie";
 
-import { login } from "../../../../modules/infraestructure/slices/AuthSlice";
-
+import { login } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
+import { createUniversalCookieRepository } from "../../../../modules/cookie/infrastructure/UniversalCookie";
 import "./LoginForm.scss";
 
 const LoginForm = () => {
+  const cookieRepository = createUniversalCookieRepository();
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [loading, setLoading] = useState<boolean>(false);
@@ -46,7 +47,7 @@ const LoginForm = () => {
     const res = await loginService(values);
     if (res.token) {
       dispatch(login(res));
-      addCookie(res.token, "auth");
+      addCookie(cookieRepository, { name: "auth", data: res.token });
       toast.success(`Bienvenido de vuelta ${res.name}`, {
         onClose: () => navigate("/"),
       });

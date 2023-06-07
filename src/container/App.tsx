@@ -18,17 +18,19 @@ import Login from "../presentation/pages/Login/Login";
 import Profile from "../presentation/pages/Profile/Profile";
 import Signup from "../presentation/pages/Signup/Signup";
 
-import { getCookie } from "../modules/application/services/Cookie.service";
+import { getCookie } from "../modules/cookie/application/getCookie";
 
-import { login } from "../modules/infraestructure/slices/AuthSlice";
-
+import { login } from "../modules/auth/infrastructure/slices/AuthSlice";
+import { createUniversalCookieRepository } from "../modules/cookie/infrastructure/UniversalCookie";
 import "./App.scss";
 import "./colors.variables.css";
 import "./normalize.css";
 
 const App = () => {
+  const cookieRepository = createUniversalCookieRepository();
+
   const dispatch = useDispatch();
-  const auth = getCookie("auth");
+  const auth: string = getCookie(cookieRepository, "auth") || "";
 
   useEffect(() => {
     if (auth) {
@@ -55,12 +57,16 @@ const App = () => {
           <Route path="como-funciona" element={<HowItWorks />} />
           <Route path="sobre-nosotros" element={<AboutUs />} />
           <Route
-            element={<ProtectedRoute isAllowed={auth} redirectPath="/login" />}
+            element={
+              <ProtectedRoute isAllowed={auth != ""} redirectPath="/login" />
+            }
           >
             <Route path="/perfil/:id" element={<Profile />} />
           </Route>
           <Route
-            element={<ProtectedRoute isAllowed={!auth} redirectPath="/" />}
+            element={
+              <ProtectedRoute isAllowed={!(auth != "")} redirectPath="/" />
+            }
           >
             <Route path="login" element={<Login />} />
             <Route path="Signup" element={<Signup />} />

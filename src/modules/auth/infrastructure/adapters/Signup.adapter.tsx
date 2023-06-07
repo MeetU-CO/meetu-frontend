@@ -1,5 +1,5 @@
-import { signup } from "../../domain/entity/Signup.entity";
-import { signupModel } from "../../domain/model/Signup.model";
+import { signup } from "../../../auth/domain/dto/Signup.entity";
+import { signupModel } from "../../../auth/domain/model/Signup.model";
 
 export const signupAdapter = (values: signup) => {
   const formattedValues: signupModel = {
