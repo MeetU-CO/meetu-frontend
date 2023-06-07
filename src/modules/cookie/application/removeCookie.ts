@@ -1,8 +1,8 @@
 import { CookieRepository } from "../domain/CookieRepository";
 
 export const removeCookie = (
-  CookieRepository: CookieRepository,
+  cookieRepository: CookieRepository,
   name: string
 ): void => {
-  CookieRepository.remove(name);
+  cookieRepository.remove(name);
 };

@@ -1,8 +1,8 @@
 import { CookieRepository } from "../domain/CookieRepository";
 
 export const getCookie = (
-  CookieRepository: CookieRepository,
+  cookieRepository: CookieRepository,
   name: string
 ): string => {
-  return CookieRepository.get(name);
+  return cookieRepository.get(name);
 };

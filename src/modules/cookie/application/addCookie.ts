@@ -2,8 +2,8 @@ import { Cookie } from "../domain/Cookie";
 import { CookieRepository } from "../domain/CookieRepository";
 
 export const addCookie = (
-  CookieRepository: CookieRepository,
+  cookieRepository: CookieRepository,
   cookie: Cookie
 ): void => {
-  CookieRepository.add(cookie);
+  cookieRepository.add(cookie);
 };

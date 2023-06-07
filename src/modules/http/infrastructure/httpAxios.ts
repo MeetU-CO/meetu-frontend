@@ -1,41 +1,49 @@
 import axios from "axios";
 
-import { http } from "../domain/http";
+import { Http } from "../domain/Http";
+import { HttpRepository } from "../domain/HttpRepository";
 
 const headers = {
   "Content-type": "application/json",
 };
 
-export const httpAxios: http = {
-  get: async <T>(path: string, params?: Record<string, any>, config?: any) => {
-    const response = await axios.get(path, params);
-    return response.data as T;
-  },
+export const HttpAxios = (): HttpRepository => {
+  return {
+    get,
+    post,
+    put,
+    remove,
+  };
+};
 
-  post: async <T>(path: string, params?: Record<string, any>, config?: any) => {
-    const response = await axios.post(path, params);
-    return response.data as T;
-  },
+const get = async (myHttp: Http) => {
+  const { path, params, config } = myHttp;
+  const response = await axios.get(path, params);
+  return response.data;
+};
 
-  put: async <T>(path: string, params?: Record<string, any>, config?: any) => {
-    const response = await axios.put(path, {
-      ...config,
-      params: params,
-      headers,
-    });
-    return response.data as T;
-  },
+const post = async (myHttp: Http) => {
+  const { path, params, config } = myHttp;
+  const response = await axios.post(path, params);
+  return response.data;
+};
 
-  delete: async <T>(
-    path: string,
-    params?: Record<string, any>,
-    config?: any
-  ) => {
-    const response = await axios.delete(path, {
-      ...config,
-      params: params,
-      headers,
-    });
-    return response.data as T;
-  },
+const put = async (myHttp: Http) => {
+  const { path, params, config } = myHttp;
+  const response = await axios.put(path, {
+    ...config,
+    params: params,
+    headers,
+  });
+  return response.data;
+};
+
+const remove = async (myHttp: Http) => {
+  const { path, params, config } = myHttp;
+  const response = await axios.delete(path, {
+    ...config,
+    params: params,
+    headers,
+  });
+  return response.data;
 };

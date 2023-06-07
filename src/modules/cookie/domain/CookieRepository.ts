@@ -1,4 +1,4 @@
-import { Cookie } from "./Cookie.js";
+import { Cookie } from "./Cookie";
 
 export interface CookieRepository {
   add: (cookie: Cookie) => void;
