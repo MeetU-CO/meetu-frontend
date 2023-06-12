@@ -25,8 +25,10 @@ const AuthCallback = ({}: IAuthCallback) => {
   const navigate = useNavigate();
 
   const handleToast = (decodedToken: Token) => {
-    toast.success(`Bienvenido de vuelta ${decodedToken.name}`, {
-      onClose: () => navigate("/"),
+    toast.success(`Bienvenido ${decodedToken.name}`, {
+      onClose: () => {
+        navigate(0);
+      },
     });
   };
 

@@ -15,11 +15,13 @@ interface INavbarOptionsContainer {
 }
 
 const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
+  // console.log(auth);
   const tokenRepository = ReactJWTTokenRepository();
 
   const authData: Token = decodeToken(tokenRepository, auth.data);
+  console.log(authData);
 
-  if (!auth.logged) {
+  if (!authData) {
     return (
       <div className="navbarOptions-container">
         <LinkSingle icon="" title="Iniciar sesión" link="/login" />

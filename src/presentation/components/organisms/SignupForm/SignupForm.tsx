@@ -85,7 +85,7 @@ const SignupForm = () => {
       dispatch(loginSlice(res));
       addCookie(cookieRepository, { name: "auth", data: res.token });
       toast.success("Cuenta creada con éxito", {
-        onClose: () => navigate("/"),
+        onClose: () => navigate(0),
       });
     } else {
       toast.error("Ocurrió un error, intenta de nuevo");

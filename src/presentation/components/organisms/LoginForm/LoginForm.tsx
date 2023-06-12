@@ -48,13 +48,12 @@ const LoginForm = () => {
 
   const handleEmailLogin = async (values: Auth) => {
     setLoading(true);
-    // const res = await loginService(values);
     const res = await login(authRepository, values);
     if (res.token) {
       dispatch(loginSlice(res));
       addCookie(cookieRepository, { name: "auth", data: res.token });
-      toast.success(`Bienvenido de vuelta ${res.name}`, {
-        onClose: () => navigate("/"),
+      toast.success(`Bienvenido ${res.name}`, {
+        onClose: () => navigate(0),
       });
     } else {
       toast.error("Ocurrió un error, intenta de nuevo");
