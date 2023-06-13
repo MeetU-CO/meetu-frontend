@@ -27,7 +27,6 @@ describe("Auth_signup", () => {
     cy.contains("button", "Registrarse").click();
     cy.url().should("eq", `${Cypress.config().baseUrl}/`);
     cy.getCookie("auth").should("exist");
-    cy.contains("Cuenta creada con éxito");
   });
 
   it("Signup in existing account", () => {

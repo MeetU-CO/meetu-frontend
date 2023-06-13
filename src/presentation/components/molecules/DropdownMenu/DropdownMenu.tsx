@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import LinkList from "../../atoms/LinkList/LinkList";
@@ -19,6 +19,7 @@ const DropdownMenu = ({ children, profileID }: IDropdownMenu) => {
   const cookieRepository = createUniversalCookieRepository();
 
   const [isActive, setIsActive] = useState<boolean>(false);
+  const ctn: any = useRef();
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -27,18 +28,21 @@ const DropdownMenu = ({ children, profileID }: IDropdownMenu) => {
     window.location.reload();
   };
 
-  // document.addEventListener("mousedown", (e) => {
-  //   console.log(e);
-  //   e.stopPropagation();
-  //   e.preventDefault();
-  // });
+  const blurMenu = (e: any) => {
+    requestAnimationFrame(() => {
+      if (!ctn.current.contains(document.activeElement)) {
+        setIsActive(false);
+      }
+    });
+  };
+
+  document.addEventListener("click", blurMenu);
 
   return (
-    <div className="dropdownMenu">
+    <div className="dropdownMenu" ref={ctn}>
       <button
         className="dropdownMenu__toggleButton"
         onClick={() => setIsActive(!isActive)}
-        // onBlur={() => setIsActive(false)}
       >
         {children}
       </button>
@@ -46,13 +50,15 @@ const DropdownMenu = ({ children, profileID }: IDropdownMenu) => {
         className={
           isActive ? "dropdownMenu__options" : "dropdownMenu__options--disabled"
         }
-        // onBlur={() => setIsActive(false)}
       >
-        <LinkList
-          link={`/perfil/${profileID}`}
-          title={"Ver perfil"}
-          color={"var(--orange-color)"}
-        />
+        <div onClick={() => setIsActive(false)}>
+          <LinkList
+            link={`/perfil/${profileID}`}
+            title={"Ver perfil"}
+            color={"var(--orange-color)"}
+          />
+        </div>
+
         <div onClick={handleLogout} style={{ width: "100%" }}>
           <LinkStatic title={"Cerrar Sesión"} color={"var(--orange-color)"} />
         </div>

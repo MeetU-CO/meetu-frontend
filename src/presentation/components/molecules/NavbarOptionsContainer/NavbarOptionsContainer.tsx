@@ -15,11 +15,9 @@ interface INavbarOptionsContainer {
 }
 
 const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
-  // console.log(auth);
   const tokenRepository = ReactJWTTokenRepository();
 
   const authData: Token = decodeToken(tokenRepository, auth.data);
-  console.log(authData);
 
   if (!authData) {
     return (
@@ -36,7 +34,7 @@ const NavbarOptionsContainer = ({ auth }: INavbarOptionsContainer) => {
       <DropdownMenu profileID={auth.data}>
         <LinkStatic
           icon="account_circle"
-          title={authData ? authData.name : ""}
+          title={authData ? authData.name.split(" ")[0] : ""}
           color={"var(--orange-color)"}
         />
       </DropdownMenu>

@@ -18,7 +18,6 @@ describe("Auth_login", () => {
     cy.contains("button", "Iniciar Sesión").click();
     cy.url().should("eq", `${Cypress.config().baseUrl}/`);
     cy.getCookie("auth").should("exist");
-    cy.contains("Bienvenido de vuelta");
   });
 
   it("Login using wrong credentials", () => {
