@@ -8,6 +8,7 @@ import LinkList from "../../atoms/LinkList/LinkList";
 
 import NavbarOptionsContainer from "../../molecules/NavbarOptionsContainer/NavbarOptionsContainer";
 import SearchBar from "../../molecules/SearchBar/SearchBar";
+import { SearchBarMode } from "../../molecules/SearchBar/SearchBarMode";
 
 import { selectAuth } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
 import "./Navbar.scss";
@@ -27,7 +28,13 @@ const Navbar = () => {
         >
           <ButtonBurger />
           <MeetUIconOrange />
-          <SearchBar focus={focus} setFocus={setFocus} />
+          <div className="navbar__searchBar">
+            <SearchBar
+              focus={focus}
+              setFocus={setFocus}
+              mode={SearchBarMode.main}
+            />
+          </div>
           <ButtonProfile />
           <NavbarOptionsContainer auth={auth} />
         </div>

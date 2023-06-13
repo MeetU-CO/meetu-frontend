@@ -35,6 +35,13 @@
       }
     }
   }
+  &__searchBar {
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(285px, 35%, 634px);
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -55,6 +62,12 @@
       &__bottomBar {
         display: none;
       }
+    }
+    &__searchBar {
+      width: 100%;
+      min-width: 0;
+      margin: 8px 0;
+      position: absolute;
     }
   }
 } ;

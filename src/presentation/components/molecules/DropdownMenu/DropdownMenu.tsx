@@ -36,7 +36,12 @@ const DropdownMenu = ({ children, profileID }: IDropdownMenu) => {
     });
   };
 
-  document.addEventListener("click", blurMenu);
+  useEffect(() => {
+    document.addEventListener("click", blurMenu);
+    return () => {
+      document.removeEventListener("click", blurMenu);
+    };
+  }, []);
 
   return (
     <div className="dropdownMenu" ref={ctn}>

@@ -15,6 +15,7 @@ import AuthCallback from "../presentation/pages/AuthCallback/AuthCallback";
 import Home from "../presentation/pages/Home/Home";
 import HowItWorks from "../presentation/pages/HowItWorks/HowItWorks";
 import Login from "../presentation/pages/Login/Login";
+import OfferForm from "../presentation/pages/OfferForm/OfferForm";
 import Profile from "../presentation/pages/Profile/Profile";
 import Signup from "../presentation/pages/Signup/Signup";
 
@@ -62,6 +63,7 @@ const App = () => {
             }
           >
             <Route path="/perfil/:id" element={<Profile />} />
+            <Route path="oferta-formulario" element={<OfferForm />} />
           </Route>
           <Route
             element={

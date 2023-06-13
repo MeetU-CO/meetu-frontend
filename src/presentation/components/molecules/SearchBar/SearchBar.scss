@@ -1,7 +1,6 @@
 .searchBar {
-  width: clamp(285px, 35%, 634px);
-  height: 35px;
-  margin: 19px 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,10 +9,7 @@
 
 @media screen and (max-width: 850px) {
   .searchBar {
-    width: 55%;
-    min-width: 0;
-    margin: 8px 0;
-    position: absolute;
+    width: 100%;
     &--focus {
       max-width: 100%;
       animation: onFocus 0.5s;
