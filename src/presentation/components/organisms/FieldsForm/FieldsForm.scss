@@ -1,5 +1,27 @@
 .fieldsForm {
   width: 70%;
   height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   background-color: var(--orange-contrast-color);
+  &__dropArea {
+    width: clamp(200px, 80%, 500px);
+    border-radius: 10px;
+    // border: 2px dotted var(--grey-contrast-color);
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23333' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+    border-radius: 10px;
+    padding: 20px 0px;
+    &--isOver {
+      width: clamp(200px, 80%, 500px);
+      border-radius: 10px;
+      border: 2px dotted var(--white-color);
+      padding: 20px 0px;
+      background-color: var(--grey-contrast-color);
+      > div {
+        color: var(--white-color);
+      }
+    }
+  }
 }

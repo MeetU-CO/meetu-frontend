@@ -6,6 +6,7 @@ import FieldCard from "../../molecules/FieldCard/FieldCard";
 import SearchBar from "../../molecules/SearchBar/SearchBar";
 import { SearchBarMode } from "../../molecules/SearchBar/SearchBarMode";
 
+import { FieldTypes } from "../FieldsForm/FieldTypes";
 import "./FieldsMenu.scss";
 
 interface IFieldsMenu {}
@@ -30,7 +31,20 @@ const FieldsMenu = ({}: IFieldsMenu) => {
         />
         <div className="fieldsMenu__divisorLine"></div>
         <div className="fieldsMenu__fieldsContainer">
-          <FieldCard />
+          <FieldCard
+            type={FieldTypes.fieldCard}
+            item={{
+              name: "Requisito",
+              available: true,
+            }}
+          />
+          <FieldCard
+            type={FieldTypes.fieldCard}
+            item={{
+              name: "Requisito 2",
+              available: true,
+            }}
+          />
         </div>
       </div>
     </div>
