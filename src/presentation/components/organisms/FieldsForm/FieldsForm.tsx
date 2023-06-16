@@ -3,6 +3,7 @@ import { useDrop } from "react-dnd";
 
 import TextLight from "../../atoms/TextLight/TextLight";
 
+import Requirement from "../Fields/Requirement";
 import { FieldTypes } from "./FieldTypes";
 import "./FieldsForm.scss";
 
@@ -30,8 +31,11 @@ const FieldsForm = ({}: IFieldsForm) => {
   return (
     <div className="fieldsForm">
       {fields.map((i: any, index: number) => (
-        <div key={index}>
-          <h2>{i.name}</h2>
+        <div
+          key={index}
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
+          <Requirement />
         </div>
       ))}
       <div

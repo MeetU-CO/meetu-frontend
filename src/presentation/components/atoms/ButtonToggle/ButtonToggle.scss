@@ -1,0 +1,37 @@
+.buttonToggle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  input {
+    background-color: var(--grey-contrast-color);
+    display: none;
+  }
+  input:checked + .buttonToggle__container > .buttonToggle__bullet {
+    margin-left: calc(100% - 20px);
+    background-color: var(--white-full-color);
+    transition: all ease 0.2s;
+  }
+  input:checked + .buttonToggle__container {
+    background-color: var(--orange-color);
+    transition: all ease 0.2s;
+  }
+  &__container {
+    width: 55px;
+    height: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--white-full-color);
+    border-radius: 30px;
+    border: 2px solid var(--grey-contrast-color);
+    padding: 3px;
+    transition: all ease 0.2s;
+  }
+  &__bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--orange-color);
+    transition: all ease 0.2s;
+  }
+}
