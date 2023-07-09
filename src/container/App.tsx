@@ -57,13 +57,14 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="como-funciona" element={<HowItWorks />} />
           <Route path="sobre-nosotros" element={<AboutUs />} />
+          <Route path="oferta-formulario" element={<OfferForm />} />
           <Route
             element={
               <ProtectedRoute isAllowed={auth != ""} redirectPath="/login" />
             }
           >
             <Route path="/perfil/:id" element={<Profile />} />
-            <Route path="oferta-formulario" element={<OfferForm />} />
+            {/* <Route path="oferta-formulario" element={<OfferForm />} /> */}
           </Route>
           <Route
             element={

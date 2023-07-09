@@ -1,5 +1,6 @@
-import { Field } from "formik";
+import { ErrorMessage, Field } from "formik";
 
+import Error from "../InputFormik/Error";
 import "./ButtonToggle.scss";
 
 interface IButtonToggle {
@@ -15,6 +16,9 @@ const ButtonToggle = ({ name, label }: IButtonToggle) => {
         <div className="buttonToggle__bullet"></div>
       </div>
       {label}
+      <ErrorMessage name={name}>
+        {(children) => <Error>{children}</Error>}
+      </ErrorMessage>
     </label>
   );
 };

@@ -12,10 +12,9 @@ interface IRequirement {
   updateField: (id: string, values: any) => void;
 }
 
-const Requirement = ({ id, updateField }: IRequirement) => {
+const Requirement2 = ({ id, updateField }: IRequirement) => {
   const initialValues = {
     description: "",
-    mandatory: "",
   };
 
   const validationSchema = Yup.object({
@@ -36,14 +35,14 @@ const Requirement = ({ id, updateField }: IRequirement) => {
           return (
             <Form className="requirement__form">
               <Textarea
-                title={"Requisito"}
+                title={"Requisito 2"}
                 name={"description"}
                 placeholder={"Describe tu requisito"}
               />
-              <ButtonToggle
+              {/* <ButtonToggle
                 name={"mandatory"}
                 label={"Requisito obligatorio"}
-              />
+              /> */}
             </Form>
           );
         }}
@@ -52,4 +51,4 @@ const Requirement = ({ id, updateField }: IRequirement) => {
   );
 };
 
-export default Requirement;
+export default Requirement2;
