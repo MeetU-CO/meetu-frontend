@@ -1,4 +1,4 @@
-import { Http } from "./Http";
+import { Http } from "./http";
 
 export interface HttpRepository {
   get: (data: Http) => Promise<any>;
