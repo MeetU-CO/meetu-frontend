@@ -1,8 +1,4 @@
 import { Form, Formik } from "formik";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import * as Yup from "yup";
 
 import LogoGoogle from "../../../assets/Logos/LogoGoogle.svg";
@@ -16,23 +12,14 @@ import Input from "../../atoms/InputFormik/Input";
 import Password from "../../atoms/InputFormik/Password";
 import LinkList from "../../atoms/LinkList/LinkList";
 
-import { Auth } from "../../../../modules/auth/domain/Auth";
+import { handleLoginGooogle, handleLoginMicrosoft } from "./LoginHelper";
 
-import { login } from "../../../../modules/auth/application/Login";
-import { addCookie } from "../../../../modules/cookie/application/addCookie";
+import useEmailLogin from "./useEmailLogin";
 
-import { createMongoDBAuthRepository } from "../../../../modules/auth/infrastructure/MongoDBAuthRepository";
-import { login as loginSlice } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
-import { createUniversalCookieRepository } from "../../../../modules/cookie/infrastructure/UniversalCookieRepository";
 import "./LoginForm.scss";
 
 const LoginForm = () => {
-  const cookieRepository = createUniversalCookieRepository();
-  const authRepository = createMongoDBAuthRepository();
-
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [loading, setLoading] = useState<boolean>(false);
+  const { loading, handleEmailLogin } = useEmailLogin();
 
   const loginInitialValues = {
     email: "",
@@ -45,35 +32,6 @@ const LoginForm = () => {
       .required("Este campo es obligatorio"),
     password: Yup.string().required("Este campo es obligatorio"),
   });
-
-  const handleEmailLogin = async (values: Auth) => {
-    setLoading(true);
-    const res = await login(authRepository, values);
-    if (res.token) {
-      dispatch(loginSlice(res));
-      addCookie(cookieRepository, { name: "auth", data: res.token });
-      toast.success(`Bienvenido ${res.name}`, {
-        onClose: () => navigate(0),
-      });
-    } else {
-      toast.error("Ocurrió un error, intenta de nuevo");
-    }
-    setLoading(false);
-  };
-
-  const handleLoginGooogle = async () => {
-    window.open(
-      `${process.env.REACT_APP_AUTHENTICATION_SERVICE_URI}/google`,
-      "_self"
-    );
-  };
-
-  const handleLoginMicrosoft = async () => {
-    window.open(
-      `${process.env.REACT_APP_AUTHENTICATION_SERVICE_URI}/microsoft`,
-      "_self"
-    );
-  };
 
   if (loading) {
     return (

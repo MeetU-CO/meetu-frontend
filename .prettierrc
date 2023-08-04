@@ -9,6 +9,8 @@
     "domain/(.*)$",
     "application/(.*)$",
     "infraestructure/(.*)$",
+    "(.*)Helper",
+    "use(.*)",
     "^./I",
     "^[./]",
     ".scss$"
