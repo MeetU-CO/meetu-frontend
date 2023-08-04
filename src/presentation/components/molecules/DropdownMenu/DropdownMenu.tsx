@@ -19,7 +19,7 @@ const DropdownMenu = ({ children, profileID }: IDropdownMenu) => {
   const cookieRepository = createUniversalCookieRepository();
 
   const [isActive, setIsActive] = useState<boolean>(false);
-  const ctn: any = useRef();
+  const ctn = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -30,7 +30,7 @@ const DropdownMenu = ({ children, profileID }: IDropdownMenu) => {
 
   const blurMenu = (e: any) => {
     requestAnimationFrame(() => {
-      if (!ctn.current.contains(document.activeElement)) {
+      if (!ctn.current!.contains(document.activeElement)) {
         setIsActive(false);
       }
     });
