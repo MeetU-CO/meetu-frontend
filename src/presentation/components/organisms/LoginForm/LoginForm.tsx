@@ -12,7 +12,10 @@ import Input from "../../atoms/InputFormik/Input";
 import Password from "../../atoms/InputFormik/Password";
 import LinkList from "../../atoms/LinkList/LinkList";
 
-import { handleLoginGooogle, handleLoginMicrosoft } from "./LoginHelper";
+import {
+  handleAuthGooogle,
+  handleAuthMicrosoft,
+} from "../SignupForm/AuthHelper";
 
 import useEmailLogin from "./useEmailLogin";
 
@@ -72,7 +75,7 @@ const LoginForm = () => {
               fill={true}
               border={false}
               shadow={"rgba(0, 0, 0, 0.084)"}
-              onClick={handleLoginGooogle}
+              onClick={handleAuthGooogle}
             />
             <ButtonSocial
               imgUrl={LogoMicrosoft}
@@ -82,7 +85,7 @@ const LoginForm = () => {
               fill={false}
               border={true}
               shadow={""}
-              onClick={handleLoginMicrosoft}
+              onClick={handleAuthMicrosoft}
             />
             <ButtonPassive type="submit" text="Iniciar Sesión" />
           </div>

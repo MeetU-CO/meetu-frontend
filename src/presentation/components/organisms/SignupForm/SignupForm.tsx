@@ -1,12 +1,10 @@
 import { Form, Formik } from "formik";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import * as Yup from "yup";
 
 import LogoGoogle from "../../../assets/Logos/LogoGoogle.svg";
 import LogoMicrosoft from "../../../assets/Logos/LogoMicrosoft.svg";
 
+import AnimatedLoader from "../../atoms/AnimatedLoader/AnimatedLoader";
 import ActionButton from "../../atoms/ButtonPassive/ButtonPassive";
 import ButtonSocial from "../../atoms/ButtonSocial/ButtonSocial";
 import MeetUIconOrange from "../../atoms/IconMeetU/IconMeetUOrange";
@@ -14,21 +12,14 @@ import Input from "../../atoms/InputFormik/Input";
 import Password from "../../atoms/InputFormik/Password";
 import LinkList from "../../atoms/LinkList/LinkList";
 
-import { Auth } from "../../../../modules/auth/domain/Auth";
+import { handleAuthGooogle, handleAuthMicrosoft } from "./AuthHelper";
 
-import { signup } from "../../../../modules/auth/application/Signup";
-import { addCookie } from "../../../../modules/cookie/application/addCookie";
+import useEmailSignup from "./useEmailSignup";
 
-import { createMongoDBAuthRepository } from "../../../../modules/auth/infrastructure/MongoDBAuthRepository";
-import { login as loginSlice } from "../../../../modules/auth/infrastructure/slices/AuthSlice";
-import { createUniversalCookieRepository } from "../../../../modules/cookie/infrastructure/UniversalCookieRepository";
 import "./SignupForm.scss";
 
 const SignupForm = () => {
-  const cookieRepository = createUniversalCookieRepository();
-  const authRepository = createMongoDBAuthRepository();
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const { loading, handleEmailSignup } = useEmailSignup();
 
   const signupInitialValues = {
     email: "",
@@ -79,37 +70,18 @@ const SignupForm = () => {
     ),
   });
 
-  const handleSignup = async (values: Auth) => {
-    const res = await signup(authRepository, values);
-    if (res.token) {
-      dispatch(loginSlice(res));
-      addCookie(cookieRepository, { name: "auth", data: res.token });
-      toast.success("Cuenta creada con éxito", {
-        onClose: () => navigate(0),
-      });
-    } else {
-      toast.error("Ocurrió un error, intenta de nuevo");
-    }
-  };
-
-  const handleLoginGooogle = async () => {
-    window.open(
-      `${process.env.REACT_APP_AUTHENTICATION_SERVICE_URI}/google`,
-      "_self"
+  if (loading) {
+    return (
+      <div className="login-form--loading">
+        <AnimatedLoader />
+      </div>
     );
-  };
-
-  const handleLoginMicrosoft = async () => {
-    window.open(
-      `${process.env.REACT_APP_AUTHENTICATION_SERVICE_URI}/microsoft`,
-      "_self"
-    );
-  };
+  }
 
   return (
     <Formik
       initialValues={signupInitialValues}
-      onSubmit={handleSignup}
+      onSubmit={handleEmailSignup}
       validationSchema={validationSchema}
     >
       {() => (
@@ -138,7 +110,7 @@ const SignupForm = () => {
               fill={true}
               border={false}
               shadow={"rgba(0, 0, 0, 0.084)"}
-              onClick={handleLoginGooogle}
+              onClick={handleAuthGooogle}
             />
             <ButtonSocial
               imgUrl={LogoMicrosoft}
@@ -148,7 +120,7 @@ const SignupForm = () => {
               fill={false}
               border={true}
               shadow={""}
-              onClick={handleLoginMicrosoft}
+              onClick={handleAuthMicrosoft}
             />
             <ActionButton type="submit" text="Registrarse" />
           </div>
