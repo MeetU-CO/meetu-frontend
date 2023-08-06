@@ -12,9 +12,11 @@ import Input from "../../atoms/InputFormik/Input";
 import Password from "../../atoms/InputFormik/Password";
 import LinkList from "../../atoms/LinkList/LinkList";
 
-import { handleAuthGooogle, handleAuthMicrosoft } from "./AuthHelper";
-
-import useEmailSignup from "./useEmailSignup";
+import {
+  handleAuthGooogle,
+  handleAuthMicrosoft,
+  useEmailSignup,
+} from "./AuthHelper";
 
 import "./SignupForm.scss";
 
