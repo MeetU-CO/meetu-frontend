@@ -18,7 +18,6 @@ import {
   useEmailLogin,
 } from "../SignupForm/AuthHelper";
 
-// import useEmailLogin from "./useEmailLogin";
 import "./LoginForm.scss";
 
 const LoginForm = () => {

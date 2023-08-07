@@ -1,4 +1,4 @@
-import { SetStateAction } from "react";
+import { FC, SetStateAction } from "react";
 
 import TitleH3 from "../../atoms/TitleH3/TitleH3";
 
@@ -6,12 +6,14 @@ import FieldCard from "../../molecules/FieldCard/FieldCard";
 import SearchBar from "../../molecules/SearchBar/SearchBar";
 import { SearchBarMode } from "../../molecules/SearchBar/SearchBarMode";
 
-import { fieldData } from "../Fields/FieldData";
+import { FieldsList } from "../Fields/FieldsData";
 import "./FieldsMenu.scss";
 
-interface IFieldsMenu {}
+interface Props {
+  availableFields: FieldsList[];
+}
 
-const FieldsMenu = ({}: IFieldsMenu) => {
+const FieldsMenu: FC<Props> = ({ availableFields }) => {
   return (
     <div className="fieldsMenu">
       <div className="fieldsMenu__searchBar">
@@ -31,20 +33,30 @@ const FieldsMenu = ({}: IFieldsMenu) => {
         />
         <div className="fieldsMenu__divisorLine"></div>
         <div className="fieldsMenu__fieldsContainer">
-          <FieldCard
-            type={fieldData.requirement.type}
+          {availableFields.map(({ type }: FieldsList) => (
+            <FieldCard
+              key={type}
+              type={type}
+              item={{
+                name: type,
+                available: true,
+              }}
+            />
+          ))}
+          {/* <FieldCard
+            type={fieldsData.requirement.type}
             item={{
-              name: fieldData.requirement.type,
+              name: fieldsData.requirement.type,
               available: true,
             }}
           />
           <FieldCard
-            type={fieldData.cv.type}
+            type={fieldsData.cv.type}
             item={{
-              name: fieldData.cv.type,
+              name: fieldsData.cv.type,
               available: true,
             }}
-          />
+          /> */}
         </div>
       </div>
     </div>
