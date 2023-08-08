@@ -8,6 +8,7 @@ const fieldsAdapter = (fields: Fields) => {
     ...fields[id],
     ...FIELDS_COMPONENTS[id],
   }));
+  console.log(components);
   return components;
 };
 

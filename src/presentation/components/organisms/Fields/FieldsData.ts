@@ -19,6 +19,7 @@ export const FIELDS_COMPONENTS: any = {
   requirement: {
     type: "requirement",
     component: Requirement,
+    mandatory: false,
   },
   cv: {
     type: "cv",

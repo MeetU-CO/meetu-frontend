@@ -1,11 +1,12 @@
 import { FC } from "react";
 
 import ButtonPassive from "../../atoms/ButtonPassive/ButtonPassive";
+import TextLight from "../../atoms/TextLight/TextLight";
 
 import useFieldsList from "./useFieldsList";
 
 import { FieldsList } from "../Fields/FieldsData";
-import DropArea from "./DropArea";
+// import DropArea from "./DropArea";
 import "./FieldsForm.scss";
 
 interface props {
@@ -13,7 +14,7 @@ interface props {
 }
 
 const FieldsForm: FC<props> = ({ availableFields }) => {
-  const { fieldsList, zipFields, sendData, updateField, acceptedFields } =
+  const { zipFields, sendData, updateField, DropArea } =
     useFieldsList(availableFields);
 
   return (
@@ -32,7 +33,19 @@ const FieldsForm: FC<props> = ({ availableFields }) => {
           </div>
         );
       })}
-      <DropArea fieldsList={fieldsList} acceptedFields={acceptedFields} />
+      {/* <DropArea fieldsList={fieldsList} acceptedFields={acceptedFields} />
+      <div
+        className={
+          isOver ? "fieldsForm__dropArea--isOver" : "fieldsForm__dropArea"
+        }
+        ref={drop}
+      >
+        <TextLight
+          text={"Arrastra y suelta tu campo aquí"}
+          textAlign={"center"}
+        />
+      </div> */}
+      <DropArea />
     </div>
   );
 };

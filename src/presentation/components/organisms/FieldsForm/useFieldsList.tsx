@@ -1,6 +1,8 @@
-import { useRef } from "react";
+import { ReactElement, useRef } from "react";
 import { useDrop } from "react-dnd";
 import { v4 as uuidv4 } from "uuid";
+
+import TextLight from "../../atoms/TextLight/TextLight";
 
 import { FIELDS_COMPONENTS, FieldsList } from "../Fields/FieldsData";
 
@@ -29,10 +31,10 @@ const useFieldsList = (availableFields: FieldsList[]) => {
   };
 
   const addField = (item: { name: string; available: boolean }) => {
-    console.log(item);
     const id: string = uuidv4();
     const newField: any = { ...fieldsList.current };
-    newField[id] = FIELDS_COMPONENTS[item.name as keyof Object];
+    console.log(newField);
+    newField[id] = { ...FIELDS_COMPONENTS[item.name as keyof Object] };
     fieldsList.current = newField;
   };
 
@@ -61,15 +63,29 @@ const useFieldsList = (availableFields: FieldsList[]) => {
     [fieldsList]
   );
 
+  const DropArea = () => {
+    return (
+      <div
+        className={
+          isOver ? "fieldsForm__dropArea--isOver" : "fieldsForm__dropArea"
+        }
+        ref={drop}
+      >
+        <TextLight
+          text={"Arrastra y suelta tu campo aquí"}
+          textAlign={"center"}
+        />
+      </div>
+    );
+  };
+
   return {
     fieldsList,
     addField,
     zipFields,
     sendData,
     updateField,
-    acceptedFields,
-    // drop,
-    // isOver,
+    DropArea,
   };
 };
 
