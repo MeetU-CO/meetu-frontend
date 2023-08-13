@@ -1,9 +1,9 @@
-import { Fields } from "../domain/Organization";
+import { FieldsList } from "../domain/Organization";
 import { OrganizationRepository } from "../domain/OrganizationRepository";
 
 export const getFields = (
   organizationRepository: OrganizationRepository,
   id: string
-): Fields => {
+): FieldsList => {
   return organizationRepository.getFields(id);
 };

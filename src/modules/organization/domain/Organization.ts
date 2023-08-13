@@ -3,11 +3,14 @@ export enum ORGANIZATION_TYPES {
   Company = "Company",
 }
 
-export interface Fields {
-  [id: string]: {
-    description: string;
-    isDefault: boolean;
-  };
+export interface Field {
+  description: string;
+  name: string;
+  isDefault: boolean;
+}
+
+export interface FieldsList {
+  [id: string]: Field;
 }
 
 export interface Organization {
@@ -15,5 +18,5 @@ export interface Organization {
   name: string;
   email: string;
   department: string;
-  fields: Fields;
+  fields: FieldsList;
 }

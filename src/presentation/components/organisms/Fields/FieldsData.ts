@@ -1,35 +1,35 @@
+import { FC } from "react";
+
 import Requirement from "./Requirement";
 import Requirement2 from "./Requirement2";
 
-export const fieldsData = {
+export interface FieldComponent {
+  id: string;
+  updateField: (id: string, values: any) => void;
+  deleteField?: (id: string) => void;
+}
+
+export interface FieldsObject {
+  [id: string]: {
+    fieldID: string;
+    component: FC<FieldComponent>;
+    mandatory?: string;
+    options?: string[];
+    mainValue?: string;
+    secondaryValue?: string;
+  };
+}
+
+export const FIELDS_COMPONENTS: FieldsObject = {
   requirement: {
-    type: "requirement",
+    fieldID: "ID_1",
     component: Requirement,
-    description: "",
+    mainValue: "",
     mandatory: "",
   },
   cv: {
-    type: "cv",
+    fieldID: "ID_2",
     component: Requirement2,
-    description: "",
+    mainValue: "",
   },
 };
-
-export const FIELDS_COMPONENTS: any = {
-  requirement: {
-    type: "requirement",
-    component: Requirement,
-    mandatory: false,
-  },
-  cv: {
-    type: "cv",
-    component: Requirement2,
-  },
-};
-
-export interface FieldsList {
-  type: string;
-  component: JSX.Element;
-  description: string;
-  isDefault: boolean;
-}

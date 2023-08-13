@@ -3,10 +3,22 @@ import "./FieldsBase.scss";
 
 interface IFieldsBase {
   children: JSX.Element;
+  deleteField?: (id: any) => void;
 }
 
-const FieldsBase = ({ children }: IFieldsBase) => {
-  return <div className="fieldsBase">{children}</div>;
+const FieldsBase = ({ children, deleteField }: IFieldsBase) => {
+  const renderDeleteButon = () => {
+    if (deleteField) {
+      return <button onClick={deleteField}>x</button>;
+    }
+  };
+
+  return (
+    <div className="fieldsBase">
+      {renderDeleteButon()}
+      {children}
+    </div>
+  );
 };
 
 export default FieldsBase;

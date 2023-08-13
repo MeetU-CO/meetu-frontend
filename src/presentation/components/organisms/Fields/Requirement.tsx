@@ -1,31 +1,24 @@
 import { Form, Formik, useFormikContext } from "formik";
-import { useEffect } from "react";
+import { FC, useEffect } from "react";
 import * as Yup from "yup";
 
 import ButtonToggle from "../../atoms/ButtonToggle/ButtonToggle";
 import Textarea from "../../atoms/InputFormik/Textarea";
 
 import FieldsBase from "./FieldsBase";
+import { FIELDS_COMPONENTS, FieldComponent } from "./FieldsData";
 
-interface IRequirement {
-  id: string;
-  updateField: (id: string, values: any) => void;
-}
-
-const Requirement = ({ id, updateField }: IRequirement) => {
-  const initialValues = {
-    description: "",
-    mandatory: "",
-  };
+const Requirement: FC<FieldComponent> = ({ id, updateField, deleteField }) => {
+  const initialValues = FIELDS_COMPONENTS["requirement"];
 
   const validationSchema = Yup.object({
-    description: Yup.string()
+    mainValue: Yup.string()
       .min(10, "La descripción debe tener al menos 10 caracteres")
       .required("Este campo es obligatorio"),
   });
 
   return (
-    <FieldsBase>
+    <FieldsBase deleteField={deleteField}>
       <Formik
         initialValues={initialValues}
         onSubmit={(i) => console.log(i)}
@@ -37,7 +30,7 @@ const Requirement = ({ id, updateField }: IRequirement) => {
             <Form className="requirement__form">
               <Textarea
                 title={"Requisito"}
-                name={"description"}
+                name={"mainValue"}
                 placeholder={"Describe tu requisito"}
               />
               <ButtonToggle

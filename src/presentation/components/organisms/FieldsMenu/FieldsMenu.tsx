@@ -1,4 +1,5 @@
 import { FC, SetStateAction } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import TitleH3 from "../../atoms/TitleH3/TitleH3";
 
@@ -6,11 +7,15 @@ import FieldCard from "../../molecules/FieldCard/FieldCard";
 import SearchBar from "../../molecules/SearchBar/SearchBar";
 import { SearchBarMode } from "../../molecules/SearchBar/SearchBarMode";
 
-import { FieldsList } from "../Fields/FieldsData";
+import {
+  Field,
+  FieldsList,
+} from "../../../../modules/organization/domain/Organization";
+
 import "./FieldsMenu.scss";
 
 interface Props {
-  availableFields: FieldsList[];
+  availableFields: Field[];
 }
 
 const FieldsMenu: FC<Props> = ({ availableFields }) => {
@@ -33,30 +38,20 @@ const FieldsMenu: FC<Props> = ({ availableFields }) => {
         />
         <div className="fieldsMenu__divisorLine"></div>
         <div className="fieldsMenu__fieldsContainer">
-          {availableFields.map(({ type }: FieldsList) => (
-            <FieldCard
-              key={type}
-              type={type}
-              item={{
-                name: type,
-                available: true,
-              }}
-            />
-          ))}
-          {/* <FieldCard
-            type={fieldsData.requirement.type}
-            item={{
-              name: fieldsData.requirement.type,
-              available: true,
-            }}
-          />
-          <FieldCard
-            type={fieldsData.cv.type}
-            item={{
-              name: fieldsData.cv.type,
-              available: true,
-            }}
-          /> */}
+          {availableFields.map(({ name }: Field) => {
+            const id: string = uuidv4();
+
+            return (
+              <FieldCard
+                key={id}
+                type={name}
+                item={{
+                  name: name,
+                  available: true,
+                }}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

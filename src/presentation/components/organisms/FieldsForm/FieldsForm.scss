@@ -34,23 +34,42 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  gap: 25px;
+  gap: 40px;
   padding-top: 50px;
   padding-bottom: 100px;
   background-color: var(--orange-contrast-color);
+  &__default {
+    width: clamp(400px, 55%, 900px);
+    background-color: var(--grey-color);
+    padding: 50px 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+  }
+  &__optional {
+    width: clamp(500px, 55%, 900px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+  }
   &__submitButton {
     width: clamp(200px, 20%, 300px);
   }
   &__dropArea {
     margin-top: 50px;
-    width: clamp(400px, 70%, 700px);
+    width: clamp(400px, 90%, 700px);
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%238F8F8FFF' stroke-width='4' stroke-dasharray='6%2c 18' stroke-dashoffset='11' stroke-linecap='square'/%3e%3c/svg%3e");
     border-radius: 8px;
     padding: 25px 0px;
     transition: all ease 0.1s;
     &--isOver {
       margin-top: 50px;
-      width: clamp(400px, 70%, 700px);
+      width: clamp(400px, 90%, 700px);
       border-radius: 8px;
       background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23FDFDFDFF' stroke-width='4' stroke-dasharray='6%2c 18' stroke-dashoffset='11' stroke-linecap='square'/%3e%3c/svg%3e");
       padding: 25px 0px;

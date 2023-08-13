@@ -1,33 +1,10 @@
 import {
-  Fields,
+  Field,
+  FieldsList,
   ORGANIZATION_TYPES,
   Organization,
 } from "../domain/Organization";
 import { OrganizationRepository } from "../domain/OrganizationRepository";
-
-//Mock data - To delete once microservice is ready
-const mockFields: Fields[] = [
-  {
-    requirement: {
-      description: "",
-      isDefault: false,
-    },
-    cv: {
-      description: "",
-      isDefault: true,
-    },
-  },
-  {
-    requirement: {
-      description: "",
-      isDefault: true,
-    },
-    cv: {
-      description: "",
-      isDefault: true,
-    },
-  },
-];
 
 const mockOrganizations: Organization[] = [
   {
@@ -35,14 +12,36 @@ const mockOrganizations: Organization[] = [
     name: "Sabana Mock",
     email: "sabanamock@gmail.com",
     department: "Huila",
-    fields: mockFields[0],
+    fields: {
+      ID_1: {
+        description: "",
+        name: "requirement",
+        isDefault: true,
+      },
+      ID_2: {
+        description: "",
+        name: "cv",
+        isDefault: true,
+      },
+    },
   },
   {
     type: ORGANIZATION_TYPES.Company,
     name: "Militar Mock",
     email: "Militarmock@gmail.com",
     department: "Soacha",
-    fields: mockFields[1],
+    fields: {
+      ID_3: {
+        description: "",
+        name: "requirement",
+        isDefault: true,
+      },
+      ID_4: {
+        description: "",
+        name: "cv",
+        isDefault: true,
+      },
+    },
   },
 ];
 
@@ -58,7 +57,7 @@ const getData = (id: string): Organization => {
   return organizationData;
 };
 
-const getFields = (id: string): Fields => {
-  const fieldsData: Fields = mockFields[parseInt(id)];
+const getFields = (id: string): FieldsList => {
+  const fieldsData: FieldsList = mockOrganizations[parseInt(id)].fields;
   return fieldsData;
 };

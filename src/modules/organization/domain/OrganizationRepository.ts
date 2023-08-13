@@ -1,6 +1,6 @@
-import { Fields, Organization } from "./Organization";
+import { FieldsList, Organization } from "./Organization";
 
 export interface OrganizationRepository {
   getData: (id: string) => Organization;
-  getFields: (id: string) => Fields;
+  getFields: (id: string) => FieldsList;
 }
