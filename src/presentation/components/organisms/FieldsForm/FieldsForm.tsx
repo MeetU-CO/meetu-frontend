@@ -3,7 +3,7 @@ import { FC } from "react";
 import ButtonPassive from "../../atoms/ButtonPassive/ButtonPassive";
 import TextLight from "../../atoms/TextLight/TextLight";
 
-import useFieldsList from "./useFieldsList";
+import useFields from "./useFields";
 
 import { FieldsList } from "../Fields/FieldsData";
 // import DropArea from "./DropArea";
@@ -15,7 +15,7 @@ interface props {
 
 const FieldsForm: FC<props> = ({ availableFields }) => {
   const { zipFields, sendData, updateField, DropArea } =
-    useFieldsList(availableFields);
+    useFields(availableFields);
 
   return (
     <div className="fieldsForm">

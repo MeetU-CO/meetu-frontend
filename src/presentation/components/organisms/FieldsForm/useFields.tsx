@@ -6,7 +6,7 @@ import TextLight from "../../atoms/TextLight/TextLight";
 
 import { FIELDS_COMPONENTS, FieldsList } from "../Fields/FieldsData";
 
-const useFieldsList = (availableFields: FieldsList[]) => {
+const useFields = (availableFields: FieldsList[]) => {
   const setDefaultFields = (availableFields: FieldsList[]) => {
     let initialFields: any = {};
     const mandatoryFields = availableFields.filter(
@@ -89,4 +89,4 @@ const useFieldsList = (availableFields: FieldsList[]) => {
   };
 };
 
-export default useFieldsList;
+export default useFields;
