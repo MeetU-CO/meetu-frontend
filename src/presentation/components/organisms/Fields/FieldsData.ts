@@ -6,7 +6,7 @@ import Requirement2 from "./Requirement2";
 export interface FieldComponent {
   id: string;
   updateField: (id: string, values: any) => void;
-  deleteField?: (id: string) => void;
+  deleteField?: () => void;
 }
 
 export interface FieldsObject {

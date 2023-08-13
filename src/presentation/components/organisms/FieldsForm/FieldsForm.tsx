@@ -13,7 +13,7 @@ import useFields from "./useFields";
 import "./FieldsForm.scss";
 
 interface Props {
-  formFields: any;
+  formFields: Field[];
   organizationFields: FieldsList;
 }
 
@@ -21,6 +21,7 @@ const FieldsForm: FC<Props> = ({ formFields, organizationFields }) => {
   const {
     sendData,
     updateField,
+    deleteField,
     getDefaultFields,
     getOptionalFields,
     DropArea,
@@ -63,7 +64,7 @@ const FieldsForm: FC<Props> = ({ formFields, organizationFields }) => {
               <Field
                 id={i[0]}
                 updateField={updateField}
-                deleteField={console.log("x")}
+                deleteField={() => deleteField(i[0])}
               />
             </div>
           );

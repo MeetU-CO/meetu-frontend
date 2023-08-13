@@ -16,7 +16,7 @@ const mockOrganizations: Organization[] = [
       ID_1: {
         description: "",
         name: "requirement",
-        isDefault: true,
+        isDefault: false,
       },
       ID_2: {
         description: "",

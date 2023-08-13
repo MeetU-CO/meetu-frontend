@@ -8,7 +8,7 @@ import Textarea from "../../atoms/InputFormik/Textarea";
 import FieldsBase from "./FieldsBase";
 import { FIELDS_COMPONENTS, FieldComponent } from "./FieldsData";
 
-const Requirement2: FC<FieldComponent> = ({ id, updateField }) => {
+const Requirement2: FC<FieldComponent> = ({ id, updateField, deleteField }) => {
   const initialValues = FIELDS_COMPONENTS["cv"];
 
   const validationSchema = Yup.object({
@@ -18,7 +18,7 @@ const Requirement2: FC<FieldComponent> = ({ id, updateField }) => {
   });
 
   return (
-    <FieldsBase>
+    <FieldsBase deleteField={deleteField}>
       <Formik
         initialValues={initialValues}
         onSubmit={(i) => console.log(i)}

@@ -12,7 +12,7 @@ import {
 import { FIELDS_COMPONENTS } from "../Fields/FieldsData";
 
 const useFields = (fields: Field[], organizationFields: FieldsList) => {
-  const fieldsList = useRef(fields);
+  const fieldsList: any = useRef(fields);
 
   const getAcceptedFields = () => {
     const acceptedFields = Object.values(organizationFields).map(
@@ -41,8 +41,20 @@ const useFields = (fields: Field[], organizationFields: FieldsList) => {
     const id: string = uuidv4();
     const newField: any = { ...fieldsList.current };
     const fieldData = FIELDS_COMPONENTS[item.name as keyof Object];
-    newField[id] = { ...fieldData };
+    newField[id] = {
+      ...fieldData,
+      ...organizationFields[fieldData.fieldID],
+      isDefault: false,
+    };
     fieldsList.current = newField;
+  };
+
+  const deleteField = (id: string) => {
+    // const newFieldsList = { ...fieldsList.current };
+    // delete newFieldsList[id as keyof object];
+    // fieldsList.current = newFieldsList;
+    // fieldsList.current = fieldsList.current;
+    // console.log(newFieldsList);
   };
 
   const updateField = (id: string, values: any) => {
@@ -87,6 +99,7 @@ const useFields = (fields: Field[], organizationFields: FieldsList) => {
   return {
     sendData,
     updateField,
+    deleteField,
     DropArea,
     getAcceptedFields,
     getDefaultFields,

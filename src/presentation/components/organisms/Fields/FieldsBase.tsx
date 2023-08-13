@@ -3,7 +3,7 @@ import "./FieldsBase.scss";
 
 interface IFieldsBase {
   children: JSX.Element;
-  deleteField?: (id: any) => void;
+  deleteField?: () => void;
 }
 
 const FieldsBase = ({ children, deleteField }: IFieldsBase) => {
