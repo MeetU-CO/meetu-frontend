@@ -1,4 +1,4 @@
-import { ReactElement, useRef } from "react";
+import { ReactElement, useRef, useState } from "react";
 import { useDrop } from "react-dnd";
 import { v4 as uuidv4 } from "uuid";
 
@@ -13,6 +13,7 @@ import { FIELDS_COMPONENTS } from "../Fields/FieldsData";
 
 const useFields = (fields: Field[], organizationFields: FieldsList) => {
   const fieldsList: any = useRef(fields);
+  const [reload, setReload] = useState(false);
 
   const getAcceptedFields = () => {
     const acceptedFields = Object.values(organizationFields).map(
@@ -50,11 +51,11 @@ const useFields = (fields: Field[], organizationFields: FieldsList) => {
   };
 
   const deleteField = (id: string) => {
-    // const newFieldsList = { ...fieldsList.current };
-    // delete newFieldsList[id as keyof object];
-    // fieldsList.current = newFieldsList;
-    // fieldsList.current = fieldsList.current;
-    // console.log(newFieldsList);
+    const newFieldsList = { ...fieldsList.current };
+    delete newFieldsList[id as keyof object];
+    fieldsList.current = newFieldsList;
+    setReload(!reload);
+    console.log(newFieldsList);
   };
 
   const updateField = (id: string, values: any) => {
@@ -68,7 +69,7 @@ const useFields = (fields: Field[], organizationFields: FieldsList) => {
     console.log(fieldsList.current);
   };
 
-  const [{ canDrop, isOver }, drop] = useDrop(
+  const [{ isOver }, drop] = useDrop(
     () => ({
       accept: getAcceptedFields(),
       drop: (item: { name: string; available: boolean }) => addField(item),
