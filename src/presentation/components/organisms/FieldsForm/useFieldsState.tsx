@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useDrop } from "react-dnd";
 import { v4 as uuidv4 } from "uuid";
 
@@ -12,8 +12,8 @@ import {
 import { FIELDS_COMPONENTS } from "../Fields/FieldsData";
 
 const useFields = (fields: Field[], organizationFields: FieldsList) => {
-  const fieldsList: any = useRef(fields);
-  const [reload, setReload] = useState(false);
+  // const fieldsList: any = useRef(fields);
+  const [fieldsList, setFieldsList] = useState(fields);
 
   const getAcceptedFields = () => {
     const acceptedFields = Object.values(organizationFields).map(
@@ -23,8 +23,8 @@ const useFields = (fields: Field[], organizationFields: FieldsList) => {
   };
 
   const zipFields = () => {
-    const fieldsIds = Object.keys(fieldsList.current);
-    const fieldsValues = Object.values(fieldsList.current);
+    const fieldsIds = Object.keys(fieldsList);
+    const fieldsValues = Object.values(fieldsList);
     return fieldsValues.map((i: any, index: number) => [fieldsIds[index], i]);
   };
 
@@ -40,33 +40,34 @@ const useFields = (fields: Field[], organizationFields: FieldsList) => {
 
   const addField = (item: { name: string; available: boolean }) => {
     const id: string = uuidv4();
-    const newField: any = { ...fieldsList.current };
+    const newFieldsList: any = { ...fieldsList };
     const fieldData = FIELDS_COMPONENTS[item.name as keyof Object];
-    newField[id] = {
+    newFieldsList[id] = {
       ...fieldData,
       ...organizationFields[fieldData.fieldID],
       isDefault: false,
     };
-    fieldsList.current = newField;
+    // fieldsList = newField;
+    setFieldsList(newFieldsList);
   };
 
   const deleteField = (id: string) => {
-    const newFieldsList = { ...fieldsList.current };
+    const newFieldsList = { ...fieldsList };
     delete newFieldsList[id as keyof object];
-    fieldsList.current = newFieldsList;
-    setReload(!reload);
-    console.log(newFieldsList);
+    // fieldsList = newFieldsList;
+    setFieldsList(newFieldsList);
   };
 
   const updateField = (id: string, values: any) => {
-    let fieldsCopy: any = { ...fieldsList.current };
-    fieldsCopy[id] = { ...fieldsCopy[id], ...values };
-    fieldsList.current = fieldsCopy;
+    let newFieldsList: any = { ...fieldsList };
+    newFieldsList[id] = { ...newFieldsList[id], ...values };
+    // fieldsList = fieldsCopy;
+    setFieldsList(newFieldsList);
   };
 
   const sendData = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(fieldsList.current);
+    console.log(fieldsList);
   };
 
   const [{ isOver }, drop] = useDrop(

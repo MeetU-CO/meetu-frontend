@@ -1,14 +1,14 @@
 import { FC } from "react";
 
 import ButtonPassive from "../../atoms/ButtonPassive/ButtonPassive";
-import TextLight from "../../atoms/TextLight/TextLight";
 
 import {
   Field,
   FieldsList,
 } from "../../../../modules/organization/domain/Organization";
 
-import useFields from "./useFields";
+// import useFields from "./useFields";
+import useFields from "./useFieldsState";
 
 import "./FieldsForm.scss";
 

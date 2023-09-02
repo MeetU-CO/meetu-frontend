@@ -1,10 +1,11 @@
 import { Form, Formik, useFormikContext } from "formik";
-import { FC, useEffect } from "react";
+import { FC, FormEvent, useEffect } from "react";
 import * as Yup from "yup";
 
 import ButtonToggle from "../../atoms/ButtonToggle/ButtonToggle";
 import Textarea from "../../atoms/InputFormik/Textarea";
 
+import FormObserver from "../FieldsForm/FieldsObserver";
 import FieldsBase from "./FieldsBase";
 import { FIELDS_COMPONENTS, FieldComponent } from "./FieldsData";
 
@@ -17,6 +18,13 @@ const Requirement: FC<FieldComponent> = ({ id, updateField, deleteField }) => {
       .required("Este campo es obligatorio"),
   });
 
+  const handleOnChange = (event: any) => {
+    // const values = event.currentTarget.map((i: any) => i.name);
+    debugger;
+
+    console.log("Form::onChange", event.target.value);
+  };
+
   return (
     <FieldsBase deleteField={deleteField}>
       <Formik
@@ -25,9 +33,12 @@ const Requirement: FC<FieldComponent> = ({ id, updateField, deleteField }) => {
         validationSchema={validationSchema}
       >
         {(props) => {
-          updateField(id, props.values);
           return (
-            <Form className="requirement__form">
+            <Form
+              className="requirement__form"
+              // onChange={handleOnChange}
+            >
+              <FormObserver id={id} updateField={updateField} />
               <Textarea
                 title={"Requisito"}
                 name={"mainValue"}

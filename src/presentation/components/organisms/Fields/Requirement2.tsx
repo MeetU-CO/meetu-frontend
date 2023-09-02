@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import ButtonToggle from "../../atoms/ButtonToggle/ButtonToggle";
 import Textarea from "../../atoms/InputFormik/Textarea";
 
+import FormObserver from "../FieldsForm/FieldsObserver";
 import FieldsBase from "./FieldsBase";
 import { FIELDS_COMPONENTS, FieldComponent } from "./FieldsData";
 
@@ -25,9 +26,12 @@ const Requirement2: FC<FieldComponent> = ({ id, updateField, deleteField }) => {
         validationSchema={validationSchema}
       >
         {(props) => {
-          updateField(id, props.values);
           return (
-            <Form className="requirement__form">
+            <Form
+              className="requirement__form"
+              // onChange={() => updateField(id, props.values)}
+            >
+              <FormObserver id={id} updateField={updateField} />
               <Textarea
                 title={"Requisito 2"}
                 name={"mainValue"}
