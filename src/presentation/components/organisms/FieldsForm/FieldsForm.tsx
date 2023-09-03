@@ -1,3 +1,4 @@
+import { get } from "http";
 import { FC } from "react";
 
 import ButtonPassive from "../../atoms/ButtonPassive/ButtonPassive";
@@ -7,8 +8,7 @@ import {
   FieldsList,
 } from "../../../../modules/organization/domain/Organization";
 
-// import useFields from "./useFields";
-import useFields from "./useFieldsState";
+import useFields from "./useFields";
 
 import "./FieldsForm.scss";
 
@@ -29,8 +29,13 @@ const FieldsForm: FC<Props> = ({ formFields, organizationFields }) => {
 
   return (
     <div className="fieldsForm">
-      <form className="fieldsForm__submitButton" onSubmit={(e) => sendData(e)}>
-        <ButtonPassive type={"submit"} text={"Crear"} />
+      <form
+        className="fieldsForm__submitButtonContainer"
+        onSubmit={(e) => sendData(e)}
+      >
+        <div className="fieldsForm__submitButton">
+          <ButtonPassive type={"submit"} text={"Crear oferta"} />
+        </div>
       </form>
       <div className="fieldsForm__default">
         {getDefaultFields().map((i: any) => {

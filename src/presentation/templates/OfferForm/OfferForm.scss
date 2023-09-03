@@ -1,3 +1,13 @@
 .offerForm-template {
   display: flex;
+  &--mobile {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--orange-contrast-color);
+    &__title {
+      width: 80%;
+    }
+  }
 }

@@ -8,7 +8,8 @@ import "swiper/css/bundle";
 
 import ProtectedRoute from "../presentation/components/molecules/ProtectedRoute/ProtectedRoute";
 
-import Layout from "../presentation/templates/Layout/Layout";
+import LayoutFull from "../presentation/templates/Layouts/LayoutFull";
+import LayoutMinified from "../presentation/templates/Layouts/LayoutMinified";
 
 import AboutUs from "../presentation/pages/AboutUs/AboutUs";
 import AuthCallback from "../presentation/pages/AuthCallback/AuthCallback";
@@ -52,31 +53,29 @@ const App = () => {
         draggable
         pauseOnHover={false}
       />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="como-funciona" element={<HowItWorks />} />
-          <Route path="sobre-nosotros" element={<AboutUs />} />
-          <Route path="oferta-formulario" element={<OfferForm />} />
-          <Route
-            element={
-              <ProtectedRoute isAllowed={auth != ""} redirectPath="/login" />
-            }
-          >
-            <Route path="/perfil/:id" element={<Profile />} />
-            {/* <Route path="oferta-formulario" element={<OfferForm />} /> */}
-          </Route>
-          <Route
-            element={
-              <ProtectedRoute isAllowed={!(auth != "")} redirectPath="/" />
-            }
-          >
-            <Route path="login" element={<Login />} />
-            <Route path="Signup" element={<Signup />} />
-            <Route path="auth-callback" element={<AuthCallback />} />
-          </Route>
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/" element={LayoutFull(Home)} />
+        <Route path="como-funciona" element={LayoutFull(HowItWorks)} />
+        <Route path="sobre-nosotros" element={LayoutFull(AboutUs)} />
+        <Route path="oferta-formulario" element={LayoutMinified(OfferForm)} />
+        <Route
+          element={
+            <ProtectedRoute isAllowed={auth !== ""} redirectPath="/login" />
+          }
+        >
+          <Route path="/perfil/:id" element={LayoutFull(Profile)} />
+          {/* <Route path="oferta-formulario" element={<OfferForm />} /> */}
+        </Route>
+        <Route
+          element={
+            <ProtectedRoute isAllowed={!(auth !== "")} redirectPath="/" />
+          }
+        >
+          <Route path="login" element={LayoutFull(Login)} />
+          <Route path="Signup" element={LayoutFull(Signup)} />
+          <Route path="auth-callback" element={LayoutFull(AuthCallback)} />
+        </Route>
+      </Routes>
     </div>
   );
 };

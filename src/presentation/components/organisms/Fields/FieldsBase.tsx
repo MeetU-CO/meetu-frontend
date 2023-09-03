@@ -9,7 +9,13 @@ interface IFieldsBase {
 const FieldsBase = ({ children, deleteField }: IFieldsBase) => {
   const renderDeleteButon = () => {
     if (deleteField) {
-      return <button onClick={deleteField}>x</button>;
+      return (
+        <div className="fieldsBase__deleteButton">
+          <button onClick={deleteField}>
+            <i className="bi bi-x"></i>
+          </button>
+        </div>
+      );
     }
   };
 

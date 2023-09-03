@@ -7,10 +7,7 @@ import FieldCard from "../../molecules/FieldCard/FieldCard";
 import SearchBar from "../../molecules/SearchBar/SearchBar";
 import { SearchBarMode } from "../../molecules/SearchBar/SearchBarMode";
 
-import {
-  Field,
-  FieldsList,
-} from "../../../../modules/organization/domain/Organization";
+import { Field } from "../../../../modules/organization/domain/Organization";
 
 import "./FieldsMenu.scss";
 
@@ -19,6 +16,9 @@ interface Props {
 }
 
 const FieldsMenu: FC<Props> = ({ availableFields }) => {
+  const mandatoryFields = availableFields.filter((i) => i.isDefault);
+  const optionalFields = availableFields.filter((i) => !i.isDefault);
+
   return (
     <div className="fieldsMenu">
       <div className="fieldsMenu__searchBar">
@@ -38,17 +38,35 @@ const FieldsMenu: FC<Props> = ({ availableFields }) => {
         />
         <div className="fieldsMenu__divisorLine"></div>
         <div className="fieldsMenu__fieldsContainer">
-          {availableFields.map(({ name }: Field) => {
+          {mandatoryFields.map((field: Field) => {
             const id: string = uuidv4();
-
             return (
               <FieldCard
                 key={id}
-                type={name}
-                item={{
-                  name: name,
-                  available: true,
-                }}
+                field={field}
+                isDefault={false}
+                isDraggable={false}
+              />
+            );
+          })}
+        </div>
+      </div>
+      <div className="fieldsMenu__fields">
+        <TitleH3
+          title={"Campos opcionales"}
+          color={"var(--black-full-color)"}
+          textAlign={"left"}
+        />
+        <div className="fieldsMenu__divisorLine"></div>
+        <div className="fieldsMenu__fieldsContainer">
+          {optionalFields.map((field: Field) => {
+            const id: string = uuidv4();
+            return (
+              <FieldCard
+                key={id}
+                field={field}
+                isDefault={true}
+                isDraggable={true}
               />
             );
           })}

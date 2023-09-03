@@ -1,6 +1,8 @@
 .fieldsMenu {
-  width: 30%;
-  // height: 100vh;
+  width: 25%;
+  height: calc(100vh - 132px);
+  min-width: 440px;
+  max-width: 476px;
   box-sizing: border-box;
   background-color: var(--grey-color);
   display: flex;
@@ -8,6 +10,12 @@
   align-items: center;
   flex-direction: column;
   padding: 20px 10px;
+  overflow-y: scroll;
+  &__searchBar {
+    width: 80%;
+    height: 50px;
+    margin: 30px 0;
+  }
   &__fields {
     margin: 50px 0;
     width: 80%;
@@ -18,9 +26,18 @@
     margin: 20px 0;
     background-color: var(--grey-contrast-color);
   }
-  &__searchBar {
-    width: 80%;
-    height: 50px;
-    margin: 30px 0;
+  &__fieldsContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .fieldsMenu {
+    width: 30%;
+    min-width: 200px;
   }
 }

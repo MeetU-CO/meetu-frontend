@@ -27,20 +27,12 @@ const Requirement2: FC<FieldComponent> = ({ id, updateField, deleteField }) => {
       >
         {(props) => {
           return (
-            <Form
-              className="requirement__form"
-              // onChange={() => updateField(id, props.values)}
-            >
+            <Form className="requirement__form">
               <FormObserver id={id} updateField={updateField} />
               <Textarea
-                title={"Requisito 2"}
                 name={"mainValue"}
                 placeholder={"Describe tu requisito"}
               />
-              {/* <ButtonToggle
-                name={"mandatory"}
-                label={"Requisito obligatorio"}
-              /> */}
             </Form>
           );
         }}

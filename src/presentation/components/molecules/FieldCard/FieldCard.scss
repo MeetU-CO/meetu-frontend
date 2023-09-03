@@ -1,7 +1,19 @@
 .fieldCard {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   background-color: #fdfdfd;
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   cursor: move;
+  .material-icons-outlined {
+    font-size: 72px;
+    color: var(--grey-contrast-color);
+    margin-bottom: 8px;
+  }
+  .default {
+    color: var(--orange-color);
+  }
 }

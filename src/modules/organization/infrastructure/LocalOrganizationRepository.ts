@@ -14,13 +14,23 @@ const mockOrganizations: Organization[] = [
     department: "Huila",
     fields: {
       ID_1: {
-        description: "",
+        description: "Doc 1",
         name: "requirement",
         isDefault: false,
       },
       ID_2: {
-        description: "",
+        description: "Doc 2",
         name: "cv",
+        isDefault: false,
+      },
+      ID_3: {
+        description: "Título",
+        name: "title",
+        isDefault: true,
+      },
+      ID_4: {
+        description: "Descripción",
+        name: "description",
         isDefault: true,
       },
     },
@@ -31,12 +41,12 @@ const mockOrganizations: Organization[] = [
     email: "Militarmock@gmail.com",
     department: "Soacha",
     fields: {
-      ID_3: {
+      ID_4: {
         description: "",
         name: "requirement",
         isDefault: true,
       },
-      ID_4: {
+      ID_5: {
         description: "",
         name: "cv",
         isDefault: true,
