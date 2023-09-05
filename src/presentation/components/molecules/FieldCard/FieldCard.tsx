@@ -34,7 +34,7 @@ const FieldCard: FC<IFieldCard> = ({ field, isDefault, isDraggable }) => {
       <span className={`material-icons-outlined ${isDefault ? "default" : ""}`}>
         {FIELDS_COMPONENTS[field.name].icon}
       </span>
-      <span>{field.description}</span>
+      <span className="fieldCard__name">{field.description}</span>
     </div>
   );
 };

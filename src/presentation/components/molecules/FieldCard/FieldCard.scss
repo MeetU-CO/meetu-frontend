@@ -1,19 +1,26 @@
 .fieldCard {
-  width: 130px;
-  height: 130px;
+  width: 115px;
+  height: 115px;
   background-color: #fdfdfd;
-  border-radius: 20px;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border: 1px solid #bfbfbf;
+  padding: 6px;
   cursor: move;
   .material-icons-outlined {
-    font-size: 72px;
+    font-size: 50px;
     color: var(--grey-contrast-color);
-    margin-bottom: 8px;
+    margin-bottom: 13px;
+    text-align: center;
   }
   .default {
     color: var(--orange-color);
+  }
+  &__name {
+    text-align: center;
+    font-family: "Lato", sans-serif;
   }
 }
